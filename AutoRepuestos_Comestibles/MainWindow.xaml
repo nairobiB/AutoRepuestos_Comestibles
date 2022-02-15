@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoRepuestos_Comestibles"
         mc:Ignorable="d"
-        Title="MainWindow" Height="560" Width="910">
+        Title="MainWindow" Height="500" Width="920">
     <Grid>
         
     </Grid>
