@@ -8,7 +8,7 @@
         Title="MainWindow" Height="500" Width="920">
     <Grid>
         <Label>
-            Hola mundo
+            AGREGO TEXTO
         </Label>
     </Grid>
 </Window>
