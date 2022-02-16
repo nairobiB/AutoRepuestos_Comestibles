@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Threading;
-using System.Windows.Media.Animation;
-using System.Timers;
+
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MenuAdmin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuAdmin : Window
     {
-        public MainWindow()
+        public MenuAdmin()
         {
-            InitializeComponent();       
+            InitializeComponent();
         }
-
     }
 }

@@ -1,14 +1,30 @@
-﻿<Window x:Class="AutoRepuestos_Comestibles.MainWindow"
+﻿<Window x:Name="SplashWindow" x:Class="AutoRepuestos_Comestibles.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoRepuestos_Comestibles"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="920">
+        Title="MainWindow" Height="374" Width="658" FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush TileMode="FlipX" ImageSource="/bg.jpg"/>
+    </Window.Background>
     <Grid>
-        <Label>
-            NAIROBI BODDEN
-        </Label>
+        <TextBlock Margin="58,89,58,103" FontSize="25">
+            BIENVENIDO AL SISTEMA
+            <LineBreak/>
+            AUTOREPUESTOS Y COMESTIBLES
+            <LineBreak/>
+            <LineBreak/>
+            VERSION 1.1
+        </TextBlock>
+        <ProgressBar Margin="47,256,47,88" Name="pgCount" Minimum="0" Maximum="100"/>
+        <Label x:Name="labelCounter" Content="" Margin="288,292,288,34"/>
+        <Border BorderThickness="1" BorderBrush="Black"/>
     </Grid>
+
 </Window>
+   
+        
+    
