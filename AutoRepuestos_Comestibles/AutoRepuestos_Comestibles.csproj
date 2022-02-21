@@ -114,5 +114,38 @@
   <ItemGroup>
     <Resource Include="bg.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\employees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\car-rental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\carsale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\checkout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\parcel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\custom.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

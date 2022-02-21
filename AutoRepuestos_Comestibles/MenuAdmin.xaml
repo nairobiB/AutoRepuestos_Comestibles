@@ -5,8 +5,614 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoRepuestos_Comestibles"
         mc:Ignorable="d"
-        Title="Menú Admin" Height="600" Width="1000">
-    <Grid>
-        
-    </Grid>
+        Title="Menú Admin" Height="600" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Window.Resources>
+        <!--#region FOCUS VISUAL-->
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region BTN STYLE-->
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="BtnHeader" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#baddf9"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#baddf9"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region FOCUS VISUAL TB-->
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region BTN SHOW HIDE-->
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="TBStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual2">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual3">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region BTN LIST-->
+        <SolidColorBrush x:Key="Button.Static.Background2" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border2" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background2" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
+        <Style x:Key="BTNLISTA" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background2}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background2}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border2}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground2}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+        <!--#region LIST STYLE-->
+        <Style x:Key="FocusVisual4">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Item.MouseOver.Background" Color="#1F26A0DA"/>
+        <SolidColorBrush x:Key="Item.MouseOver.Border" Color="#a826A0Da"/>
+        <SolidColorBrush x:Key="Item.SelectedActive.Background" Color="#3D26A0DA"/>
+        <SolidColorBrush x:Key="Item.SelectedActive.Border" Color="#FF26A0DA"/>
+        <SolidColorBrush x:Key="Item.SelectedInactive.Background" Color="#3DDADADA"/>
+        <SolidColorBrush x:Key="Item.SelectedInactive.Border" Color="#FFDADADA"/>
+        <Style x:Key="LISTSTYLE" TargetType="{x:Type ListViewItem}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Padding" Value="4,1"/>
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual4}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsMouseOver" Value="True"/>
+                                </MultiTrigger.Conditions>
+                                <Setter Property="Background" TargetName="Bd" Value="WHITE"/>
+                                <Setter Property="BorderBrush" TargetName="Bd" Value="WHITE"/>
+                            </MultiTrigger>
+                           
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+       
+       
+    </Window.Resources>
+    <Border CornerRadius="10"
+            Background="#edffff">
+        <Grid Name="Principal" Background="Transparent" >
+            <!--#region HEADER-->
+            <Grid Name ="Header" Height="70" VerticalAlignment="Top" 
+                  Background="Transparent">
+                <Border CornerRadius="10, 10, 0, 0" Background = "#8aacc8" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="150"/>
+                    </Grid.ColumnDefinitions>
+                    <!--#region TITLE -->
+                    <TextBlock Name="TextoPrincipal" Text="Menú principal" 
+                               Grid.Column="1" Foreground="Black"
+                               FontSize="40" HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               FontFamily="Century Gothic" FontWeight="Bold"/>
+                    <!--#endregion-->
+
+                    <!--#region BOTONES CERRAR Y MINIMIZAR-->
+
+                    <Button Style="{DynamicResource BtnHeader}" x:Name="BtnMinimizar"
+                            Grid.Column="3"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Height=  "35"
+                            Width=   "35"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="0,10,50,0"
+                            Cursor="Hand">
+                        <Image Source="/Imagenes/min.png"/>
+
+                    </Button>
+
+                    <Button x:Name="BtnCerrar"
+                            Grid.Column="3"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Height=  "35"
+                            Width=   "35"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Margin="0,10,5,0"
+                            Cursor="Hand"
+                            Style="{DynamicResource BtnHeader}">
+                        <Image Source="/Imagenes/close1.png"/>
+
+                    </Button>
+
+
+
+                    <!--#endregion-->
+                </Grid>
+
+            </Grid>
+
+
+            <!--#endregion-->
+           
+            <!--#region CONTENIDO-->
+            <Grid x:Name="GridContent"
+                  Background="Transparent"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Right"
+                  Height="530"
+                  Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftButtonDown">
+                <Border CornerRadius="0,0,0,10" Background="#edffff"/>
+                <TextBlock Text="Autorepuestos y comestibles"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="40"
+                           FontWeight="Bold"
+                           FontFamily="century gothic"/>
+            </Grid>
+            <!--#endregion-->
+            <!--#region SIDEBAR-->
+            
+            <Grid x:Name="GridMenu"
+                  Background="Transparent"
+                  Width="75"
+                  HorizontalAlignment="Left" Height="530" VerticalAlignment="Bottom" >
+                <Border Background="#baddf9"
+                        CornerRadius="0,0,0,10"/>
+                
+                <!--#region MENU-->
+                <StackPanel Background="Transparent"
+                            VerticalAlignment="Top">
+                   
+                    <!--#region SHOW/HIDE-->
+                    <Grid Background="Transparent"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Right"
+                      Margin="0,10,15,0">
+                        <ToggleButton Style="{DynamicResource TBStyle}" x:Name="BtnShowHide"
+                                    Width="30"
+                                    Height="30"
+                                    BorderBrush="Transparent"
+                                      Cursor="Hand"
+                                      Checked="TBShow" Unchecked="TBHide">
+                            <ToggleButton.Background>
+                                <ImageBrush ImageSource="/Imagenes/list.png"/>
+                            </ToggleButton.Background>
+                            <ToggleButton.Triggers>
+                                
+                                <!--#region HIDE-->
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HidePanel">
+                                            <DoubleAnimation Storyboard.TargetName="GridMenu" 
+                                                             Storyboard.TargetProperty="Width"
+                                                             BeginTime="0:0:0"
+                                                             From="200" To = "75"
+                                                             Duration="0:0:0:0.4"/>
+
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <!--#endregion-->
+                                <!--#region SHOW-->
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="ShowPanel">
+                                            <DoubleAnimation Storyboard.TargetName="GridMenu" 
+                                                             Storyboard.TargetProperty="Width"
+                                                             BeginTime="0:0:0"
+                                                             From="75" To="200"
+                                                             Duration="0:0:0:0.5"/>
+
+
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
+                        <!--#endregion-->
+                    </Grid>
+                    <!--#endregion-->
+                    <!--#region LISTA-->
+                    <ListView Background="Transparent"
+                              BorderBrush="Transparent"
+                              Margin="0,30,0,0"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <!--#endregion-->
+
+                        <!--#region EMPLEADOS-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnInicio"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/employees.png"/>
+                                    <TextBlock Text="Empleados" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+                            
+
+                        </ListViewItem>
+                        
+                        <!--#endregion-->
+                        <!--#region USURIOS-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnUsuarios"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/user.png"/>
+                                    <TextBlock Text="Usuarios" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region PROVEEDORES-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnProveedores"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/parcel.png"/>
+                                    <TextBlock Text="Proveedores" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region Pedidos-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnPedidos"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/checkout.png"/>
+                                    <TextBlock Text="Pedidos" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region Clientes-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnClientes"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/custom.png"/>
+                                    <TextBlock Text="Clientes" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region Ventas-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnVenta"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/carsale.png"/>
+                                    <TextBlock Text="Venta" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region Rentas-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnRenta"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/car-rental.png"/>
+                                    <TextBlock Text="Renta" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                        <!--#region Retorno Vehiculo-->
+                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnRetorno"
+                                    Height="50"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    Cursor="Hand"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent">
+                                <Grid Width="200">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/return.png"/>
+                                    <TextBlock Text="Retornos" Grid.Column="1"
+                                               FontFamily="Century gothic"
+                                               FontWeight="Bold"
+                                               FontSize="18"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Grid>
+                            </Button>
+
+
+                        </ListViewItem>
+
+                        <!--#endregion-->
+                    </ListView>
+                </StackPanel>
+                <!--#endregion-->
+            </Grid>
+            <!--#endregion-->
+        </Grid>
+    </Border>
 </Window>

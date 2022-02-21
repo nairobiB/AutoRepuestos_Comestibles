@@ -23,5 +23,21 @@ namespace AutoRepuestos_Comestibles
         {
             InitializeComponent();
         }
+
+        private void TBShow(object sender, RoutedEventArgs e)
+        {
+            GridContent.Opacity = 0.5;
+        }
+
+        private void TBHide(object sender, RoutedEventArgs e)
+        {
+            GridContent.Opacity = 1;
+        }
+
+        private void PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            BtnShowHide.IsChecked = false;
+        }
+      
     }
 }
