@@ -306,7 +306,7 @@
                   Height="530"
                   Width="925" PreviewMouseLeftButtonDown="PreviewMouseLeftButtonDown">
                 <Border CornerRadius="0,0,0,10" Background="#edffff"/>
-                <TextBlock Text="Autorepuestos y comestibles"
+                <TextBlock Text="Autorepuestos y Comestibles"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            FontSize="40"
