@@ -112,9 +112,6 @@
     <Resource Include="Imagenes\bg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\close1.png" />
   </ItemGroup>
   <ItemGroup>

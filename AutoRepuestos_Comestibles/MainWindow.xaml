@@ -8,7 +8,7 @@
         Title="MainWindow" Height="374" Width="658" FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False"
         WindowStartupLocation="CenterScreen">
     <Window.Background>
-        <ImageBrush TileMode="FlipX" ImageSource="/bg.jpg"/>
+        <ImageBrush TileMode="FlipX" ImageSource="Imagenes/bg.jpg"/>
     </Window.Background>
     <Grid>
         <TextBlock Margin="58,89,58,103" FontSize="25">
