@@ -9,13 +9,7 @@
       Title="frmEmpleados">
 
     <Grid >
-        <!--#region menu lateral-->
-        <Grid Background="Aqua" 
-              Width="40" 
-              HorizontalAlignment="Left">
-            
-        </Grid>
-        <!--#endregion-->
+       
         
     </Grid>
 </Page>
