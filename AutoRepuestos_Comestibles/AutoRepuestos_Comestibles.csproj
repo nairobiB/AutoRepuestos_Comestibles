@@ -85,10 +85,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MenuAgente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MenuAdmin.xaml.cs">
       <DependentUpon>MenuAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgente.xaml.cs">
+      <DependentUpon>MenuAgente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -150,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\custom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\car.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
