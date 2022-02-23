@@ -27,9 +27,9 @@
                             <TextBlock VerticalAlignment="Center" Text="Dark Mode" />
                             <ToggleButton Cursor="Hand" ToolTip="Enable Dark Mode" Margin="12 0 8 0"
                             x:Name="themeToogle" IsChecked="{Binding IsDarkTheme}" Click="toggleTheme"/>
-                        
+
                         </StackPanel>
-                        
+
 
                         <Button x:Name="btn_exit" ToolTip="Close Application" Content="Exit Application"
                         Click="exitApp"/>
@@ -37,10 +37,10 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
 
-                <Image Margin="0 60 0 5" Source="br.png" Height="100" Width="360"/>
-                
+                <Image Margin="0 60 0 5" Source="Imagenes/br.png" Height="100" Width="360"/>
+
                 <TextBlock Margin="0 25 0 5 " HorizontalAlignment="Center" FontSize="28" FontWeight="Bold"
-                Text="Bienvenido de Vuelta!"/>
+                Text="¡Bienvenido nuevamente!"/>
 
                 <TextBlock FontSize="17" FontWeight="SemiBold" HorizontalAlignment="Center"
                 Text="Ingresa a tu cuenta existente"/>
@@ -60,12 +60,12 @@
 
                 <Button Margin="0 20 0 0" x:Name="signupBtn" Style="{StaticResource MaterialDesignFlatButton}"
                 materialDesign:ShadowAssist.ShadowDepth="Depth0" Height="53" Width="300"
-                materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Olvidaste tu contraseña?"
+                materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="¿Olvidaste tu contraseña?"
                 />
 
             </StackPanel>
-            
+
         </materialDesign:DialogHost>
-        
+
     </materialDesign:Card>
 </Window>
