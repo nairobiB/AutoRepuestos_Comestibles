@@ -1,9 +1,9 @@
-﻿<Window x:Class="AutoRepuestos_Comestibles.MenuAdmin"
+﻿<Window x:Class="AutoRepuestos_Comestibles.MenuAgente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AutoRepuestos_Comestibles" xmlns:viewmodels="clr-namespace:AutoRepuestos_Comestibles.Vistas.Empleado"
+        xmlns:local="clr-namespace:AutoRepuestos_Comestibles"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -226,23 +226,15 @@
                                 <Setter Property="Background" TargetName="Bd" Value="WHITE"/>
                                 <Setter Property="BorderBrush" TargetName="Bd" Value="WHITE"/>
                             </MultiTrigger>
-                           
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <!--#endregion-->
-        
-        <!--#region  DATA TEMPLATE-->
-        <DataTemplate x:Name="Empleados"
-                      DataType="{x:Type viewmodels:Empleados}">
-            <viewmodels:Empleados DataContext="{Binding}"/>
 
-        </DataTemplate>
-        <!--#endregion-->
-       
-       
+
     </Window.Resources>
     <Border CornerRadius="10"
             Background="#edffff">
@@ -276,7 +268,7 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             Margin="0,10,50,0"
-                            Cursor="Hand" Click="BtnMinimizar_Click">
+                            Cursor="Hand">
                         <Image Source="/Imagenes/min.png"/>
 
                     </Button>
@@ -291,7 +283,7 @@
                             VerticalAlignment="Top"
                             Margin="0,10,5,0"
                             Cursor="Hand"
-                            Style="{DynamicResource BtnHeader}" Click="BtnCerrar_Click">
+                            Style="{DynamicResource BtnHeader}">
                         <Image Source="/Imagenes/close1.png"/>
 
                     </Button>
@@ -305,7 +297,7 @@
 
 
             <!--#endregion-->
-           
+
             <!--#region CONTENIDO-->
             <Grid x:Name="GridContent"
                   Background="Transparent"
@@ -320,22 +312,21 @@
                            FontSize="40"
                            FontWeight="Bold"
                            FontFamily="century gothic"/>
-                <ContentControl Content="{Binding}"/>
             </Grid>
             <!--#endregion-->
             <!--#region SIDEBAR-->
-            
+
             <Grid x:Name="GridMenu"
                   Background="Transparent"
-                  Width="75"
+                  Width="200"
                   HorizontalAlignment="Left" Height="530" VerticalAlignment="Bottom" >
                 <Border Background="#baddf9"
                         CornerRadius="0,0,0,10"/>
-                
+
                 <!--#region MENU-->
                 <StackPanel Background="Transparent"
                             VerticalAlignment="Top">
-                   
+
                     <!--#region SHOW/HIDE-->
                     <Grid Background="Transparent"
                       VerticalAlignment="Top"
@@ -346,12 +337,12 @@
                                     Height="30"
                                     BorderBrush="Transparent"
                                       Cursor="Hand"
-                                      Checked="TBShow" Unchecked="TBHide">
+                                      Checked="TBShow" Unchecked="TBHide" PreviewMouseLeftButtonDown="PreviewMouseLeftButtonDown">
                             <ToggleButton.Background>
                                 <ImageBrush ImageSource="/Imagenes/list.png"/>
                             </ToggleButton.Background>
                             <ToggleButton.Triggers>
-                                
+
                                 <!--#region HIDE-->
                                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                     <BeginStoryboard>
@@ -389,9 +380,11 @@
                     <!--#region LISTA-->
                     <ListView Background="Transparent"
                               BorderBrush="Transparent"
-                              Margin="0,20,0,0"
+                              Margin="0,100,0,0"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <!--#endregion-->
+                        <!--#endregion-->
+
+
                         <!--#region Vehiculos-->
                         <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
                             <Button Style="{DynamicResource BTNLISTA}" x:Name="btnVehiculos"
@@ -408,118 +401,6 @@
                                     </Grid.ColumnDefinitions>
                                     <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/car.png"/>
                                     <TextBlock Text="Vehiculos" Grid.Column="1"
-                                               FontFamily="Century gothic"
-                                               FontWeight="Bold"
-                                               FontSize="18"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-
-
-                        </ListViewItem>
-
-                        <!--#endregion-->
-                        <!--#region EMPLEADOS-->
-                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
-                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnEmpleado"
-                                    Height="50"
-                                    Width="200"
-                                    HorizontalAlignment="Left"
-                                    Cursor="Hand"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent" Click="btnEmpleado_Click">
-                                <Grid Width="200">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/employees.png"/>
-                                    <TextBlock Text="Empleados" Grid.Column="1"
-                                               FontFamily="Century gothic"
-                                               FontWeight="Bold"
-                                               FontSize="18"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-                            
-
-                        </ListViewItem>
-                        
-                        <!--#endregion-->
-                        <!--#region USURIOS-->
-                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
-                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnUsuarios"
-                                    Height="50"
-                                    Width="200"
-                                    HorizontalAlignment="Left"
-                                    Cursor="Hand"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent">
-                                <Grid Width="200">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/user.png"/>
-                                    <TextBlock Text="Usuarios" Grid.Column="1"
-                                               FontFamily="Century gothic"
-                                               FontWeight="Bold"
-                                               FontSize="18"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-
-
-                        </ListViewItem>
-
-                        <!--#endregion-->
-                        <!--#region PROVEEDORES-->
-                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
-                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnProveedores"
-                                    Height="50"
-                                    Width="200"
-                                    HorizontalAlignment="Left"
-                                    Cursor="Hand"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent">
-                                <Grid Width="200">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/parcel.png"/>
-                                    <TextBlock Text="Proveedores" Grid.Column="1"
-                                               FontFamily="Century gothic"
-                                               FontWeight="Bold"
-                                               FontSize="18"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
-                                </Grid>
-                            </Button>
-
-
-                        </ListViewItem>
-
-                        <!--#endregion-->
-                        <!--#region Pedidos-->
-                        <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
-                            <Button Style="{DynamicResource BTNLISTA}" x:Name="btnPedidos"
-                                    Height="50"
-                                    Width="200"
-                                    HorizontalAlignment="Left"
-                                    Cursor="Hand"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent">
-                                <Grid Width="200">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="60"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/checkout.png"/>
-                                    <TextBlock Text="Pedidos" Grid.Column="1"
                                                FontFamily="Century gothic"
                                                FontWeight="Bold"
                                                FontSize="18"
@@ -652,3 +533,4 @@
         </Grid>
     </Border>
 </Window>
+
