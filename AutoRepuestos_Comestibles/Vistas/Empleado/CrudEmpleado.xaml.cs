@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +15,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AutoRepuestos_Comestibles
+namespace AutoRepuestos_Comestibles.Vistas.Empleado
 {
     /// <summary>
-    /// Lógica de interacción para frmEmpleados.xaml
+    /// Lógica de interacción para CrudEmpleado.xaml
     /// </summary>
-    public partial class frmEmpleados : Page
+    public partial class CrudEmpleado : Page
     {
-        public frmEmpleados()
+        public CrudEmpleado()
         {
             InitializeComponent();
+        }
+
+        
+
+        private void BtnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new Empleados();
         }
     }
 }
