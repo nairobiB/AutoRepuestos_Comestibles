@@ -1,5 +1,4 @@
-﻿using AutoRepuestos_Comestibles.Vistas.Empleado;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,20 +38,6 @@ namespace AutoRepuestos_Comestibles
         {
             BtnShowHide.IsChecked = false;
         }
-
-        private void BtnCerrar_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
-
-        private void btnEmpleado_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new Empleados();
-        }
+      
     }
 }
