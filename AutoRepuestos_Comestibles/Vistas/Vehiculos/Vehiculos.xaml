@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
              mc:Ignorable="d" 
               d:DesignHeight="530" 
-             d:DesignWidth="925">
+             d:DesignWidth="925"
+             FontFamily="Century gothic">
     
         <UserControl.Resources>
             <!--#region Textbox-->
