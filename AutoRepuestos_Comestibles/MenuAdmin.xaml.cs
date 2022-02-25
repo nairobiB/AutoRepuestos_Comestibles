@@ -5,7 +5,7 @@ using AutoRepuestos_Comestibles.Vistas.Proveedores;
 using AutoRepuestos_Comestibles.Vistas.Usuario;
 using AutoRepuestos_Comestibles.Vistas.Vehiculos;
 using AutoRepuestos_Comestibles.Vistas.Clientes;
-
+using AutoRepuestos_Comestibles.Vistas.Ventas;
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -67,6 +67,11 @@ namespace AutoRepuestos_Comestibles
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Clientes();
+        }
+
+        private void btnVenta_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Ventas();
         }
     }
 }

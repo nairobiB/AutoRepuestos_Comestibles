@@ -93,6 +93,12 @@
     <Compile Include="Vistas\Vehiculos\Vehiculos.xaml.cs">
       <DependentUpon>Vehiculos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Ventas\CrudVentas.xaml.cs">
+      <DependentUpon>CrudVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Ventas\Ventas.xaml.cs">
+      <DependentUpon>Ventas.xaml</DependentUpon>
+    </Compile>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +163,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Vehiculos\Vehiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Ventas\CrudVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Ventas\Ventas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

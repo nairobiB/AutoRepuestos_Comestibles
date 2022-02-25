@@ -9,6 +9,7 @@
         xmlns:viewmodels3="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
         xmlns:viewmodels4="clr-namespace:AutoRepuestos_Comestibles.Vistas.Proveedores"
         xmlns:viewmodels5="clr-namespace:AutoRepuestos_Comestibles.Vistas.Clientes"
+        xmlns:viewmodels6="clr-namespace:AutoRepuestos_Comestibles.Vistas.Ventas"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -37,6 +38,11 @@
                       DataType="{x:Type viewmodels5:Clientes}">
             <viewmodels5:Clientes DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="Ventas"
+                      DataType="{x:Type viewmodels6:Ventas}">
+            <viewmodels6:Ventas DataContext="{Binding}"/>
+        </DataTemplate>
+        
         <!--#endregion-->
         <!--#region FOCUS VISUAL-->
         <Style x:Key="FocusVisual">
@@ -588,7 +594,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnVenta_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
