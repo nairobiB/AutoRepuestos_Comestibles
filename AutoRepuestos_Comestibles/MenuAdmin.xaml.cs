@@ -4,7 +4,7 @@ using System.Windows.Input;
 using AutoRepuestos_Comestibles.Vistas.Proveedores;
 using AutoRepuestos_Comestibles.Vistas.Usuario;
 using AutoRepuestos_Comestibles.Vistas.Vehiculos;
-
+using AutoRepuestos_Comestibles.Vistas.Clientes;
 
 namespace AutoRepuestos_Comestibles
 {
@@ -62,6 +62,11 @@ namespace AutoRepuestos_Comestibles
         private void btnProveedores_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Proveedores();
+        }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Clientes();
         }
     }
 }

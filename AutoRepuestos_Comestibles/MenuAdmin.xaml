@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AutoRepuestos_Comestibles" xmlns:viewmodels="clr-namespace:AutoRepuestos_Comestibles.Vistas.Empleado"
+        xmlns:local="clr-namespace:AutoRepuestos_Comestibles" 
+        xmlns:viewmodels="clr-namespace:AutoRepuestos_Comestibles.Vistas.Empleado"
         xmlns:viewmodels2="clr-namespace:AutoRepuestos_Comestibles.Vistas.Usuario"
         xmlns:viewmodels3="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
         xmlns:viewmodels4="clr-namespace:AutoRepuestos_Comestibles.Vistas.Proveedores"
+        xmlns:viewmodels5="clr-namespace:AutoRepuestos_Comestibles.Vistas.Clientes"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -30,6 +32,10 @@
         <DataTemplate x:Name="Proveedores"
                       DataType="{x:Type viewmodels4:Proveedores}">
             <viewmodels4:Proveedores DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Clientes"
+                      DataType="{x:Type viewmodels5:Clientes}">
+            <viewmodels5:Clientes DataContext="{Binding}"/>
         </DataTemplate>
         <!--#endregion-->
         <!--#region FOCUS VISUAL-->
@@ -554,7 +560,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnClientes_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
