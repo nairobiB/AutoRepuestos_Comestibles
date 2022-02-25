@@ -195,16 +195,7 @@
   <ItemGroup>
     <Resource Include="Imagenes\back.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vistas\Clientes\" />
-    <Folder Include="Vistas\Pedidos\" />
-    <Folder Include="Vistas\Proveedores\" />
-    <Folder Include="Vistas\Rentas\" />
-    <Folder Include="Vistas\Retornos\" />
-    <Folder Include="Vistas\Usuarios\" />
-    <Folder Include="Vistas\Vehiculos\" />
-    <Folder Include="Vistas\Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagenes\confirm.png" />
   </ItemGroup>
