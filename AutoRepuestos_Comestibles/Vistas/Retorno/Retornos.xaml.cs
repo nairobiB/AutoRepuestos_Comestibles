@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace AutoRepuestos_Comestibles.Vistas.Retorno
 {
     /// <summary>
-    /// Lógica de interacción para Retorno.xaml
+    /// Interaction logic for Retornos.xaml
     /// </summary>
-    public partial class Retorno : Page
+    public partial class Retornos : UserControl
     {
-        public Retorno()
+        public Retornos()
         {
             InitializeComponent();
-        }
-
-        private void FrameRetorno_Navigated(object sender, NavigationEventArgs e)
-        {
-
         }
     }
 }

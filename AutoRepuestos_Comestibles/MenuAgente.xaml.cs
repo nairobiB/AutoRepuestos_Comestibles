@@ -4,7 +4,7 @@ using AutoRepuestos_Comestibles.Vistas.Vehiculos;
 using AutoRepuestos_Comestibles.Vistas.Clientes;
 using AutoRepuestos_Comestibles.Vistas.Ventas;
 using AutoRepuestos_Comestibles.Vistas.Rentas;
-
+using AutoRepuestos_Comestibles.Vistas.Retorno;
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -60,6 +60,11 @@ namespace AutoRepuestos_Comestibles
         private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void btnRetorno_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Retornos();
         }
     }
 }

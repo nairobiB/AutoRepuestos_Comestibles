@@ -1,14 +1,14 @@
-﻿<Page x:Class="AutoRepuestos_Comestibles.Vistas.Retorno.Retorno"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Retorno"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Retorno">
-
-    <Page.Resources>
+﻿<UserControl x:Class="AutoRepuestos_Comestibles.Vistas.Retorno.Retornos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Retorno"
+             mc:Ignorable="d" 
+             d:DesignHeight="530" 
+             d:DesignWidth="925"
+             FontFamily="Century Gothic">
+    <UserControl.Resources>
         <!--#region Textbox-->
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
@@ -223,7 +223,7 @@
         </Style>
         <!--#endregion-->
 
-    </Page.Resources>
+    </UserControl.Resources>
     <Border Background="#edffff"
             CornerRadius="15,15,15,15">
         <!--#region COLS ROWS-->
@@ -240,12 +240,22 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="90"/>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition Height="20"/>
+
             </Grid.RowDefinitions>
             <!--#endregion-->
 
@@ -259,73 +269,79 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" Grid.Column="2" Margin="227.8,25,8.2,25.4"/>
 
-            <TextBlock Grid.Column="2"
+            <TextBlock Grid.Column="1"
                        Text="Vehiculo:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,23.6,273.2,6" Grid.Row="2"/>
+                        Grid.Row="3"/>
             <ComboBox Name="CmbRetorno"
                       Grid.Column="2" Foreground="White" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
-                      HorizontalAlignment="Left" Margin="91.8,15.6,0,10" Grid.Row="2"/>
-            <TextBlock Grid.Column="2"
+                      HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>
+            <TextBlock Grid.Column="3"
                        Text="Fecha Retorno:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,4.6,171.5,45" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-            <DatePicker Grid.Column="3"
+                        Grid.Row="1" 
+                      />
+            <DatePicker Grid.Column="5"
                         Name="DpFechRetorno" 
                         
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Width="100" Margin="43.8,0.6,0,0.4" Grid.Row="1"/>
-            <TextBlock Grid.Column="2"
+                        Width="100"  Grid.Row="1"/>
+            <TextBlock Grid.Column="1"
                        Grid.Row="1"
+                      
                        Text="Id de renta:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,9.6,273.2,40" Grid.RowSpan="2"/>
+                       />
             <TextBox Grid.Column="2"
                      Grid.Row="1"
                      Name="TxtNomCliente"
-                     Style="{DynamicResource TextBoxStyle}" Margin="91.8,9.6,107.2,40" Grid.RowSpan="2"/>
-            <TextBlock Grid.Column="2"
-                       Grid.Row="3"
+                     Style="{DynamicResource TextBoxStyle}" Margin="28,0,171,0"/>
+            <TextBlock Grid.Column="3"
+                       Grid.Row="4"
                        Text="Mora:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,4,273.2,79.2" Grid.RowSpan="2"/>
-            <TextBox Grid.Column="2"
-                     Grid.Row="3"
+                      />
+            <TextBox Grid.Column="5"
+                     Grid.Row="4"
+                     Margin="5"
                      Name="TxtCobroAd"
-                     Style="{DynamicResource TextBoxStyle}" Margin="91.8,4,107.2,79.2" Grid.RowSpan="2"/>
-            <TextBlock Grid.Column="2"
-                       Grid.Row="2"
+                     Style="{DynamicResource TextBoxStyle}"  />
+            <TextBlock Grid.Column="3"
+                       Grid.Row="3"
                        Text="Combustible:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,19.6,151.5,10" Grid.ColumnSpan="2"/>
-            <TextBox Grid.Column="3"
-                     Grid.Row="2"
+                       />
+            <TextBox Grid.Column="5"
+                     Grid.Row="3"
                      Name="TxtCombustible"
-                     Style="{DynamicResource TextBoxStyle}" Margin="64.8,19.6,33.5,10"/>
+                     Style="{DynamicResource TextBoxStyle}"
+                    
+                     />
             <TextBlock Grid.Column="3"
-                       Grid.Row="2"
+                       Grid.Row="5"
                        Text="Daños:"
                        HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Bottom"
                        FontSize="15"
-                       Margin ="0,44.6,150.5,5" Grid.RowSpan="2"/>
-            <TextBox Grid.Column="3"
-                     Grid.Row="2"
+                       />
+            <TextBox Grid.Column="5"
+                     Grid.Row="5"
                      Name="TxtDanos"
-                     Style="{DynamicResource TextBoxStyle}" Margin="64.8,44.6,33.5,5" Grid.RowSpan="2"/>
+                     Margin="5"
+                     Style="{DynamicResource TextBoxStyle}"  />
             <!--#endregion-->
 
             <!--#region BUSCADOR-->
@@ -333,10 +349,10 @@
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        Grid.Column="1"
-                       Grid.Row="4"
+                       Grid.Row="5"
                        Foreground="Black"
                        FontSize="15"
-                       Margin="0,32,275.2,31.2" Grid.ColumnSpan="2"/>
+                       />
 
 
             <!--#region TEXTBOX-->
@@ -344,9 +360,9 @@
             <TextBox TextAlignment="Center"                         
                          BorderBrush="Black"
                          Grid.Column="2"
-                         Grid.Row="4"
+                         Grid.Row="5"
                          FontSize="15" Style="{DynamicResource TextBoxStyle}"
-                         Margin="79.8,22,150.5,31.2" Grid.ColumnSpan="2"/>
+                         Margin="5"/>
 
 
             <!--#region BTN AGREGAR Retorno-->
@@ -354,13 +370,12 @@
                     Grid.Row="4"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="155.8,2,0,31.2"
+                    Grid.RowSpan="2"
                     Cursor="Hand"
                     Width="64"
                     Name="BtnAgregarRetorno"
                     HorizontalAlignment="Left" 
-                    Style="{DynamicResource ButtonStyle}" 
-                    Click="BtnAgregarRenta_Click" Grid.ColumnSpan="2">
+                    Style="{DynamicResource ButtonStyle}" >
                 <Image Source="/Imagenes/addition.png" Height="40"/>
 
             </Button>
@@ -369,10 +384,10 @@
 
             <!--#region dataGrid-->
 
-            <DataGrid Grid.Row="4"
-                      Grid.Column="2"
-                      Grid.RowSpan="4"
-                      Grid.ColumnSpan="2"
+            <DataGrid Grid.Row="7"
+                      Grid.Column="1"
+                      Grid.RowSpan="9"
+                      Grid.ColumnSpan="5"
                       x:Name="GridDatos"
                       AutoGenerateColumns="True"
                       Background="GhostWhite"
@@ -385,20 +400,11 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}" Margin="16.8,64,2.5,19.6">
+                      Style="{DynamicResource DataGridStyle}" >
 
             </DataGrid>
             <!--#endregion-->
 
-            <!--#region FRAME EMPLEADO-->
-            <Frame x:Name="FrameRetorno"
-                   Grid.Column="0"
-                   Grid.Row="0"
-                   Grid.ColumnSpan="7"
-                   Grid.RowSpan="8" Margin="10,10,-10.6,-10.4" Navigated="FrameRetorno_Navigated"/>
-            <!--#endregion-->
-
-
         </Grid>
     </Border>
-</Page>
+</UserControl>

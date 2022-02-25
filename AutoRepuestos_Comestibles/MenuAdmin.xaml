@@ -12,6 +12,7 @@
         xmlns:viewmodels6="clr-namespace:AutoRepuestos_Comestibles.Vistas.Ventas"
         xmlns:viewmodels7="clr-namespace:AutoRepuestos_Comestibles.Vistas.Rentas"
         xmlns:viewmodels8="clr-namespace:AutoRepuestos_Comestibles.Vistas.Pedidos"
+        xmlns:viewmodels20="clr-namespace:AutoRepuestos_Comestibles.Vistas.Retorno"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -52,6 +53,10 @@
         <DataTemplate x:Name="Pedidos"
                       DataType="{x:Type viewmodels8:Pedidos}">
             <viewmodels8:Pedidos DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Retorno"
+                      DataType="{x:Type viewmodels20:Retornos}">
+            <viewmodels20:Retornos DataContext="{Binding}"/>
         </DataTemplate>
 
         <!--#endregion-->
@@ -661,7 +666,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnRetorno_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
