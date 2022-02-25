@@ -81,6 +81,12 @@
     <Compile Include="Vistas\Proveedores\Proveedores.xaml.cs">
       <DependentUpon>Proveedores.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Rentas\CrudRentas.xaml.cs">
+      <DependentUpon>CrudRentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Rentas\Rentas.xaml.cs">
+      <DependentUpon>Rentas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuario\CrudUsuarios.xaml.cs">
       <DependentUpon>CrudUsuarios.xaml</DependentUpon>
     </Compile>
@@ -147,6 +153,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Proveedores\Proveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Rentas\CrudRentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Rentas\Rentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
