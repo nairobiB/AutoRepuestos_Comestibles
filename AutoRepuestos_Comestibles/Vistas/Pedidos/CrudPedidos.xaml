@@ -9,7 +9,7 @@
       d:DesignWidth="935"
       Title="CrudPedidos"
       FontFamily ="Century Gothic">
-    
+
     <!--#region Recurso-->
     <Page.Resources>
         <!--#region Textbox-->
@@ -252,29 +252,29 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="21" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
                 <RowDefinition Height="20"/>
 
             </Grid.RowDefinitions>
@@ -384,7 +384,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="0,0,0,0"/>
+                       Margin ="10,0,0,0"/>
 
                 <RadioButton  x:Name="rbtnCash"
                                 Grid.Column="2"
@@ -427,7 +427,7 @@
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="15"
-                       Margin ="60,0,0,0"/>
+                       Margin ="0,0,0,0"/>
             <DatePicker Grid.Column="7"
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
