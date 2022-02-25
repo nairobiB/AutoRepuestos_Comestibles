@@ -1,15 +1,13 @@
-﻿<UserControl x:Class="AutoRepuestos_Comestibles.Vistas.Empleado.Empleados"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Empleado"
-             mc:Ignorable="d" 
-             d:DesignHeight="530" 
-             d:DesignWidth="925"
-             FontFamily="Century Gothic">
-
-    <UserControl.Resources>
+﻿<Page x:Class="AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Proveedores"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Proveedores">
+    <Page.Resources>
         <!--#region Textbox-->
         <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
@@ -138,7 +136,7 @@
             </Setter>
         </Style>
         <!--#endregion-->
-        
+
         <!--#region DaTaGridview-->
         <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
@@ -198,7 +196,7 @@
             </Style.Triggers>
         </Style>
         <!--#endregion-->
-        
+
         <!--#region ESTILO DATAGRID VIEW COLUMNS-->
         <Style TargetType="{x:Type DataGridColumnHeader}">
 
@@ -224,9 +222,8 @@
         </Style>
         <!--#endregion-->
 
-    </UserControl.Resources>
+    </Page.Resources>
 
-    <!--#region  Contenido-->
     <Border Background="#edffff"
             CornerRadius="15,15,15,15">
         <!--#region COLS ROWS-->
@@ -255,7 +252,7 @@
             <!--#region TITULO-->
             <TextBlock Grid.Row="0"
                        Grid.ColumnSpan="6"
-                       Text="Mantenimiento de Empleado "
+                       Text="Proveedores "
                        Foreground="Black"
                        FontSize="30"
                        FontWeight="Bold"
@@ -267,7 +264,7 @@
             <!--#endregion-->
 
             <!--#region BUSCADOR-->
-            <TextBlock Text="Buscar Empleado: "
+            <TextBlock Text="Buscar Proveedor: "
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        Grid.Column="1"
@@ -275,21 +272,21 @@
                        Foreground="Black"
                        FontSize="15"
                        Margin="0,0,10,0"/>
-           
-            
-                <!--#region TEXTBOX-->
 
-                <TextBox TextAlignment="Center"
+
+            <!--#region TEXTBOX-->
+
+            <TextBox TextAlignment="Center"
                          
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
                          FontSize="15" Style="{DynamicResource TextBoxStyle}"
                          Margin="10"/>
-                <!--#endregion-->
-            
-                <!--#region BTN Modificar-->
-                <Button Grid.Column="3"
+            <!--#endregion-->
+
+            <!--#region BTN Modificar-->
+            <Button Grid.Column="3"
                         Grid.Row="2"
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -301,7 +298,7 @@
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
-                <!--#endregion-->
+            <!--#endregion-->
 
             <!--#region BTN Eliminar-->
             <Button Grid.Column="3"
@@ -317,7 +314,7 @@
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
             <!--#endregion-->
-            
+
 
             <!--#region BTN CREAR EMPLEADO-->
             <Button Grid.Column="4"
@@ -330,9 +327,9 @@
                     Name="BtnAgregarEmpleado"
                     HorizontalAlignment="Left" 
                     Style="{DynamicResource ButtonStyle}"
-                    Click="BtnAgregarEmpleado_Click">
-                    <Image Source="/Imagenes/addition.png" Height="40"/>
-                
+                    Click="BtnAgregarProveedor_Click">
+                <Image Source="/Imagenes/addition.png" Height="40"/>
+
             </Button>
             <!--#endregion-->
             <!--#endregion-->
@@ -359,8 +356,8 @@
             </DataGrid>
             <!--#endregion-->
 
-            <!--#region FRAME EMPLEADO-->
-            <Frame x:Name="FrameEmpleado"
+            <!--#region FRAME PROVEEDOR-->
+            <Frame x:Name="FrameProveedor"
                    Grid.Column="0"
                    Grid.Row="0"
                    Grid.ColumnSpan="6"
@@ -373,5 +370,4 @@
 
 
     </Border>
-    <!--#endregion-->
-</UserControl>
+</Page>
