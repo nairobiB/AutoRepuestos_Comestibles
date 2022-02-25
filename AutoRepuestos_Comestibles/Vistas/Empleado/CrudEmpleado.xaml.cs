@@ -29,5 +29,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             Content = new Empleados();
 
         }
+
+        private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

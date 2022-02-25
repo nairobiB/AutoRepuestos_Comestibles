@@ -219,7 +219,7 @@
                     Background="Transparent" 
                     Width="64"
                     
-                    Style= "{DynamicResource ButtonStyle}" Click="BtnRegresar_Click">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
             <!--#endregion-->
