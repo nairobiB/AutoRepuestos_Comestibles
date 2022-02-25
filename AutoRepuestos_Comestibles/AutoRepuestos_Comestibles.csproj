@@ -93,6 +93,9 @@
     <Compile Include="Vistas\Rentas\Rentas.xaml.cs">
       <DependentUpon>Rentas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Retorno\Retorno.xaml.cs">
+      <DependentUpon>Retorno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Usuario\CrudUsuarios.xaml.cs">
       <DependentUpon>CrudUsuarios.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Rentas\Rentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Retorno\Retorno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
