@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using AutoRepuestos_Comestibles.Vistas.Vehiculos;
+using AutoRepuestos_Comestibles.Vistas.Clientes;
+using AutoRepuestos_Comestibles.Vistas.Ventas;
+using AutoRepuestos_Comestibles.Vistas.Rentas;
 
 namespace AutoRepuestos_Comestibles
 {
@@ -37,6 +30,36 @@ namespace AutoRepuestos_Comestibles
         private void PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             BtnShowHide.IsChecked = false;
+        }
+
+        private void btnVehiculos_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Vehiculos();
+        }
+
+        private void btnClientes_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Clientes();
+        }
+
+        private void btnVenta_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Ventas();
+        }
+
+        private void btnRenta_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Rentas();
+        }
+
+        private void BtnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
