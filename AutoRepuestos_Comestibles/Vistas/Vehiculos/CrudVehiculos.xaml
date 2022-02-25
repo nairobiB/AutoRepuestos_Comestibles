@@ -1,0 +1,371 @@
+﻿<Page x:Class="AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CrudVehiculos">
+
+    <Page.Resources>
+        <!--#region Textbox-->
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="FontSize" Value="15"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="0" x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <!--#endregion-->
+        <!--#region BTN Botones-->
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="10" x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True"/>
+                            <Polygon x:Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="8,8,3,3" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" TargetName="Arrow" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#endregion-->
+
+    </Page.Resources>
+
+    <Border CornerRadius="0,0,10,0"
+            Background="#edffff">
+
+        <Grid>
+
+            <!--#region COLUMNAS Y FILAS-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width ="200"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+
+            <!--#region Titulo-->
+            <TextBlock x:Name="Titulo"
+                       Text="Mantenimiento de Vehículos"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       Grid.ColumnSpan="6"
+                       FontSize="30"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold">
+
+            </TextBlock>
+            <!--#endregion-->
+
+            <!--#region Botones-->
+
+            <!--#region  BTN REGRESAR-->
+            <Button x:Name="BtnRegresar"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Cursor="Hand"
+                    Background="Transparent" 
+                    Width="64"
+                    
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnRegresar_Click">
+                <Image Source="/Imagenes/back.png"/>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region  BTN Confirmar-->
+            <Button x:Name="BtnConfirmar"
+                    Grid.Column="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Cursor="Hand"
+                    Background="Transparent" 
+                    Width="64"
+                    
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
+                <Image Source="/Imagenes/confirm.png"/>
+            </Button>
+            <!--#endregion-->
+            <!--#endregion-->
+
+            <!--#region CONTENIDO-->
+            <TextBlock Grid.Column="2"
+                       Grid.Row="4"
+                       Text="ID Vehículo:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <TextBox Grid.Column="3"
+                         Grid.Row="4"
+                         Name="TxtIdVehiculo"
+                        Style="{DynamicResource TextBoxStyle}"
+                     Width="200"/>
+
+            <TextBlock Grid.Column="2"
+                       Grid.Row="6"
+                       Text="Marca:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <ComboBox Name="CmbMarca"
+                      Grid.Column="3"
+                      Grid.Row="6" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left"/>
+
+            <TextBlock Grid.Column="2"
+                       Grid.Row="8"
+                       Text="Modelo:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <ComboBox Name="CmbModelo"
+                      Grid.Column="3"
+                      Grid.Row="8" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left"/>
+            <TextBlock Grid.Column="2"
+                       Grid.Row="10"
+                       Text="Color:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <ComboBox Name="CmbColor"
+                      Grid.Column="3"
+                      Grid.Row="10" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left"/>
+                     
+            <TextBlock Grid.Column="2"
+                       Grid.Row="12"
+                       Text="Precios:"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="15,0,0,0"
+                       FontWeight="Bold"/>
+            <TextBlock Grid.Column="2"
+                       Grid.Row="12"
+                       Text="Venta"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <TextBox Grid.Column="3"
+                         Grid.Row="12"
+                         Name="TxtVenta" 
+                            Width="150"
+                        HorizontalAlignment="Left"
+                      Style="{DynamicResource TextBoxStyle}"/>
+            <TextBlock Grid.Column="3"
+                       Grid.Row="12"
+                       Text="Renta"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,160,0"/>
+            <TextBox Grid.Column="3"
+                         Grid.Row="12"
+                         Name="TxtRenta" 
+                            Width="150"
+                        HorizontalAlignment="Right"
+                      Style="{DynamicResource TextBoxStyle}"/>
+            <TextBlock Grid.Column="2"
+                       Grid.Row="14"
+                       Text="Cargo:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <ComboBox Name="CmbPuesto"
+                      Grid.Column="3"
+                      Grid.Row="14" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left"/>
+
+            <TextBlock Grid.Column="2"
+                       Grid.Row="16"
+                       Text="Estado:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
+            <RadioButton  
+                x:Name="rbtnActivo"
+                        Grid.Column="3"
+                       Grid.Row="16"                      
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="30,0,0,0"
+                        Content="Activo"
+                 IsChecked="True"/>
+            <RadioButton  
+                x:Name="rbtnInActivo"
+                        Grid.Column="3"
+                       Grid.Row="16"                      
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="220,0,0,0"
+                        Content="Inactivo"
+                        />
+            <RadioButton  
+                x:Name="rbtnMant"
+                        Grid.Column="3"
+                       Grid.Row="18"                      
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="100,0,0,10"
+                        Content="Mantenimiento"
+                        />
+
+            <!--#endregion-->
+
+
+
+        </Grid>
+    </Border>
+</Page>
