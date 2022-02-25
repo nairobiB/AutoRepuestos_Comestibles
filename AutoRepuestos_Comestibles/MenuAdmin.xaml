@@ -11,6 +11,7 @@
         xmlns:viewmodels5="clr-namespace:AutoRepuestos_Comestibles.Vistas.Clientes"
         xmlns:viewmodels6="clr-namespace:AutoRepuestos_Comestibles.Vistas.Ventas"
         xmlns:viewmodels7="clr-namespace:AutoRepuestos_Comestibles.Vistas.Rentas"
+        xmlns:viewmodels8="clr-namespace:AutoRepuestos_Comestibles.Vistas.Pedidos"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -43,11 +44,16 @@
                       DataType="{x:Type viewmodels6:Ventas}">
             <viewmodels6:Ventas DataContext="{Binding}"/>
         </DataTemplate>
-        <DataTemplate x:Name="rentas"
+        <DataTemplate x:Name="Rentas"
                       DataType="{x:Type viewmodels7:Rentas}">
             <viewmodels7:Rentas DataContext="{Binding}"/>
         </DataTemplate>
-        
+
+        <DataTemplate x:Name="Pedidos"
+                      DataType="{x:Type viewmodels8:Pedidos}">
+            <viewmodels8:Pedidos DataContext="{Binding}"/>
+        </DataTemplate>
+
         <!--#endregion-->
         <!--#region FOCUS VISUAL-->
         <Style x:Key="FocusVisual">
@@ -543,7 +549,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnPedidos_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>

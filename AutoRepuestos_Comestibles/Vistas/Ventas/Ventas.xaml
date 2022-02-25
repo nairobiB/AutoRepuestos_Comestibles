@@ -362,7 +362,7 @@
             </DataGrid>
             <!--#endregion-->
 
-            <!--#region FRAME EMPLEADO-->
+            <!--#region FRAME Ventas-->
             <Frame x:Name="FrameVentas"
                    Grid.Column="0"
                    Grid.Row="0"
