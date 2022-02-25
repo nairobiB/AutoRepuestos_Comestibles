@@ -7,6 +7,7 @@
       mc:Ignorable="d" 
        d:DesignHeight="530" 
              d:DesignWidth="925"
+      FontFamily="Century gothic"
       Title="CrudVehiculos">
 
     <Page.Resources>

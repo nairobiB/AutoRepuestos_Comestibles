@@ -17,7 +17,7 @@
         <!--#region Data template-->
         <DataTemplate x:Name="Empleados"
                       DataType="{x:Type viewmodels:Empleados}">
-                    <viewmodels:Empleados DataContext="{Binding}"/>
+            <viewmodels:Empleados DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="Usuarios"
                       DataType="{x:Type viewmodels2:Usuarios}">
@@ -247,15 +247,15 @@
                                 <Setter Property="Background" TargetName="Bd" Value="WHITE"/>
                                 <Setter Property="BorderBrush" TargetName="Bd" Value="WHITE"/>
                             </MultiTrigger>
-                           
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
         <!--#endregion-->
-       
-       
+
+
     </Window.Resources>
     <Border CornerRadius="10"
             Background="#edffff">
@@ -318,7 +318,7 @@
 
 
             <!--#endregion-->
-           
+
             <!--#region CONTENIDO-->
             <Grid x:Name="GridContent"
                   Background="Transparent"
@@ -337,18 +337,18 @@
             </Grid>
             <!--#endregion-->
             <!--#region SIDEBAR-->
-            
+
             <Grid x:Name="GridMenu"
                   Background="Transparent"
                   Width="75"
                   HorizontalAlignment="Left" Height="530" VerticalAlignment="Bottom" >
                 <Border Background="#baddf9"
                         CornerRadius="0,0,0,10"/>
-                
+
                 <!--#region MENU-->
                 <StackPanel Background="Transparent"
                             VerticalAlignment="Top">
-                   
+
                     <!--#region SHOW/HIDE-->
                     <Grid Background="Transparent"
                       VerticalAlignment="Top"
@@ -364,7 +364,7 @@
                                 <ImageBrush ImageSource="/Imagenes/list.png"/>
                             </ToggleButton.Background>
                             <ToggleButton.Triggers>
-                                
+
                                 <!--#region HIDE-->
                                 <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                     <BeginStoryboard>
@@ -404,7 +404,7 @@
                               BorderBrush="Transparent"
                               Margin="0,20,0,0"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                    <!--#endregion-->
+                        <!--#endregion-->
                         <!--#region Vehiculos-->
                         <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
                             <Button Style="{DynamicResource BTNLISTA}" x:Name="btnVehiculos"
@@ -456,10 +456,10 @@
                                                VerticalAlignment="Center"/>
                                 </Grid>
                             </Button>
-                            
+
 
                         </ListViewItem>
-                        
+
                         <!--#endregion-->
                         <!--#region USURIOS-->
                         <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
@@ -469,19 +469,20 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnUsuarios_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition/>
+                                        <ColumnDefinition Width="34*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Width="40" Grid.Column="0" HorizontalAlignment="Center" Source="/Imagenes/user.png"/>
-                                    <TextBlock Text="Usuarios" Grid.Column="1"
+                                    <Image Width="40" HorizontalAlignment="Center" Source="/Imagenes/user.png"/>
+                                    <TextBlock Text="Usuarios" Grid.Column="2"
                                                FontFamily="Century gothic"
                                                FontWeight="Bold"
                                                FontSize="18"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center" Margin="30,0,0,0"/>
                                 </Grid>
                             </Button>
 
@@ -497,7 +498,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnProveedores_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
