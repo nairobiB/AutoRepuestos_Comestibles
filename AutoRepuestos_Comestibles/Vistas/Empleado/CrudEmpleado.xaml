@@ -210,7 +210,7 @@
             </Button>
             <!--#endregion-->
 
-            <!--#region  BTN REGRESAR-->
+            <!--#region  BTN Confirmar-->
             <Button x:Name="BtnConfirmar"
                     Grid.Column="4"
                     Grid.Row="1"
