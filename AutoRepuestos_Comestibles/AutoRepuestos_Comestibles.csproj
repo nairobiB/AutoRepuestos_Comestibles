@@ -195,6 +195,19 @@
   <ItemGroup>
     <Resource Include="Imagenes\back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vistas\Clientes\" />
+    <Folder Include="Vistas\Pedidos\" />
+    <Folder Include="Vistas\Proveedores\" />
+    <Folder Include="Vistas\Rentas\" />
+    <Folder Include="Vistas\Retornos\" />
+    <Folder Include="Vistas\Usuarios\" />
+    <Folder Include="Vistas\Vehiculos\" />
+    <Folder Include="Vistas\Ventas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\confirm.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

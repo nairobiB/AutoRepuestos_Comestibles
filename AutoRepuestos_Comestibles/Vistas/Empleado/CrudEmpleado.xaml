@@ -202,15 +202,27 @@
                     Grid.Row="1"
                     Grid.RowSpan="2"
                     Cursor="Hand"
-                    Background="Azure" 
+                    Background="Transparent" 
                     Width="64"
                     
                     Style= "{DynamicResource ButtonStyle}" Click="BtnRegresar_Click">
                 <Image Source="/Imagenes/back.png"/>
             </Button>
             <!--#endregion-->
-            
 
+            <!--#region  BTN REGRESAR-->
+            <Button x:Name="BtnConfirmar"
+                    Grid.Column="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="2"
+                    Cursor="Hand"
+                    Background="Transparent" 
+                    Width="64"
+                    
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnRegresar_Click">
+                <Image Source="/Imagenes/confirm.png"/>
+            </Button>
+            <!--#endregion-->
             <!--#endregion-->
             
             <!--#region CONTENIDO-->

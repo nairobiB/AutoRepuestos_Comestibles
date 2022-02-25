@@ -318,7 +318,7 @@
 
             <Grid x:Name="GridMenu"
                   Background="Transparent"
-                  Width="200"
+                  Width="75"
                   HorizontalAlignment="Left" Height="530" VerticalAlignment="Bottom" >
                 <Border Background="#baddf9"
                         CornerRadius="0,0,0,10"/>
