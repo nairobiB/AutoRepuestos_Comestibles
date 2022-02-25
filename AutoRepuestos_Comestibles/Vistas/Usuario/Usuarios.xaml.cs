@@ -13,21 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
+namespace AutoRepuestos_Comestibles.Vistas.Usuario
 {
     /// <summary>
-    /// Interaction logic for Vehiculos.xaml
+    /// Interaction logic for Usuarios.xaml
     /// </summary>
-    public partial class Vehiculos : UserControl
+    public partial class Usuarios : UserControl
     {
-        public Vehiculos()
+        public Usuarios()
         {
             InitializeComponent();
         }
 
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
-            CrudVehiculos ventana = new CrudVehiculos();
+            CrudUsuarios ventana = new CrudUsuarios();
             FrameEmpleado.Content = ventana;
         }
     }

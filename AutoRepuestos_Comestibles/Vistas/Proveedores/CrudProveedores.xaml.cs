@@ -12,23 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoRepuestos_Comestibles.Vistas.Proveedores;
 
-namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
+namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 {
     /// <summary>
-    /// Interaction logic for Vehiculos.xaml
+    /// Interaction logic for CrudProveedores.xaml
     /// </summary>
-    public partial class Vehiculos : UserControl
+    public partial class CrudProveedores : Page
     {
-        public Vehiculos()
+        public CrudProveedores()
         {
             InitializeComponent();
         }
 
-        private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
+        private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
-            CrudVehiculos ventana = new CrudVehiculos();
-            FrameEmpleado.Content = ventana;
+            Content = new Proveedores();
         }
     }
 }
