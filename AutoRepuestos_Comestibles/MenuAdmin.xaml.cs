@@ -1,7 +1,9 @@
 ﻿using AutoRepuestos_Comestibles.Vistas.Empleado;
 using System.Windows;
 using System.Windows.Input;
-
+using AutoRepuestos_Comestibles.Vistas.Proveedores;
+using AutoRepuestos_Comestibles.Vistas.Usuario;
+using AutoRepuestos_Comestibles.Vistas.Vehiculos;
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -43,6 +45,11 @@ namespace AutoRepuestos_Comestibles
         private void btnEmpleado_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Empleados();
+        }
+
+        private void btnVehiculos_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Vehiculos();
         }
     }
 }

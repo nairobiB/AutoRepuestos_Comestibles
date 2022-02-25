@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+       d:DesignHeight="530" 
+             d:DesignWidth="925"
       Title="CrudVehiculos">
 
     <Page.Resources>
@@ -219,7 +220,7 @@
                     Background="Transparent" 
                     Width="64"
                     
-                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
+                    Style= "{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
             <!--#endregion-->
@@ -295,7 +296,7 @@
             <TextBox Grid.Column="3"
                          Grid.Row="12"
                          Name="TxtVenta" 
-                            Width="150"
+                            Width="200"
                         HorizontalAlignment="Left"
                       Style="{DynamicResource TextBoxStyle}"/>
             <TextBlock Grid.Column="3"
@@ -304,13 +305,14 @@
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="0,0,160,0"/>
+                       Margin ="0,0,210,0"/>
             <TextBox Grid.Column="3"
                          Grid.Row="12"
                          Name="TxtRenta" 
-                            Width="150"
+                            Width="200"
                         HorizontalAlignment="Right"
-                      Style="{DynamicResource TextBoxStyle}"/>
+                      Style="{DynamicResource TextBoxStyle}"
+                     />
             <TextBlock Grid.Column="2"
                        Grid.Row="14"
                        Text="Cargo:"

@@ -4,6 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoRepuestos_Comestibles" xmlns:viewmodels="clr-namespace:AutoRepuestos_Comestibles.Vistas.Empleado"
+        xmlns:viewmodels2="clr-namespace:AutoRepuestos_Comestibles.Vistas.Usuario"
+        xmlns:viewmodels3="clr-namespace:AutoRepuestos_Comestibles.Vistas.Vehiculos"
+        xmlns:viewmodels4="clr-namespace:AutoRepuestos_Comestibles.Vistas.Proveedores"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -15,6 +18,18 @@
         <DataTemplate x:Name="Empleados"
                       DataType="{x:Type viewmodels:Empleados}">
                     <viewmodels:Empleados DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Usuarios"
+                      DataType="{x:Type viewmodels2:Usuarios}">
+            <viewmodels2:Usuarios DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Vehiculos"
+                      DataType="{x:Type viewmodels3:Vehiculos}">
+            <viewmodels3:Vehiculos DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Proveedores"
+                      DataType="{x:Type viewmodels4:Proveedores}">
+            <viewmodels4:Proveedores DataContext="{Binding}"/>
         </DataTemplate>
         <!--#endregion-->
         <!--#region FOCUS VISUAL-->
@@ -398,7 +413,7 @@
                                     HorizontalAlignment="Left"
                                     Cursor="Hand"
                                     Background="Transparent"
-                                    BorderBrush="Transparent">
+                                    BorderBrush="Transparent" Click="btnVehiculos_Click">
                                 <Grid Width="200">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>

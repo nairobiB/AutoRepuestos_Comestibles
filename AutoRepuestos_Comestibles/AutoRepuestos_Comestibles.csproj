@@ -69,6 +69,18 @@
     <Compile Include="Vistas\Empleado\Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Proveedores\CrudProveedores.xaml.cs">
+      <DependentUpon>CrudProveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Proveedores\Proveedores.xaml.cs">
+      <DependentUpon>Proveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Usuario\CrudUsuarios.xaml.cs">
+      <DependentUpon>CrudUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Usuario\Usuarios.xaml.cs">
+      <DependentUpon>Usuarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Vehiculos\CrudVehiculos.xaml.cs">
       <DependentUpon>CrudVehiculos.xaml</DependentUpon>
     </Compile>
@@ -107,6 +119,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Empleado\Empleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Proveedores\CrudProveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Proveedores\Proveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Usuario\CrudUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Usuario\Usuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

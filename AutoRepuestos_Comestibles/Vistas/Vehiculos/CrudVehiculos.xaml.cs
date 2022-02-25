@@ -24,5 +24,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         {
             InitializeComponent();
         }
+
+        private void BtnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new Vehiculos();
+        }
     }
 }
