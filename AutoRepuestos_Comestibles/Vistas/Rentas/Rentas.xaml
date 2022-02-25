@@ -231,7 +231,7 @@
     <Border Background="#edffff"
             CornerRadius="15,15,15,15">
         <!--#region COLS ROWS-->
-        <Grid x:Name="FrmVentas">
+        <Grid x:Name="FrmRentas">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition />

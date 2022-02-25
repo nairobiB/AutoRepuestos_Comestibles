@@ -75,6 +75,12 @@
     <Compile Include="Vistas\Empleado\Empleados.xaml.cs">
       <DependentUpon>Empleados.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Pedidos\CrudPedidos.xaml.cs">
+      <DependentUpon>CrudPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pedidos\Pedidos.xaml.cs">
+      <DependentUpon>Pedidos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Proveedores\CrudProveedores.xaml.cs">
       <DependentUpon>CrudProveedores.xaml</DependentUpon>
     </Compile>
@@ -145,6 +151,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\Empleado\Empleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Pedidos\CrudPedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Pedidos\Pedidos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
