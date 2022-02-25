@@ -195,7 +195,9 @@
   <ItemGroup>
     <Resource Include="Imagenes\back.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Vistas\Vehiculos\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\confirm.png" />
   </ItemGroup>
