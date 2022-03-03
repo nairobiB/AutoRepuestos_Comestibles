@@ -264,7 +264,7 @@
             <PasswordBox Grid.Column="3"
                          Grid.Row="8"
                          Name="TxtPass"
-                      Background="White"
+                        Background="White"
                          HorizontalAlignment="Left"
                      Width="300" CaretBrush="White" SelectionBrush="White"/>
             <TextBlock Grid.Column="2"

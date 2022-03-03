@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capa_Entidades;
+using Capa_Negocios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         {
             InitializeComponent();
         }
+
+
 
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
