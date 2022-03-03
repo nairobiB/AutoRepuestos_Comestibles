@@ -12,9 +12,9 @@ namespace AutoRepuestos_Comestibles.Clases
         SqlDataAdapter da;
         DataTable dt;
 
-        string conexion = "Data Source = Nairobi-Bodden\\SQLEXPRESS; Initial catalog = BoddenRentals; Integrated Security = true";
+// string conexion = "Data Source = Nairobi-Bodden\\SQLEXPRESS; Initial catalog = BoddenRentals; Integrated Security = true";
 
-        //string conexion = "Data Source = 34.70.153.7;" + "Initial Catalog = BoddenRentals;" + "User id = sqlserver;" + "Password = vE8wcHIvMBxec47v;";
+      string conexion = "Data Source = 34.70.153.7;" + "Initial Catalog = BoddenRentals;" + "User id = sqlserver;" + "Password = vE8wcHIvMBxec47v;";
 
         public SqlConnection Sc = new SqlConnection();
 
@@ -28,7 +28,7 @@ namespace AutoRepuestos_Comestibles.Clases
             try
             {
                 Sc.Open();
-                System.Windows.MessageBox.Show("Conexion abierta");
+               // System.Windows.MessageBox.Show("Conexion abierta");
             }
             catch (Exception x)
             {
@@ -39,7 +39,7 @@ namespace AutoRepuestos_Comestibles.Clases
         public void cerrar()
         {
             Sc.Close();
-            System.Windows.MessageBox.Show("Conexion cerrada");
+           // System.Windows.MessageBox.Show("Conexion cerrada");
         }
 
         public void cargarDatos(DataColumn dgv, string tableName)

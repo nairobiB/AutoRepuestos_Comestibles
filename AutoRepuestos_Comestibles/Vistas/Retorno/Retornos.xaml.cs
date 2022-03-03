@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoRepuestos_Comestibles.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
     /// </summary>
     public partial class Retornos : UserControl
     {
+        ClVistasDataGrid obj = new ClVistasDataGrid();
         public Retornos()
         {
             InitializeComponent();
+            CargarDG();
+        }
+        void CargarDG()
+        {
+            obj.LlenarDG("RetornosVista", GridDatos);
+
         }
     }
 }

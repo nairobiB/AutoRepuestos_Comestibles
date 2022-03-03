@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Clientes
 {
@@ -20,9 +21,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     /// </summary>
     public partial class Clientes : UserControl
     {
+        ClVistasDataGrid obj = new ClVistasDataGrid();
         public Clientes()
         {
             InitializeComponent();
+            CargarDG();
+        }
+         
+        void CargarDG()
+        {
+            obj.LlenarDG("ClientesVista", GridDatos);
+
         }
 
         private void BtnAgregarCliente_Click(object sender, RoutedEventArgs e)

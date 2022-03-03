@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoRepuestos_Comestibles.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
     /// </summary>
     public partial class Rentas : UserControl
     {
+        ClVistasDataGrid obj = new ClVistasDataGrid();
+
         public Rentas()
         {
             InitializeComponent();
+            CargarDG();
+        }
+        void CargarDG()
+        {
+            obj.LlenarDG("RentasVista", GridDatos);
+
         }
 
         private void BtnAgregarRenta_Click(object sender, RoutedEventArgs e)
