@@ -21,12 +21,14 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     /// </summary>
     public partial class CrudUsuarios : Page
     {
-
         public CrudUsuarios()
-            {
-                InitializeComponent();
-                       
+        {
+            InitializeComponent();
+        }
 
-            }      
+        private void BtnRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            Content = new Usuarios();
+        }
     }
 }
