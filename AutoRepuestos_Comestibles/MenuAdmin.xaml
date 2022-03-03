@@ -18,7 +18,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True" Loaded="Window_Loaded">
     <Window.Resources>
         <!--#region Data template-->
         <DataTemplate x:Name="Empleados"
