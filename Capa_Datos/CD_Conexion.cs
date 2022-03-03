@@ -10,7 +10,7 @@ namespace Capa_Datos
 {
     public class CD_Conexion
     {
-        private readonly SqlConnection con = new SqlConnection("Data Source=Ele; initial catalog= BoddenRentals; integrated security=true");
+        private readonly SqlConnection con = new SqlConnection("Data Source=Nairobi-Bodden\\SQLEXPRESS; initial catalog= BoddenRentals; integrated security=true");
 
 
         public SqlConnection AbrirConexion()

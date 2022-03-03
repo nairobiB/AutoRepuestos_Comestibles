@@ -301,20 +301,6 @@
     <Resource Include="Imagenes\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
-      <Project>{E21819F0-EB6B-4E8D-9314-B880965DB407}</Project>
-      <Name>Capa_Datos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Capa_Entidades\Capa_Entidades.csproj">
-      <Project>{a36a1d8b-8584-4aad-97e6-d10b0b22e2cd}</Project>
-      <Name>Capa_Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Capa_Negocios\Capa_Negocios.csproj">
-      <Project>{ca8b485e-039c-45f3-ad79-443190f7a1ef}</Project>
-      <Name>Capa_Negocios</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\confirm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

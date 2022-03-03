@@ -45,15 +45,5 @@
     <Compile Include="CN_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
-      <Project>{e21819f0-eb6b-4e8d-9314-b880965db407}</Project>
-      <Name>Capa_Datos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Capa_Entidades\Capa_Entidades.csproj">
-      <Project>{a36a1d8b-8584-4aad-97e6-d10b0b22e2cd}</Project>
-      <Name>Capa_Entidades</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

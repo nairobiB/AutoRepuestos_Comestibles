@@ -54,14 +54,14 @@ namespace Capa_Datos
             SqlCommand com = new SqlCommand()
             {
                 Connection = con.AbrirConexion(),
-                CommandText= "CMB_CargarEmpleado",
+                CommandText= "CMB_CargarEMPLEADO",
                 CommandType= CommandType.StoredProcedure
             };
             SqlDataReader reader = com.ExecuteReader();
             List<String> lista = new List<string>();
             while (reader.Read())
             {
-                lista.Add(Convert.ToString(reader["NombreEmpleado"]));
+                lista.Add(Convert.ToString(reader["Empleado_Nombre"]));
             }
             con.CerrarConexion();
 
