@@ -9,6 +9,7 @@ using AutoRepuestos_Comestibles.Vistas.Ventas;
 using AutoRepuestos_Comestibles.Vistas.Rentas;
 using AutoRepuestos_Comestibles.Vistas.Pedidos;
 using AutoRepuestos_Comestibles.Vistas.Retorno;
+using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -16,6 +17,7 @@ namespace AutoRepuestos_Comestibles
     /// </summary>
     public partial class MenuAdmin : Window
     {
+        ClConexion conexion = new ClConexion();
         public MenuAdmin()
         {
             InitializeComponent();
@@ -90,6 +92,11 @@ namespace AutoRepuestos_Comestibles
         private void btnRetorno_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Retornos();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            conexion.abrir();
         }
     }
 }
