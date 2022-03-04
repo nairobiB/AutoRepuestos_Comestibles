@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 {
@@ -20,9 +21,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
     /// </summary>
     public partial class CrudPedidos : Page
     {
+        ClCmb cmb = new ClCmb();
         public CrudPedidos()
         {
             InitializeComponent();
+            cmb.fill_cmb(CmbProveedor, "Proveedores", 3);
+            cmb.fill_cmb(CmbVehiculo, "Vehiculos", 0);
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)

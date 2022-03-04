@@ -276,7 +276,7 @@
                        FontSize="15"
                         Grid.Row="3"/>
             <ComboBox Name="CmbRetorno"
-                      Grid.Column="2" Foreground="White" 
+                      Grid.Column="2" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
                       HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>

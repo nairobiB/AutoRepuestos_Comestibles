@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Vistas.Usuario;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Usuario
 {
@@ -21,9 +22,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     /// </summary>
     public partial class CrudUsuarios : Page
     {
+        ClCmb cmb = new ClCmb();
         public CrudUsuarios()
         {
             InitializeComponent();
+            cmb.fill_cmb(CmbEmpleado, "Usuarios", 3);
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles.Vistas.Ventas
 {
     /// <summary>
@@ -20,9 +20,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
     /// </summary>
     public partial class CrudVentas : Page
     {
+        ClCmb cmb = new ClCmb();
         public CrudVentas()
         {
             InitializeComponent();
+            cmb.fill_cmb(CmbCliente, "Clientes", 1);
+            cmb.fill_cmb(CmbVehiculo, "Vehiculos", 0);
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
