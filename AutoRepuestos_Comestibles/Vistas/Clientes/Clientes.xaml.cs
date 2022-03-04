@@ -39,5 +39,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             CrudClientes ventana = new CrudClientes();
             FrameCliente.Content = ventana;
         }
+
+        void Buscar(string texto)
+        {
+            obj.Busqueda("ClientesVista", GridDatos, texto, "Identidad", "[Nombre del Cliente]", "Correo");
+
+        }
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
+        }
     }
 }

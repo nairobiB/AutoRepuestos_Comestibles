@@ -21,11 +21,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         }
 
+        void Buscar(string texto)
+        {
+            obj.Busqueda("EmpleadosVista", GridDatos, texto, "Identidad", "[Nombre del empleado]", "Puesto");
+
+        }
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
             CrudEmpleado ventana = new CrudEmpleado();
             FrameEmpleado.Content = ventana;
 
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
         }
     }
 }

@@ -32,10 +32,23 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             obj.LlenarDG("VentasVista", GridDatos);
 
         }
+
+        void Buscar(string texto)
+        {
+            obj.Busqueda("VentasVista", GridDatos, texto, "Cliente", "Empleado", "[Tipo de pago]");
+
+        }
+
+
         private void BtnAgregarVenta_Click(object sender, RoutedEventArgs e)
         {
             CrudVentas ventana = new CrudVentas();
             FrameVentas.Content = ventana;
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
         }
     }
 }

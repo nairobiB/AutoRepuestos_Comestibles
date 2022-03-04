@@ -219,7 +219,8 @@
                         <Setter Property="Background" Value="#ADB5BD"/>
                         <Setter Property="BorderBrush" Value="Transparent"/>
                         <Setter Property="Foreground" Value="Black"/>
-                    </Trigger>
+                    <Setter Property="Padding" Value="3"/>
+                </Trigger>
                 </Style.Triggers>
             </Style>
             <!--#endregion-->
@@ -280,12 +281,12 @@
                 <!--#region TEXTBOX-->
 
                 <TextBox TextAlignment="Center"
-                         
+                         x:Name="TxtBuscar"
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
                          FontSize="15" Style="{DynamicResource TextBoxStyle}"
-                         Margin="10"/>
+                         Margin="10" TextChanged="TxtBuscar_TextChanged"/>
                 <!--#endregion-->
 
                 <!--#region BTN Modificar-->
@@ -343,7 +344,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -354,9 +355,34 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}">
+                      Style="{DynamicResource DataGridStyle}"
+                      IsReadOnly="True">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="ID"
+                                       Width="50"
+                                        Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Marca"
+                                       Width="150"
+                                        Binding="{Binding Marca}"/>
+                    <DataGridTextColumn Header="Modelo"
+                                       Width="100"
+                                       Binding="{Binding Modelo}" />
+                    <DataGridTextColumn Header="Color"
+                                       Width="120"
+                                        Binding="{Binding Color}"/>
+                    <DataGridTextColumn Header="Precio de venta"
+                                       Width="180"
+                                        Binding="{Binding [Precio de Renta]}"/>
+                    <DataGridTextColumn Header="Precio de renta"
+                                       Width="180"
+                                        Binding="{Binding [Precio de Venta]}"/>
+                    <DataGridTextColumn Header="Estado"
+                                       Width="80"
+                                        Binding="{Binding Estado}"/>
 
-                </DataGrid>
+                </DataGrid.Columns>
+
+            </DataGrid>
                 <!--#endregion-->
 
                 <!--#region FRAME EMPLEADO-->                <Frame x:Name="FrameEmpleado"                   Grid.Column="0"                   Grid.Row="0"                   Grid.ColumnSpan="6"                   Grid.RowSpan="8"/>                <!--#endregion-->

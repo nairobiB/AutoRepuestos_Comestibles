@@ -23,10 +23,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 
         }
 
+        void Buscar(string texto)
+        {
+            obj.Busqueda("ProveedoresVista", GridDatos, texto, "RTN", "Nombre", "Identidad");
+
+        }
+
         private void BtnAgregarProveedor_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             CrudProveedores ventana = new CrudProveedores();
             FrameProveedor.Content = ventana;
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
         }
     }
 }
