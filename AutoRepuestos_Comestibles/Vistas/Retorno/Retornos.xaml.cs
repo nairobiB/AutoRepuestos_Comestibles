@@ -29,7 +29,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
         }
         void CargarDG()
         {
-            obj.LlenarDG("RetornosVista", GridDatos);
+            obj.LlenarDG("Retorno_VehiculoVista", GridDatos);
 
         }
     }
