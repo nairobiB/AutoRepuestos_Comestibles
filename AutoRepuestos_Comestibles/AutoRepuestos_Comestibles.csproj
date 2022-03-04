@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Clases\ClConexion.cs" />
+    <Compile Include="Clases\ClVistasDataGrid.cs" />
     <Compile Include="Vistas\Clientes\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Empleado
 {
@@ -11,6 +12,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         public Empleados()
         {
             InitializeComponent();
+            CargarDG();
+        }
+        ClVistasDataGrid obj = new ClVistasDataGrid();
+        void CargarDG()
+        {
+            obj.LlenarDG("EmpleadosVista", GridDatos);
+
         }
 
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
