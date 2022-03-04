@@ -174,10 +174,10 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
 
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
 
             </Grid.RowDefinitions>
             <!--#endregion-->
@@ -250,7 +250,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbMarca"
                       Grid.Column="3"
-                      Grid.Row="6" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Grid.Row="6" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
 
@@ -263,7 +263,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbModelo"
                       Grid.Column="3"
-                      Grid.Row="8" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
             <TextBlock Grid.Column="2"
@@ -275,10 +275,10 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbColor"
                       Grid.Column="3"
-                      Grid.Row="10" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
+                      Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
-                     
+
             <TextBlock Grid.Column="2"
                        Grid.Row="12"
                        Text="Precios:"
@@ -314,21 +314,9 @@
                         HorizontalAlignment="Right"
                       Style="{DynamicResource TextBoxStyle}"
                      />
-            <TextBlock Grid.Column="2"
-                       Grid.Row="14"
-                       Text="Cargo:"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="0,0,20,0"/>
-            <ComboBox Name="CmbPuesto"
-                      Grid.Column="3"
-                      Grid.Row="14" Foreground="White" Background="White" BorderBrush="#FF1A1A1A"
-                      Width="300"
-                      HorizontalAlignment="Left"/>
 
             <TextBlock Grid.Column="2"
-                       Grid.Row="16"
+                       Grid.Row="15"
                        Text="Estado:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
@@ -337,7 +325,7 @@
             <RadioButton  
                 x:Name="rbtnActivo"
                         Grid.Column="3"
-                       Grid.Row="16"                      
+                       Grid.Row="15"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
@@ -347,7 +335,7 @@
             <RadioButton  
                 x:Name="rbtnInActivo"
                         Grid.Column="3"
-                       Grid.Row="16"                      
+                       Grid.Row="15"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
@@ -357,7 +345,7 @@
             <RadioButton  
                 x:Name="rbtnMant"
                         Grid.Column="3"
-                       Grid.Row="18"                      
+                       Grid.Row="16"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"

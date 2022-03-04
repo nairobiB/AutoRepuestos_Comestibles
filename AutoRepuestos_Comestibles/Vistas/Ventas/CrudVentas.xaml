@@ -339,7 +339,7 @@
             <ComboBox Name="CmbCliente"
                       Grid.Column="2"
                       Grid.ColumnSpan="2"
-                      Grid.Row="4" Foreground="White" 
+                      Grid.Row="4" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
                       HorizontalAlignment="Left"/>
@@ -499,11 +499,11 @@
                        FontSize="15"
                        Margin ="0,0,20,0"/>
 
-            <ComboBox Name="CmbPuesto"
+            <ComboBox Name="CmbVehiculo"
                       Grid.Column="2"
                       Grid.Row="10"
                       Grid.RowSpan="2"
-                      Foreground="White" Background="White" BorderBrush="#FF1A1A1A"    
+                      Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"    
                       Width="230"
                       HorizontalAlignment="Left"
                       Grid.ColumnSpan="2"/>

@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
+using System.Data;
+using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles.Vistas.Empleado
 {
     /// <summary>
@@ -19,10 +22,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     /// </summary>
     public partial class CrudEmpleado : Page
     {
+        ClCmb cmb = new ClCmb();
         public CrudEmpleado()
         {
             InitializeComponent();
+            cmb.fill_cmb(CmbPuesto, "Puestos", 1);
         }
+
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {

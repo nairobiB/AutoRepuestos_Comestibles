@@ -22,15 +22,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
     public partial class Retornos : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        ClCmb cmb = new ClCmb();
         public Retornos()
         {
             InitializeComponent();
             CargarDG();
+            cmb.fill_cmb(CmbRetorno, "Vehiculos", 0);
         }
         void CargarDG()
         {
             obj.LlenarDG("Retorno_VehiculoVista", GridDatos);
-
         }
     }
 }
