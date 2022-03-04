@@ -27,11 +27,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
         {
             InitializeComponent();
             CargarDG();
-            cmb.fill_cmb(CmbRetorno, "Vehiculos", 0);
+            cmb.fill_cmb(CmbRetorno, "Retorno_VehiculoVista", 2);
         }
         void CargarDG()
         {
             obj.LlenarDG("Retorno_VehiculoVista", GridDatos);
+        }
+        void Buscar(string texto)
+        {
+            obj.Busqueda("Retorno_VehiculoVista", GridDatos, texto, "Cliente", "Vehiculo", "[Tipo de Pago]");
+
+        }
+
+        private void Txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(Txtbuscar.Text);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         public CrudUsuarios()
         {
             InitializeComponent();
-            cmb.fill_cmb(CmbEmpleado, "Usuarios", 3);
+            cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)

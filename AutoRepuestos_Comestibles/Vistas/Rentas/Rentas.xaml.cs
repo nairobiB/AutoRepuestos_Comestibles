@@ -39,5 +39,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             CrudRentas ventana = new CrudRentas();
             FrameRentas.Content = ventana;
         }
+
+        void Buscar(string texto)
+        {
+            obj.Busqueda("RentasVista", GridDatos, texto, "Cliente", "Empleado", "Fecha");
+
+        }
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
+        }
     }
 }

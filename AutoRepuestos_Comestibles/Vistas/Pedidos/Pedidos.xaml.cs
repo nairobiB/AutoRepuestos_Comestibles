@@ -37,5 +37,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             CrudPedidos ventana = new CrudPedidos();
             FramePedidos.Content = ventana;
         }
+        void Buscar(string texto)
+        {
+            obj.Busqueda("PedidosVista", GridDatos, texto, "Proveedor", "[Fecha del Pedido]", "[Encargado del Pedido]");
+
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
+        }
     }
 }

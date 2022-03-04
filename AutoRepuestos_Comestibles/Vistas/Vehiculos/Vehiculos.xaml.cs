@@ -37,5 +37,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
             CrudVehiculos ventana = new CrudVehiculos();
             FrameEmpleado.Content = ventana;
         }
+
+        void Buscar(string texto)
+        {
+            obj.Busqueda("VehiculosVista", GridDatos, texto, "Marca", "COlor", "Modelo");
+
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
+        }
     }
 }

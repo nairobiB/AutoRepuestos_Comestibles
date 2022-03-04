@@ -276,12 +276,12 @@
             <!--#region TEXTBOX-->
 
             <TextBox TextAlignment="Center"
-                         
+                         x:Name="TxtBuscar"
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
                          FontSize="15" Style="{DynamicResource TextBoxStyle}"
-                         Margin="10"/>
+                         Margin="10" TextChanged="TxtBuscar_TextChanged"/>
             <!--#endregion-->
 
             <!--#region BTN Modificar-->
@@ -350,7 +350,8 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}">
+                      Style="{DynamicResource DataGridStyle}"
+                      IsReadOnly="True">
 
             </DataGrid>
             <!--#endregion-->

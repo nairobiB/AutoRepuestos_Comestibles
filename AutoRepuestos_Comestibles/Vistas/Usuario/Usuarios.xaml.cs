@@ -32,10 +32,23 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             obj.LlenarDG("UsuariosVista", GridDatos);
 
         }
+
+
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
             CrudUsuarios ventana = new CrudUsuarios();
             FrameEmpleado.Content = ventana;
+        }
+
+        void Buscar(string texto)
+        {
+            obj.Busqueda("UsuariosVista", GridDatos, texto, "Usuario", "[Nombre del Empleado]", "Rol");
+
+        }
+
+        private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Buscar(TxtBuscar.Text);
         }
     }
 }
