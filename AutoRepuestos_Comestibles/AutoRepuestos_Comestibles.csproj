@@ -65,6 +65,7 @@
     </ApplicationDefinition>
     <Compile Include="Clases\ClCmb.cs" />
     <Compile Include="Clases\ClConexion.cs" />
+    <Compile Include="Clases\ClInsercion.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
     <Compile Include="Vistas\Clientes\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
