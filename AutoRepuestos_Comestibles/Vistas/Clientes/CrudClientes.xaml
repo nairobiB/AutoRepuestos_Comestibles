@@ -220,7 +220,7 @@
                     Background="Transparent" 
                     Width="64"
                     
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
             <!--#endregion-->
@@ -241,66 +241,80 @@
                      Width="89" Margin="151,30,0,11.4" Grid.RowSpan="3"/>
 
             <TextBlock Grid.Column="2"
-                       Grid.Row="4"
-                       Text="Identidad:"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="0,29.6,121.6,15.8" Grid.RowSpan="3" RenderTransformOrigin="0.412,0.507"/>
-            <TextBox Grid.Column="2"
-                         Grid.Row="4"
-                         Name="TxtIdentidad"
-                      Style="{DynamicResource TextBoxStyle}"
-                     Width="201" Margin="151,29.6,0,11.8" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
-
-            <TextBlock Grid.Column="2"
-                       Grid.Row="7"
+                       Grid.Row="5"
                        Text="Nombre:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="0,0.2,121.6,15.2" Grid.RowSpan="2"/>
+                       Margin ="0,16.6,135.6,9.6" Grid.RowSpan="2"/>
             <TextBox Grid.Column="2"
-                         Grid.Row="7"
+                         Grid.Row="5"
                          Name="TxtNombre"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="300" Margin="151,0.2,0,11.2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                     Width="300" Margin="151,10.6,0,0.6" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             <TextBlock Grid.Column="2"
-                       Grid.Row="9"
+                       Grid.Row="7"
                        Text="Fecha de Nacimiento:"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="27,0,0,0"/>
+                       Margin ="27,8.4,0,17.8" Grid.RowSpan="2"/>
             <DatePicker Grid.Column="3"
-                         Grid.Row="8"
+                         Grid.Row="7"
                          Name="TxtFechNac" 
                             Width="127"
-                        HorizontalAlignment="Left" Margin="0,30,0,0" Grid.RowSpan="3" VerticalAlignment="Top"/>
+                        HorizontalAlignment="Left" Margin="0.4,10.4,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="2"
-                       Grid.Row="13"
+                       Grid.Row="11"
                        Text="Correo:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="0,0.4,152.6,16" Grid.RowSpan="2"/>
+                       Margin ="0,16,146.6,9.8" Grid.RowSpan="2" RenderTransformOrigin="0.816,0.367"/>
             <TextBox Grid.Column="2"
-                         Grid.Row="13"
+                         Grid.Row="11"
                          Name="TxtCorreo"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="232" Margin="120,0.4,0,11" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                     Width="232" Margin="120,10,0,0.8" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
             <TextBlock Grid.Column="2"
-                       Grid.Row="11"
+                       Grid.Row="9"
                        Text="Telefono:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="0,0.4,152.6,15.6" Grid.RowSpan="2"/>
+                       Margin ="0,16.2,131.6,10" Grid.RowSpan="2"/>
             <TextBox Grid.Column="2"
-                         Grid.Row="11"
+                         Grid.Row="9"
                          Name="TxtTelefono"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="167" Grid.ColumnSpan="2" Margin="120,0.4,0,10.6" Grid.RowSpan="2"/>
+                     Width="167" Grid.ColumnSpan="2" Margin="151,10.2,0,1" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="2"
+                Grid.Row="14"
+                Text="Estado:"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="0,1,136.6,4"/>
+            <RadioButton  
+                x:Name="rbtnActivo"
+                Grid.Column="2"
+                Grid.Row="14"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="171,0,0,4"
+                Content="Activo"
+                IsChecked="True" Grid.ColumnSpan="2"/>
+            <RadioButton  
+                x:Name="rbtnInActivo"
+                Grid.Column="3"
+                Grid.Row="14"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="101.4,0,0,4"
+                Content="Inactivo"
+                        />
 
             <!--#endregion-->
 

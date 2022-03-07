@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Clientes
 {
@@ -20,6 +21,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     /// </summary>
     public partial class CrudClientes : Page
     {
+        ClInsercion obj = new ClInsercion();
+
         public CrudClientes()
         {
             InitializeComponent();
@@ -28,6 +31,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Clientes();
+        }
+
+
+        private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> parametros = new List<string>() { "@ID", "@Nombre" ,"@Telefono", "@Correo", "@FechaNac", "@IDEstado"};
+            List<string> controlnames = new List<string>() { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, "1" };
+            obj.Insertar("Ins_Clientes", parametros, controlnames);
+            
         }
     }
 }
