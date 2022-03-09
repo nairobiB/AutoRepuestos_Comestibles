@@ -42,21 +42,6 @@ namespace AutoRepuestos_Comestibles.Clases
            // System.Windows.MessageBox.Show("Conexion cerrada");
         }
 
-        public void cargarDatos(DataColumn dgv, string tableName)
-        {
-            try
-            {
-                da = new SqlDataAdapter("SELECT * FROM " + tableName, conexion);
-                dt = new DataTable();
-                da.Fill(dt);
-                
-            }
-
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show("No se pudieron cargar los datos.");
-            }
-        }
 
     }
 }
