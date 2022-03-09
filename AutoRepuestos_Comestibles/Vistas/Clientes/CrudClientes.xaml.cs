@@ -22,6 +22,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     public partial class CrudClientes : Page
     {
         ClInsercion obj = new ClInsercion();
+        private String operacion;
+
+        public String Operacion { get => operacion; set => operacion = value; }
 
         public CrudClientes()
         {
@@ -34,15 +37,30 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         }
 
         int estado = 1;
+
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            if(rbtnInActivo.IsChecked == true)
+
+            if (rbtnInActivo.IsChecked == true)
             {
                 estado = 0;
             }
-            List<string> parametros = new List<string>() { "@ID", "@Nombre" ,"@Telefono", "@Correo", "@FechaNac", "@IDEstado"};
-            List<string> controlnames = new List<string>() { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString()};
-            obj.Insertar("Ins_Clientes", parametros, controlnames);
+
+            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "@ID_Estado" };
+            dynamic[] controlnames = { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString() };
+            String st;
+            if (operacion == "Insert")
+            {
+                st = "Ins_Clientes";
+            }
+            else
+            {
+                st = "Upd_Clientes";
+            }
+
+
+
+            obj.Insertar(st, parametros, controlnames);
             
         }
     }

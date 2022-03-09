@@ -43,6 +43,7 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -66,6 +67,7 @@
     <Compile Include="Clases\ClCmb.cs" />
     <Compile Include="Clases\ClConexion.cs" />
     <Compile Include="Clases\ClInsercion.cs" />
+    <Compile Include="Clases\ClSeleccion.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
     <Compile Include="Vistas\Clientes\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
@@ -304,7 +306,9 @@
   <ItemGroup>
     <Resource Include="Imagenes\back.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\confirm.png" />
   </ItemGroup>

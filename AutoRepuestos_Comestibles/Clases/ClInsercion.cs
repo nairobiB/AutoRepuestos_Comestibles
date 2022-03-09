@@ -13,7 +13,7 @@ namespace AutoRepuestos_Comestibles.Clases
     {
         ClConexion conexion = new ClConexion();
 
-        public void Insertar(string Sp, List<string> parametros, List<string> controlsNames)
+        public void Insertar(string Sp, dynamic[] parametros, dynamic[] controlsNames)
         {
             
 
@@ -21,7 +21,7 @@ namespace AutoRepuestos_Comestibles.Clases
             SqlCommand cmd = new SqlCommand(Sp, conexion.Sc);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            for (int i = 0; i < parametros.Count; i++)
+            for (int i = 0; i < parametros.Length; i++)
             {
                 cmd.Parameters.AddWithValue(parametros[i], controlsNames[i]);
 
