@@ -33,11 +33,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             Content = new Clientes();
         }
 
-
+        int estado = 1;
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
+            if(rbtnInActivo.IsChecked == true)
+            {
+                estado = 0;
+            }
             List<string> parametros = new List<string>() { "@ID", "@Nombre" ,"@Telefono", "@Correo", "@FechaNac", "@IDEstado"};
-            List<string> controlnames = new List<string>() { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, "1" };
+            List<string> controlnames = new List<string>() { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString()};
             obj.Insertar("Ins_Clientes", parametros, controlnames);
             
         }
