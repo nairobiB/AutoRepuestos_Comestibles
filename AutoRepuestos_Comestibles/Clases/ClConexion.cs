@@ -15,7 +15,7 @@ namespace AutoRepuestos_Comestibles.Clases
 // string conexion = "Data Source = Nairobi-Bodden\\SQLEXPRESS; Initial catalog = BoddenRentals; Integrated Security = true";
 
       string conexion = "Data Source = 34.70.153.7;" + "Initial Catalog = BoddenRentals;" + "User id = sqlserver;" + "Password = vE8wcHIvMBxec47v;";
-
+            
         public SqlConnection Sc = new SqlConnection();
 
         public ClConexion()

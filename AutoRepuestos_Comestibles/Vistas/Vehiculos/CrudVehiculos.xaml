@@ -224,6 +224,8 @@
                     Style= "{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
+            
+            
             <!--#endregion-->
             <!--#endregion-->
 
@@ -323,34 +325,44 @@
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <RadioButton  
-                x:Name="rbtnActivo"
-                        Grid.Column="3"
-                       Grid.Row="15"                      
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="30,0,0,0"
-                        Content="Activo"
-                 IsChecked="True"/>
+                x:Name="rbtnDisponible"
+                Grid.Column="3"
+                Grid.Row="15"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="30,1.6,0,3.2"
+                Content="Disponible"
+                IsChecked="True"/>
             <RadioButton  
-                x:Name="rbtnInActivo"
-                        Grid.Column="3"
-                       Grid.Row="15"                      
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="220,0,0,0"
-                        Content="Inactivo"
+                x:Name="rbtnRentado"
+                Grid.Column="3"
+                Grid.Row="15"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="220,1.6,0,3.2"
+                Content="Rentado"
                         />
             <RadioButton  
                 x:Name="rbtnMant"
-                        Grid.Column="3"
-                       Grid.Row="16"                      
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="100,0,0,10"
-                        Content="Mantenimiento"
+                Grid.Column="3"
+                Grid.Row="16"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="30,2.4,0,12"
+                Content="Mantenimiento"
+                        />
+            <RadioButton  
+                x:Name="rbtnVendido"
+                Grid.Column="3"
+                Grid.Row="16"                      
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="20"
+                Margin ="220,3.4,0,11"
+                Content="Vendido"
                         />
 
             <!--#endregion-->
