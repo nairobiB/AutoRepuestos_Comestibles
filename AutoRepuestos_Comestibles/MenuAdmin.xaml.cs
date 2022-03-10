@@ -10,6 +10,8 @@ using AutoRepuestos_Comestibles.Vistas.Rentas;
 using AutoRepuestos_Comestibles.Vistas.Pedidos;
 using AutoRepuestos_Comestibles.Vistas.Retorno;
 using AutoRepuestos_Comestibles.Clases;
+using System.Windows.Controls;
+
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -18,9 +20,10 @@ namespace AutoRepuestos_Comestibles
     public partial class MenuAdmin : Window
     {
         ClConexion conexion = new ClConexion();
-        public MenuAdmin()
+        public MenuAdmin(string nombre)
         {
             InitializeComponent();
+            Nombre.Text = nombre;
         }
 
         private void TBShow(object sender, RoutedEventArgs e)

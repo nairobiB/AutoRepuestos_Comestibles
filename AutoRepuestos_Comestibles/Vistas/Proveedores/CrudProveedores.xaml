@@ -292,10 +292,10 @@
             <TextBlock Grid.Column="3"
                        Grid.Row="12"
                        Text="Direccion:"
-                       HorizontalAlignment="Right"
+                       HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
-                       Margin ="0,1.4,212,1.6"/>
+                       Margin ="35,0,0,0"/>
             <TextBox Grid.Column="3"
                          Grid.Row="12"
                          Name="TxtDireccion"

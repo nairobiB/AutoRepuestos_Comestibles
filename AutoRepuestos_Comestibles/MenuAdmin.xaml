@@ -304,6 +304,12 @@
                                FontSize="40" HorizontalAlignment="Center" 
                                VerticalAlignment="Center"
                                FontFamily="Century Gothic" FontWeight="Bold"/>
+                    <TextBlock Name="Nombre" Text="Administrador" 
+                               Grid.Column="0" Foreground="Black"
+                               FontSize="20" HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               Margin="30, 10, 0, 0"
+                               FontFamily="Century Gothic" FontWeight="Bold"/>
                     <!--#endregion-->
 
                     <!--#region BOTONES CERRAR Y MINIMIZAR-->
@@ -360,6 +366,13 @@
                            HorizontalAlignment="Center"
                            FontSize="40"
                            FontWeight="Bold"
+                           FontFamily="century gothic"/>
+                <TextBlock Text="Bienvenido Administrador"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Margin="0,120,0,0"
                            FontFamily="century gothic"/>
                 <ContentControl Content="{Binding}"/>
             </Grid>
