@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         ClVistasDataGrid obj = new ClVistasDataGrid();
         CrudClientes ventana = new CrudClientes();
         ClSeleccion cli = new ClSeleccion();
-        //String valorID;
+        String valorID;
 
         public Clientes()
         {
@@ -78,10 +79,18 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         private void BtnModificar_Click_1(object sender, RoutedEventArgs e)
         {
+            llenarcampos(valorID);
             FrameCliente.Content = ventana;
-            string identidad = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la Identidad del Cliente: ", "Identidad");
-            llenarcampos(identidad);
             ventana.Operacion = "Update";
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }

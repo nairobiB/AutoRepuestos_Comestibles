@@ -34,6 +34,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Clientes();
+
         }
 
         int estado = 1;
@@ -52,15 +53,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             if (operacion == "Insert")
             {
                 st = "Ins_Clientes";
+                obj.Insertar(st, parametros, controlnames);
             }
             else
             {
                 st = "Upd_Clientes";
+                obj.Insertar(st, parametros, controlnames);
+                Content = new Clientes();
             }
 
-
-
-            obj.Insertar(st, parametros, controlnames);
             
         }
     }
