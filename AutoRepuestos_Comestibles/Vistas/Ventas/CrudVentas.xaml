@@ -577,6 +577,7 @@
                      Grid.Row="22"
                      Grid.ColumnSpan="2"
                      Name="TxtUsuario"
+                     IsReadOnly="True"
                       Style="{DynamicResource TextBoxStyle}"
                      Width="230"/>
 

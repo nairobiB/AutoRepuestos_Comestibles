@@ -5,6 +5,8 @@ using AutoRepuestos_Comestibles.Vistas.Clientes;
 using AutoRepuestos_Comestibles.Vistas.Ventas;
 using AutoRepuestos_Comestibles.Vistas.Rentas;
 using AutoRepuestos_Comestibles.Vistas.Retorno;
+using System.Windows.Controls;
+
 namespace AutoRepuestos_Comestibles
 {
     /// <summary>
@@ -12,9 +14,10 @@ namespace AutoRepuestos_Comestibles
     /// </summary>
     public partial class MenuAgente : Window
     {
-        public MenuAgente()
+        public MenuAgente(string nombre)
         {
             InitializeComponent();
+            Nombre.Text = nombre;
         }
 
         private void TBShow(object sender, RoutedEventArgs e)
