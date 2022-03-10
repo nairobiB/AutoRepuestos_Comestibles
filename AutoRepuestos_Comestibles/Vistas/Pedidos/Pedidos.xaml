@@ -103,8 +103,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent "/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -297,6 +297,7 @@
                         Width="64"
                         Name="BtnModificar"                       
                 HorizontalAlignment="Right"
+                    IsEnabled="False"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
@@ -312,6 +313,7 @@
                         Width="64"
                         Name="BtnEliminar"                       
                 HorizontalAlignment="Left"
+                    IsEnabled="False"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
@@ -342,7 +344,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -354,7 +356,24 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns >
+
+                    <DataGridTextColumn Header="ID"
+                                    Width="150"
+                                    Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Proveedor"
+                                    Width="250"
+                                    Binding="{Binding Proveedor}"/>
+                    <DataGridTextColumn Header="Fecha"
+                                    Width="200"
+                                    Binding="{Binding [Fecha del Pedido]}"/>
+                    <DataGridTextColumn Header="Empleado"
+                                    Width="250"
+                                    Binding="{Binding [Encargado del Pedido]}"/>
+             
+
+                </DataGrid.Columns>
 
             </DataGrid>
             <!--#endregion-->

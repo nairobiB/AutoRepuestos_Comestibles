@@ -104,8 +104,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent "/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -296,6 +296,7 @@
                         Width="64"
                         Name="BtnModificar"                       
                 HorizontalAlignment="Right"
+                    IsEnabled="False"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
@@ -311,6 +312,7 @@
                         Width="64"
                         Name="BtnEliminar"                       
                 HorizontalAlignment="Left"
+                     IsEnabled="False"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
@@ -341,7 +343,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -353,9 +355,41 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns>
 
+                    <DataGridTextColumn Header="ID"
+                                    Width="80"
+                                    Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="RTN"
+                                    Width="100"
+                                    Binding="{Binding RTN}"/>
+                    <DataGridTextColumn Header="Nombre"
+                                    Width="150"
+                                    Binding="{Binding Nombre}"/>
+                    <DataGridTextColumn Header="Identidad"
+                                    Width="150"
+                                    Binding="{Binding Identidad}"/>
+                    <DataGridTextColumn Header="Encargado"
+                                    Width="100"
+                                    Binding="{Binding Encargado}"/>
+                    <DataGridTextColumn Header="Telefono"
+                                    Width="100"
+                                    Binding="{Binding Telefono}"/>
+                    <DataGridTextColumn Header="Correo"
+                                    Width="90"
+                                    Binding="{Binding Correo}"/>
+                    <DataGridTextColumn Header="Dirección"
+                                    Width="200"
+                                    Binding="{Binding Dirección}"/>
+                    <DataGridTextColumn Header="Estado"
+                                    Width="80"
+                                    Binding="{Binding Estado}"/>
+
+                </DataGrid.Columns>
             </DataGrid>
+            
+            
             <!--#endregion-->
 
             <!--#region FRAME PROVEEDOR-->

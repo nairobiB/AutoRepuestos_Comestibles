@@ -1,19 +1,7 @@
 ﻿using AutoRepuestos_Comestibles.Clases;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 {
     /// <summary>
@@ -22,6 +10,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
     public partial class Pedidos : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        string valorID;
         public Pedidos()
         {
             InitializeComponent();
@@ -46,6 +35,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }

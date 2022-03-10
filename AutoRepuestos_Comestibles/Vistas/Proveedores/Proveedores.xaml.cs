@@ -1,7 +1,6 @@
 ﻿using System.Windows.Controls;
 using AutoRepuestos_Comestibles.Clases;
-using AutoRepuestos_Comestibles.Vistas.Proveedores;
-
+using System.Data;
 namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 {
     /// <summary>
@@ -10,7 +9,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
     public partial class Proveedores : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
-
+        string valorID;
         public Proveedores()
         {
             InitializeComponent();
@@ -38,6 +37,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }

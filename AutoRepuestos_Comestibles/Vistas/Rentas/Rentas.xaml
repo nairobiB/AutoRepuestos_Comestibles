@@ -344,7 +344,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -355,8 +355,32 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}">
+                      Style="{DynamicResource DataGridStyle}" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns>
 
+                    <DataGridTextColumn Header="ID"
+                                    Width="85"
+                                    Binding="{Binding [ID de Factura]}"/>
+                    <DataGridTextColumn Header="Cliente"
+                                    Width="100"
+                                    Binding="{Binding Cliente}"/>
+                    <DataGridTextColumn Header="Empleado"
+                                    Width="150"
+                                    Binding="{Binding Empleado}"/>
+                    <DataGridTextColumn Header="Tipo de Pago"
+                                    Width="150"
+                                    Binding="{Binding [Tipo de Pago]}"/>
+                    <DataGridTextColumn Header="Fecha"
+                                    Width="100"
+                                    Binding="{Binding Fecha}"/>
+                    <DataGridTextColumn Header="Fecha de Entrega"
+                                    Width="145"
+                                    Binding="{Binding [Hora de Entrega]}"/>
+                    <DataGridTextColumn Header="Fecha de Retorno"
+                                    Width="145"
+                                    Binding="{Binding [Hora de Retorno]}"/>
+
+                </DataGrid.Columns>
             </DataGrid>
             <!--#endregion-->
 
