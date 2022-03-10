@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Vistas.Proveedores;
+using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 {
@@ -21,6 +22,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
     /// </summary>
     public partial class CrudProveedores : Page
     {
+        ClInsercion obj = new ClInsercion();
+        int estado = 1;
         public CrudProveedores()
         {
             InitializeComponent();
@@ -29,6 +32,18 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Proveedores();
+        }
+
+        private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
+        {
+            if (rbtnInActivo.IsChecked == true)
+            {
+                estado = 0;
+            }
+
+            dynamic[] parametros = { "@ID", "@RTN", "@Identidad", "@Nombre","@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
+            dynamic[] controlnames = { TxtIdentidad.Text, TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
+            obj.Insertar("Ins_Proveedores", parametros, controlnames);
         }
     }
 }
