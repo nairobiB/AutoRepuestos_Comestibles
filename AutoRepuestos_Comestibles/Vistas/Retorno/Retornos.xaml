@@ -403,7 +403,32 @@
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
                       IsReadOnly="True">
+                <DataGrid.Columns>
 
+                    <DataGridTextColumn Header="ID"
+                                    Width="85"
+                                    Binding="{Binding [ID Factura]}"/>
+                    <DataGridTextColumn Header="Cliente"
+                                    Width="100"
+                                    Binding="{Binding Cliente}"/>
+                    <DataGridTextColumn Header="Vehiculo"
+                                    Width="145"
+                                    Binding="{Binding Vehiculo}"/>
+                    <DataGridTextColumn Header="Tipo de Pago"
+                                    Width="145"
+                                    Binding="{Binding [Tipo de Pago]}"/>
+                    <DataGridTextColumn Header="Fecha Retorno"
+                                    Width="120"
+                                    Binding="{Binding [Hora de Retorno]}"/>
+                    <DataGridTextColumn Header="Transaccion"
+                                    Width="140"
+                                    Binding="{Binding FK_ID_Transaccion}"/>
+                    <DataGridTextColumn Header="Estado de Retorno"
+                                    Width="145"
+                                    Binding="{Binding ID_Estado_Retorno}"/>
+
+                </DataGrid.Columns>
+            
             </DataGrid>
             <!--#endregion-->
 

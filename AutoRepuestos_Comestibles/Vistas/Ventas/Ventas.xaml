@@ -357,8 +357,36 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}">
+                      Style="{DynamicResource DataGridStyle}" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns>
 
+                    <DataGridTextColumn Header="ID"
+                                    Width="85"
+                                    Binding="{Binding [ID de Factura]}"/>
+                    <DataGridTextColumn Header="Cliente"
+                                    Width="100"
+                                    Binding="{Binding Cliente}"/>
+                    <DataGridTextColumn Header="Empleado"
+                                    Width="150"
+                                    Binding="{Binding Empleado}"/>
+                    <DataGridTextColumn Header="Vehiculo"
+                                    Width="150"
+                                    Binding="{Binding Vehiculo}"/>
+                    <DataGridTextColumn Header="Tipo de Pago"
+                                    Width="150"
+                                    Binding="{Binding [Tipo de Pago]}"/>
+                    <DataGridTextColumn Header="Fecha"
+                                    Width="100"
+                                    Binding="{Binding Fecha}"/>
+                    <DataGridTextColumn Header="Costo"
+                                    Width="145"
+                                    Binding="{Binding Costo}"/>
+                    <DataGridTextColumn Header="Forma de Compra"
+                                    Width="145"
+                                    Binding="{Binding [Forma de Compra]}"/>
+
+                </DataGrid.Columns>
+            
             </DataGrid>
             <!--#endregion-->
 

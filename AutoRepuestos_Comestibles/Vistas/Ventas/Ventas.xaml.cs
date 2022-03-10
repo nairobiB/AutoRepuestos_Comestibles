@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Data;
 namespace AutoRepuestos_Comestibles.Vistas.Ventas
 {
     /// <summary>
@@ -22,6 +22,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
     public partial class Ventas : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        string valorID;
         public Ventas()
         {
             InitializeComponent();
@@ -49,6 +50,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }
