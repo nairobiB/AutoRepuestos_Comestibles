@@ -43,7 +43,7 @@ namespace AutoRepuestos_Comestibles
 
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void BtnMinimizar_Click(object sender, RoutedEventArgs e)

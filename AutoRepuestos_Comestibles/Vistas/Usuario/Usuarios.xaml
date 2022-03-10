@@ -342,7 +342,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -354,7 +354,30 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns >
+
+                    <DataGridTextColumn Header="ID"
+                                    Width="50"
+                                    Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Usuario"
+                                    Width="150"
+                                    Binding="{Binding Usuario}"/>
+                    <DataGridTextColumn Header="Nombre del empleado"
+                                    Width="250"
+                                    Binding="{Binding [Nombre del Empleado]}"/>
+                    <DataGridTextColumn Header="Contraseña"
+                                    Width="120"
+                                    Binding="{Binding Contraseña}"/>
+                    <DataGridTextColumn Header="Rol"
+                                    Width="*"
+                                    Binding="{Binding Rol}"/>
+                   
+                    <DataGridTextColumn Header="Estado"
+                                    Width="*"
+                                    Binding="{Binding Estado}"/>
+
+                </DataGrid.Columns>
 
             </DataGrid>
             <!--#endregion-->

@@ -1,6 +1,7 @@
 ﻿using AutoRepuestos_Comestibles.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     public partial class Usuarios : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        string valorID;
         public Usuarios()
         {
             InitializeComponent();
@@ -49,6 +51,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }
