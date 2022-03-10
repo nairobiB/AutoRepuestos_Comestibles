@@ -104,8 +104,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent "/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -292,9 +292,10 @@
                         Margin="0,0,15,0"
                         Cursor="Hand"
                         Width="64"
-                        Name="BtnModificar"                       
+                        Name="BtnModificar"
+                        IsEnabled="False"
                 HorizontalAlignment="Right"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click_1">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
             <!--#endregion-->
@@ -307,7 +308,8 @@
                         Margin="40,0,0,0"
                         Cursor="Hand"
                         Width="64"
-                        Name="BtnEliminar"                       
+                        Name="BtnEliminar"  
+                        IsEnabled="False"
                 HorizontalAlignment="Left"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
@@ -339,7 +341,7 @@
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -351,8 +353,29 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+            <DataGrid.Columns >
 
+                <DataGridTextColumn Header="ID"
+                                    Width="150"
+                                    Binding="{Binding Identidad}"/>
+                <DataGridTextColumn Header="Nombre"
+                                    Width="250"
+                                    Binding="{Binding [Nombre del Cliente]}"/>
+                <DataGridTextColumn Header="Telefono"
+                                    Width="120"
+                                    Binding="{Binding Telefono}"/>
+                <DataGridTextColumn Header="Correo"
+                                    Width="200"
+                                    Binding="{Binding Correo}"/>
+                <DataGridTextColumn Header="Edad"
+                                    Width="50"
+                                    Binding="{Binding Edad}"/>
+                <DataGridTextColumn Header="Estado"
+                                    Width="80"
+                                    Binding="{Binding Estado}"/>
+
+            </DataGrid.Columns>
             </DataGrid>
             <!--#endregion-->
 

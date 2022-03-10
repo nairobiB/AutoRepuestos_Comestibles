@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     public partial class Clientes : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        CrudClientes ventana = new CrudClientes();
+        ClSeleccion cli = new ClSeleccion();
+        String valorID;
+
         public Clientes()
         {
             InitializeComponent();
@@ -36,8 +42,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         private void BtnAgregarCliente_Click(object sender, RoutedEventArgs e)
         {
-            CrudClientes ventana = new CrudClientes();
+
             FrameCliente.Content = ventana;
+            ventana.Operacion = "Insert";
         }
 
         void Buscar(string texto)
@@ -48,6 +55,42 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        void llenarcampos(string identidad)
+        {
+            cli.seleccionar(identidad);
+
+            ventana.TxtIdCliente.Text = cli.Id;
+            ventana.TxtNombre.Text = cli.Nombre;
+            ventana.TxtTelefono.Text = cli.Telefono;
+            ventana.TxtCorreo.Text = cli.Correo;
+            ventana.TxtFechNac.Text = cli.FechaNac;
+            ventana.TxtNombre.Text = cli.Nombre;
+
+            if (cli.IDEstado != "1")
+            {
+                ventana.rbtnInActivo.IsChecked = true;
+            }
+
+
+        }
+
+
+        private void BtnModificar_Click_1(object sender, RoutedEventArgs e)
+        {
+            llenarcampos(valorID);
+            FrameCliente.Content = ventana;
+            ventana.Operacion = "Update";
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }
