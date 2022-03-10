@@ -23,15 +23,42 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     public partial class CrudUsuarios : Page
     {
         ClCmb cmb = new ClCmb();
+        ClInsercion obj = new ClInsercion();
+
         public CrudUsuarios()
         {
             InitializeComponent();
             cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
+            cmb.fill_cmb(CmbInvisible, "Empleados", 0);
+
+
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Usuarios();
+
+        }
+        int estado;
+
+        private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
+        {
+            if (rbtnInActivo.IsChecked == true)
+            {
+                estado = 0;
+            }
+
+            int indice = CmbEmpleado.SelectedIndex;
+            CmbInvisible.SelectedIndex = indice;
+
+            string empleado = CmbInvisible.Text;
+
+            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
+            dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+            String st;
+
+            st = "Ins_Usuarios";
+            obj.Insertar(st, parametros, controlnames);
         }
     }
 }

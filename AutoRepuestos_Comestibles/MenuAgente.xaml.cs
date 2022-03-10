@@ -37,7 +37,10 @@ namespace AutoRepuestos_Comestibles
 
         private void btnVehiculos_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new Vehiculos();
+            Vehiculos vehiculo = new Vehiculos();
+            vehiculo.GridDatos.IsEnabled = false;
+            DataContext = vehiculo;
+            
         }
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
@@ -57,7 +60,7 @@ namespace AutoRepuestos_Comestibles
 
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void BtnMinimizar_Click(object sender, RoutedEventArgs e)

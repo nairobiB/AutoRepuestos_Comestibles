@@ -23,12 +23,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     public partial class CrudEmpleado : Page
     {
         ClCmb cmb = new ClCmb();
+        ClInsercion obj = new ClInsercion();
         public CrudEmpleado()
         {
             InitializeComponent();
             cmb.fill_cmb(CmbPuesto, "Puestos", 1);
+
         }
 
+        int estado;
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
@@ -36,8 +39,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         }
 
+        int puesto=0;
+
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
+            if (rbtnInActivo.IsChecked == true)
+            {
+                estado = 0;
+            }
+            if (CmbPuesto.SelectedIndex == 0)
+            {
+                puesto = 1;
+            }
+            else
+            {
+                puesto = 2;
+            }
+            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC","ID_PUesto" ,"@ID_Estado" };
+            dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text,puesto, estado.ToString() };
+            String st;
+
+            st = "Ins_Empleados";
+            obj.Insertar(st, parametros, controlnames);
+
 
         }
     }
