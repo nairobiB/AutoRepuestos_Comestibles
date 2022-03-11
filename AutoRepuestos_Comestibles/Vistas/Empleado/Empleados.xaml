@@ -299,7 +299,7 @@
                         Name="BtnModificar"                       
                         HorizontalAlignment="Right"
                         IsEnabled="False"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
                 <!--#endregion-->

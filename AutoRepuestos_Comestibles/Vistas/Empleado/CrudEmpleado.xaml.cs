@@ -24,6 +24,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     {
         ClCmb cmb = new ClCmb();
         ClInsercion obj = new ClInsercion();
+        private String operacion;
+
+        public String Operacion { get => operacion; set => operacion = value; }
         public CrudEmpleado()
         {
             InitializeComponent();
@@ -55,12 +58,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             {
                 puesto = 2;
             }
-            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC","ID_PUesto" ,"@ID_Estado" };
+            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC","ID_PUESTO" ,"@ID_ESTADO" };
             dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text,puesto, estado.ToString() };
             String st;
 
-            st = "Ins_Empleados";
-            obj.Insertar(st, parametros, controlnames);
+            if (operacion == "Insert")
+            {
+                st = "Ins_Empleados";
+                obj.Insertar(st, parametros, controlnames);
+            }
+            else
+            {
+                st = "Upd_Empleados";
+                obj.Insertar(st, parametros, controlnames);
+                Content = new Empleados();
+            }
 
 
         }

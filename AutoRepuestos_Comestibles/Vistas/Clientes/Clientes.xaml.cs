@@ -27,6 +27,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         CrudClientes ventana = new CrudClientes();
         ClSeleccion cli = new ClSeleccion();
         String valorID;
+        string Estado;
 
         public Clientes()
         {
@@ -68,7 +69,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             ventana.TxtFechNac.Text = cli.FechaNac;
             ventana.TxtNombre.Text = cli.Nombre;
 
-            if (cli.IDEstado != "1")
+            if (Estado == "False")
             {
                 ventana.rbtnInActivo.IsChecked = true;
             }
@@ -91,6 +92,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+            Estado = view.Row.ItemArray[5].ToString();
         }
     }
 }

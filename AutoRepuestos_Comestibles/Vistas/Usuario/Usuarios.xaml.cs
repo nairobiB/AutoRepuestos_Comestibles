@@ -23,7 +23,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     public partial class Usuarios : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
-        string valorID;
+
+        CrudUsuarios ventana = new CrudUsuarios();
+        ClSeleccionUsuario user = new ClSeleccionUsuario();
+        String valorID;
+        string Estado;
+        string Empleado;
         public Usuarios()
         {
             InitializeComponent();
@@ -38,13 +43,40 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
-            CrudUsuarios ventana = new CrudUsuarios();
             FrameEmpleado.Content = ventana;
+            ventana.Operacion = "Insert";
         }
 
         void Buscar(string texto)
         {
             obj.Busqueda("UsuariosVista", GridDatos, texto, "Usuario", "[Nombre del Empleado]", "Rol");
+
+        }
+
+        int indiceEmpleado;
+        void llenarcampos(string identidad)
+        {
+            user.seleccionar(identidad);
+
+            ventana.TxtIdentidad.Text = user.Id;
+            ventana.TxtNombre.Text = user.Nombre;
+            ventana.TxtPass.Password = user.Contra;
+            
+            
+            for(int i = 0; i < ventana.CmbInvisible.Items.Count; i++)
+            {
+                ventana.CmbInvisible.SelectedIndex = i;
+                if(ventana.CmbInvisible.SelectedItem == Empleado)
+                {
+                    indiceEmpleado = ventana.CmbEmpleado.SelectedIndex + 1; 
+                }
+            }
+            ventana.CmbEmpleado.SelectedIndex = indiceEmpleado;
+            if (Estado == "False")
+            {
+                ventana.rbtnInActivo.IsChecked = true;
+            }
+
 
         }
 
@@ -60,6 +92,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+            Estado = view.Row.ItemArray[4].ToString();
+            Empleado = view.Row.ItemArray[3].ToString();
+        }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            llenarcampos(valorID);
+            FrameEmpleado.Content = ventana;
+            ventana.Operacion = "Update";
         }
     }
 }

@@ -24,6 +24,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     {
         ClCmb cmb = new ClCmb();
         ClInsercion obj = new ClInsercion();
+        private String operacion;
+
+        public String Operacion { get => operacion; set => operacion = value; }
 
         public CrudUsuarios()
         {
@@ -39,7 +42,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             Content = new Usuarios();
 
         }
-        int estado;
+        int estado = 1;
 
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
@@ -57,8 +60,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
             String st;
 
-            st = "Ins_Usuarios";
-            obj.Insertar(st, parametros, controlnames);
+            if (operacion == "Insert")
+            {
+                st = "Ins_Usuarios";
+                obj.Insertar(st, parametros, controlnames);
+            }
+            else
+            {
+                st = "Upd_Usuarios";
+                obj.Insertar(st, parametros, controlnames);
+                Content = new Usuarios();
+            }
         }
     }
 }
