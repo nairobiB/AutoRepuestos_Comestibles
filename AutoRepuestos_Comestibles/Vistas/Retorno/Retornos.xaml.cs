@@ -1,6 +1,7 @@
 ﻿using AutoRepuestos_Comestibles.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,25 +24,61 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
         ClCmb cmb = new ClCmb();
+        ClInsercion objeto = new ClInsercion();
+        string idVehiculo;
+        string hora;
+
         public Retornos()
         {
             InitializeComponent();
             CargarDG();
-            cmb.fill_cmb(CmbRetorno, "Retorno_VehiculoVista", 2);
+            cmb.fill_cmb(CmbVehiculo, "RetornosVista", 2);
         }
         void CargarDG()
         {
-            obj.LlenarDG("Retorno_VehiculoVista", GridDatos);
+            obj.LlenarDG("RetornosVista", GridDatos);
         }
         void Buscar(string texto)
         {
-            obj.Busqueda("Retorno_VehiculoVista", GridDatos, texto, "Cliente", "Vehiculo", "[Tipo de Pago]");
+            obj.Busqueda("RetornosVista", GridDatos, texto, "Cliente", "Vehiculo", "[Placa de Vehiculo]");
 
         }
 
         private void Txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            TxtIdFactura.Clear();
+            CmbVehiculo.Items.Clear();
+            BtnAgregarRetorno.IsEnabled = false;
+            
             Buscar(Txtbuscar.Text);
+            
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            if (GridDatos.Items.Count > 0)
+            {
+                BtnAgregarRetorno.IsEnabled = true;
+                DataRowView view = (DataRowView)GridDatos.SelectedItem;
+
+                TxtIdFactura.Text = view.Row.ItemArray[0].ToString();
+                CmbVehiculo.Text = view.Row.ItemArray[2].ToString();
+                idVehiculo = view.Row.ItemArray[1].ToString();
+                DpFechRetorno.SelectedDate = DateTime.Now;
+                hora = DateTime.Now.ToString();
+            }
+        }
+
+        private void BtnAgregarRetorno_Click(object sender, RoutedEventArgs e)
+        {
+            dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo","@Mora","@Combustible","@Daños","@Fecha_Devolucion"};
+            dynamic[] controlnames = {TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, hora };
+            objeto.Insertar("Ins_Retorno", parametros, controlnames);
+            CargarDG();
+            TxtIdFactura.Clear();
+            CmbVehiculo.Items.Clear();
+            BtnAgregarRetorno.IsEnabled = false;
+            
         }
     }
 }

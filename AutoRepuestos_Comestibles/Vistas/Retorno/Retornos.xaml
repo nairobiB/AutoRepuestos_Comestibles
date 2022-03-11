@@ -104,8 +104,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent "/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -241,7 +241,7 @@
                 <RowDefinition Height="90"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -275,13 +275,13 @@
                        VerticalAlignment="Center"
                        FontSize="15"
                         Grid.Row="3"/>
-            <ComboBox Name="CmbRetorno"
+            <ComboBox Name="CmbVehiculo"
                       Grid.Column="2" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
                       HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>
             <TextBlock Grid.Column="3"
-                       Text="Fecha Retorno:"
+                       Text="Fecha Devolucion:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
@@ -303,7 +303,8 @@
                        />
             <TextBox Grid.Column="2"
                      Grid.Row="1"
-                     Name="TxtNomCliente"
+                     Name="TxtIdFactura"
+                     IsEnabled="False"
                      Style="{DynamicResource TextBoxStyle}" Margin="28,0,171,0"/>
             <TextBlock Grid.Column="3"
                        Grid.Row="4"
@@ -315,7 +316,7 @@
             <TextBox Grid.Column="5"
                      Grid.Row="4"
                      Margin="5"
-                     Name="TxtCobroAd"
+                     Name="TxtMora"
                      Style="{DynamicResource TextBoxStyle}"  />
             <TextBlock Grid.Column="3"
                        Grid.Row="3"
@@ -327,6 +328,7 @@
             <TextBox Grid.Column="5"
                      Grid.Row="3"
                      Name="TxtCombustible"
+                     Margin="5"
                      Style="{DynamicResource TextBoxStyle}"
                     
                      />
@@ -368,15 +370,17 @@
 
             <!--#region BTN AGREGAR Retorno-->
             <Button Grid.Column="3"
-                    Grid.Row="4"
+                    Grid.Row="3"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Grid.RowSpan="2"
+                    Grid.RowSpan="3"
                     Cursor="Hand"
                     Width="64"
                     Name="BtnAgregarRetorno"
+                    IsEnabled="False"
                     HorizontalAlignment="Left" 
-                    Style="{DynamicResource ButtonStyle}" >
+                    Style="{DynamicResource ButtonStyle}" Click="BtnAgregarRetorno_Click" Height="61" Margin="0,19.6,0,0" VerticalAlignment="Top" >
+
                 <Image Source="/Imagenes/addition.png" Height="40"/>
 
             </Button>
@@ -390,7 +394,7 @@
                       Grid.RowSpan="9"
                       Grid.ColumnSpan="5"
                       x:Name="GridDatos"
-                      AutoGenerateColumns="True"
+                      AutoGenerateColumns="False"
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
@@ -402,33 +406,33 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="ID"
-                                    Width="85"
-                                    Binding="{Binding [ID Factura]}"/>
-                    <DataGridTextColumn Header="Cliente"
                                     Width="100"
-                                    Binding="{Binding Cliente}"/>
+                                    Binding="{Binding [ID Factura]}"/>
+                    <DataGridTextColumn Header="Placa de Vehiculo"
+                                    Width="150"
+                                    Binding="{Binding [Placa de Vehiculo]}"/>
                     <DataGridTextColumn Header="Vehiculo"
                                     Width="145"
                                     Binding="{Binding Vehiculo}"/>
+                    <DataGridTextColumn Header="Cliente"
+                                    Width="100"
+                                    Binding="{Binding Cliente}"/>
                     <DataGridTextColumn Header="Tipo de Pago"
-                                    Width="145"
+                                    Width="110"
                                     Binding="{Binding [Tipo de Pago]}"/>
                     <DataGridTextColumn Header="Fecha Retorno"
-                                    Width="120"
+                                    Width="130"
                                     Binding="{Binding [Hora de Retorno]}"/>
-                    <DataGridTextColumn Header="Transaccion"
-                                    Width="140"
-                                    Binding="{Binding FK_ID_Transaccion}"/>
                     <DataGridTextColumn Header="Estado de Retorno"
-                                    Width="145"
-                                    Binding="{Binding ID_Estado_Retorno}"/>
+                                    Width="*"
+                                    Binding="{Binding [Estado de Retorno]}"/>
 
                 </DataGrid.Columns>
-            
+
             </DataGrid>
             <!--#endregion-->
 
