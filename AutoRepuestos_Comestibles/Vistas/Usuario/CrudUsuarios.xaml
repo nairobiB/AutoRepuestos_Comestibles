@@ -273,6 +273,7 @@
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
+                       Name="lblempleado"
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbEmpleado"
                       Grid.Column="3"

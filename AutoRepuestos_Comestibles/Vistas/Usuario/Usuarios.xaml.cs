@@ -56,22 +56,14 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         int indiceEmpleado;
         void llenarcampos(string identidad)
         {
+            
             user.seleccionar(identidad);
 
             ventana.TxtIdentidad.Text = user.Id;
             ventana.TxtNombre.Text = user.Nombre;
             ventana.TxtPass.Password = user.Contra;
-            
-            
-            for(int i = 0; i < ventana.CmbInvisible.Items.Count; i++)
-            {
-                ventana.CmbInvisible.SelectedIndex = i;
-                if(ventana.CmbInvisible.SelectedItem == Empleado)
-                {
-                    indiceEmpleado = ventana.CmbEmpleado.SelectedIndex + 1; 
-                }
-            }
-            ventana.CmbEmpleado.SelectedIndex = indiceEmpleado;
+            ventana.CmbInvisible.Text = Empleado;
+
             if (Estado == "False")
             {
                 ventana.rbtnInActivo.IsChecked = true;
@@ -94,13 +86,19 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             valorID = view.Row.ItemArray[0].ToString();
             Estado = view.Row.ItemArray[4].ToString();
             Empleado = view.Row.ItemArray[3].ToString();
+
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
             llenarcampos(valorID);
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Update";
+            ventana.CmbEmpleado.Visibility = Visibility.Hidden;
+            ventana.lblempleado.Visibility = Visibility.Hidden;
         }
     }
+
 }

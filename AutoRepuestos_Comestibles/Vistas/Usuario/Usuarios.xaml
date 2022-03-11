@@ -104,8 +104,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent "/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -295,7 +295,8 @@
                         Margin="0,0,15,0"
                         Cursor="Hand"
                         Width="64"
-                        Name="BtnModificar"                       
+                        Name="BtnModificar"  
+                        IsEnabled="False"
                 HorizontalAlignment="Right"
                         Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
@@ -310,7 +311,8 @@
                         Margin="40,0,0,0"
                         Cursor="Hand"
                         Width="64"
-                        Name="BtnEliminar"                       
+                        Name="BtnEliminar"  
+                        IsEnabled="False"
                 HorizontalAlignment="Left"
                         Style="{DynamicResource ButtonStyle}">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>

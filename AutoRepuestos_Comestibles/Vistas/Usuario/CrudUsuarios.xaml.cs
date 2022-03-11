@@ -31,9 +31,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         public CrudUsuarios()
         {
             InitializeComponent();
-            cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
-            cmb.fill_cmb(CmbInvisible, "Empleados", 0);
-
+            //cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
+            //cmb.fill_cmb(CmbInvisible, "Empleados", 0);
+            Llenar_cmb();
 
         }
 
@@ -56,21 +56,48 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
             string empleado = CmbInvisible.Text;
 
-            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
+            /*dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
             dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
-            String st;
+            String st;*/
 
             if (operacion == "Insert")
             {
+                dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
+                dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+                String st;
                 st = "Ins_Usuarios";
                 obj.Insertar(st, parametros, controlnames);
             }
             else
             {
+                dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@Estado" };
+                dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
+                String st;
                 st = "Upd_Usuarios";
                 obj.Insertar(st, parametros, controlnames);
                 Content = new Usuarios();
             }
+        }
+
+        public void Llenar_cmb() 
+        {
+            cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
+            cmb.fill_cmb(CmbInvisible, "Empleados", 0);
+        }
+
+        public void Rellenar_cmb(string empleado) 
+        {
+            for (int i = 0; i < CmbEmpleado.Items.Count; i++)
+            {
+                CmbInvisible.SelectedIndex = i;
+                if (CmbInvisible.SelectedItem == empleado) 
+                {
+                    CmbEmpleado.SelectedIndex = CmbInvisible.SelectedIndex;
+                
+                }
+
+            }
+
         }
     }
 }
