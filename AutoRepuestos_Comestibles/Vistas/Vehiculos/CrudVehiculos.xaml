@@ -221,7 +221,7 @@
                     Background="Transparent" 
                     Width="64"
                     
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
             
@@ -255,6 +255,8 @@
                       Grid.Row="6" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
+    
+            <!--#endregion-->
             <Button x:Name="BtnAddMarca"
                     Grid.Column="3"
                     Grid.Row="6"
@@ -263,7 +265,7 @@
                     Background="Transparent" 
                     Width="50"
                     Margin="0,0,160,0"
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnAddMarca_Click">
                 <Image Source="/Imagenes/dots.png"/>
             </Button>
 
@@ -279,6 +281,8 @@
                       Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
+           
+            <!--#endregion-->
             <Button x:Name="BtnAddModelo"
                     Grid.Column="3"
                     Grid.Row="8"
@@ -287,7 +291,7 @@
                     Background="Transparent" 
                     Width="50"
                     Margin="0,0,160,0"
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnAddModelo_Click">
                 <Image Source="/Imagenes/dots.png"/>
             </Button>
             <TextBlock Grid.Column="2"
@@ -302,6 +306,15 @@
                       Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
+            <!--#endregion-->
+            <!--#region  Color invisible-->
+            <ComboBox Name="CmbInvisibleColor"
+                      Visibility="Hidden"
+                      Grid.Column="4"
+                      Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
+            <!--#endregion-->
             <Button x:Name="BtnAddcolor"
                     Grid.Column="3"
                     Grid.Row="10"
@@ -310,7 +323,7 @@
                     Background="Transparent" 
                     Width="50"
                     Margin="0,0,160,0"
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnAddcolor_Click">
                 <Image Source="/Imagenes/dots.png"/>
             </Button>
 
@@ -357,11 +370,23 @@
                        VerticalAlignment="Center"
                        FontSize="20"
                        Margin ="0,0,20,0"/>
+
             <ComboBox Name="CmbEstado"
                       Grid.Column="3"
                       Grid.Row="15" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left"/>          
+                      HorizontalAlignment="Left"/>
+            
+            <!--#region  Estado Invisible-->            
+            <ComboBox Name="CmbInvisibleEstado"
+                      Visibility="Hidden"
+                      Grid.Column="4"
+                      Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
+            
+            <!--#endregion-->
+            
 
 
             <!--#endregion-->
