@@ -370,12 +370,12 @@
                     <DataGridTextColumn Header="Color"
                                        Width="120"
                                         Binding="{Binding Color}"/>
-                    <DataGridTextColumn Header="Precio de venta"
-                                       Width="180"
-                                        Binding="{Binding [Precio de Renta]}"/>
-                    <DataGridTextColumn Header="Precio de renta"
+                    <DataGridTextColumn Header="Precio de Venta"
                                        Width="180"
                                         Binding="{Binding [Precio de Venta]}"/>
+                    <DataGridTextColumn Header="Precio de Renta"
+                                       Width="180"
+                                        Binding="{Binding [Precio de Renta]}"/>
                     <DataGridTextColumn Header="Estado"
                                        Width="80"
                                         Binding="{Binding Estado}"/>
