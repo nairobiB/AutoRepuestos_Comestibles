@@ -297,7 +297,7 @@
                         Width="64"
                         Name="BtnModificar"                       
                 HorizontalAlignment="Right"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
             <!--#endregion-->
@@ -363,12 +363,13 @@
                     <DataGridTextColumn Header="Usuario"
                                     Width="150"
                                     Binding="{Binding Usuario}"/>
-                    <DataGridTextColumn Header="Nombre del empleado"
-                                    Width="250"
-                                    Binding="{Binding [Nombre del Empleado]}"/>
                     <DataGridTextColumn Header="Contraseña"
                                     Width="120"
                                     Binding="{Binding Contraseña}"/>
+                    <DataGridTextColumn Header="Nombre del empleado"
+                                    Width="250"
+                                    Binding="{Binding [Nombre del Empleado]}"/>
+                    
                     <DataGridTextColumn Header="Rol"
                                     Width="*"
                                     Binding="{Binding Rol}"/>

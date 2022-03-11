@@ -24,6 +24,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
     {
         ClInsercion obj = new ClInsercion();
         int estado = 1;
+        private String operacion;
+
+        public String Operacion { get => operacion; set => operacion = value; }
         public CrudProveedores()
         {
             InitializeComponent();
@@ -43,7 +46,18 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 
             dynamic[] parametros = { "@ID", "@RTN", "@Identidad", "@Nombre","@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
             dynamic[] controlnames = { TxtIdentidad.Text, TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
-            obj.Insertar("Ins_Proveedores", parametros, controlnames);
+            String st;
+            if (operacion == "Insert")
+            {
+                st = "Ins_Proveedores";
+                obj.Insertar(st, parametros, controlnames);
+            }
+            else
+            {
+                st = "Upd_Proveedores";
+                obj.Insertar(st, parametros, controlnames);
+                Content = new Proveedores();
+            }
         }
     }
 }
