@@ -39,7 +39,17 @@ namespace AutoRepuestos_Comestibles.Clases
             conexion.cerrar();
         }
 
-
+        public void vehiculoRenta(string vehiculo)
+        {
+            conexion.abrir();
+            SqlCommand com = new SqlCommand("select ID,(Marca+' '+Modelo+' ' +Color) as Vehiculo, [Precio de Renta] as renta from VehiculosVista where ID ='" + vehiculo + "' ", conexion.Sc);
+            SqlDataReader rdr = com.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            rdr.Read();
+            Id_vehiculo = rdr["ID"].ToString();
+            Preciorenta = Convert.ToDouble(rdr["renta"]);
+            Descripcion = rdr["Vehiculo"].ToString();
+            conexion.cerrar();
+        }
 
     }
 }

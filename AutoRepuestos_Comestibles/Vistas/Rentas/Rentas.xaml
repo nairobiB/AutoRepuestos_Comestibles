@@ -359,27 +359,29 @@
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="ID"
-                                    Width="85"
+                                    Width="70"
                                     Binding="{Binding [ID de Factura]}"/>
                     <DataGridTextColumn Header="Cliente"
-                                    Width="100"
+                                    Width="140"
                                     Binding="{Binding Cliente}"/>
                     <DataGridTextColumn Header="Empleado"
-                                    Width="150"
+                                    Width="140"
                                     Binding="{Binding Empleado}"/>
                     <DataGridTextColumn Header="Tipo de Pago"
-                                    Width="150"
+                                    Width="120"
                                     Binding="{Binding [Tipo de Pago]}"/>
                     <DataGridTextColumn Header="Fecha"
-                                    Width="100"
+                                    Width="200"
                                     Binding="{Binding Fecha}"/>
                     <DataGridTextColumn Header="Fecha de Entrega"
-                                    Width="145"
+                                    Width="200"
                                     Binding="{Binding [Hora de Entrega]}"/>
                     <DataGridTextColumn Header="Fecha de Retorno"
-                                    Width="145"
+                                    Width="200"
                                     Binding="{Binding [Hora de Retorno]}"/>
-
+                    <DataGridTextColumn Header="Costo"
+                                    Width="*"
+                                    Binding="{Binding Costo}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <!--#endregion-->

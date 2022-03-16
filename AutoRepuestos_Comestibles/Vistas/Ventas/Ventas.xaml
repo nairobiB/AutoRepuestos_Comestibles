@@ -370,9 +370,6 @@
                     <DataGridTextColumn Header="Empleado"
                                     Width="150"
                                     Binding="{Binding Empleado}"/>
-                    <DataGridTextColumn Header="Vehiculo"
-                                    Width="150"
-                                    Binding="{Binding Vehiculo}"/>
                     <DataGridTextColumn Header="Tipo de Pago"
                                     Width="150"
                                     Binding="{Binding [Tipo de Pago]}"/>
