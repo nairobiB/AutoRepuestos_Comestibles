@@ -41,8 +41,10 @@ namespace AutoRepuestos_Comestibles.Clases
         }
 
         private int _factura;
+        private int _Pedido;
 
         public int Factura { get => _factura; set => _factura = value; }
+        public int Pedido { get => _Pedido; set => _Pedido = value; }
 
         public void num_factura()
         {
@@ -55,5 +57,19 @@ namespace AutoRepuestos_Comestibles.Clases
             conexion.cerrar();
 
         }
+
+        public void num_pedido()
+        {
+
+            conexion.abrir();
+            SqlCommand com = new SqlCommand("select COUNT(ID_Pedido) as IdFac from Pedidos", conexion.Sc);
+            SqlDataReader rdr = com.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            rdr.Read();
+            Pedido = Convert.ToInt32(rdr["IdFac"]);
+
+            conexion.cerrar();
+
+        }
+
     }
 }

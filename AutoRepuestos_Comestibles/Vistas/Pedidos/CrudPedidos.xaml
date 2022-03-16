@@ -320,7 +320,7 @@
                     Background="Transparent" 
                     Width="64"
                     
-                    Style= "{DynamicResource ButtonStyle}">
+                    Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
             <!--#endregion-->
@@ -343,6 +343,12 @@
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
                       HorizontalAlignment="Left"/>
+            <ComboBox Name="CmbInvisible"
+                      Visibility="Hidden"
+                      Grid.Column="4"
+                      Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
+                      Width="300"
+                      HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
             <!--#endregion-->
 
             <!--#region Forma de pago-->
@@ -395,7 +401,7 @@
                                 Margin ="0,0,135,0"
                                 Content="Cash"
                                 IsChecked="True"/>
-                <RadioButton  x:Name="rbtnTarjera"
+                <RadioButton  x:Name="rbtnTarjeta"
                                 Grid.Column="2"
                                 Grid.Row="7"                      
                                 HorizontalAlignment="Right"
@@ -434,7 +440,7 @@
                         Name="DpFechPedido" 
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Width="100"/>
+                        Width="150" />
 
 
             <!--#endregion-->
@@ -520,7 +526,7 @@
                         Width="32"
                         Name="BtnAgregar"                       
                         HorizontalAlignment="Right"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnAgregar_Click">
                 <Image Source="/Imagenes/addition.png" Height="40"/>
             </Button>
             <!--#endregion-->
@@ -536,7 +542,7 @@
                         Width="32"
                         Name="BtnEliminar"                       
                         HorizontalAlignment="Left"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
             <!--#endregion-->
@@ -558,7 +564,24 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      Style="{DynamicResource DataGridStyle}">
+                      Style="{DynamicResource DataGridStyle}" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Placa de vehiculo"
+                                    Width="*"
+                                        Binding="{Binding vehiculo}"/>
+
+
+                    <DataGridTextColumn Header="Descripcion"
+                                    Width="*"
+                                        Binding="{Binding descripcion}"/>
+
+                    <DataGridTextColumn Header="Precio de vehiculo"
+                                    Width="*"
+                                      Binding="{Binding precio}" />
+
+
+                </DataGrid.Columns>
 
             </DataGrid>
             <!--#endregion-->
