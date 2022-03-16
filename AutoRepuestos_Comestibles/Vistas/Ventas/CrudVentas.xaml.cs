@@ -127,6 +127,14 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             {
                 pago = 1;
             }
+            else if(rbtnTarjeta.IsChecked == true)
+            {
+                pago = 2;
+            }
+            else
+            {
+                pago = 3;
+            }
 
                 
             
@@ -145,7 +153,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             int indice = CmbCliente.SelectedIndex;
             CmbInvisible.SelectedIndex = indice;
 
-            dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado", "@Tipo_Pago", "@FormaCompra" };
+            dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado", "@ID_TipoPago", "@FormaCompra" };
             dynamic[] controlnames = { numFac, CmbInvisible.Text, "123",pago, forma_compra};
             obj.Insertar("Ins_FacturasVentas", parametros, controlnames);
 

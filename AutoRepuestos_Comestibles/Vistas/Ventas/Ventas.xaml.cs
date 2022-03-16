@@ -23,6 +23,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
         string valorID;
+       
         public Ventas()
         {
             InitializeComponent();
@@ -49,7 +50,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
 
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
             Buscar(TxtBuscar.Text);
+         
         }
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
