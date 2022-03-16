@@ -37,8 +37,6 @@ namespace AutoRepuestos_Comestibles.Clases
 
         public void fill_cmbVehiculo(ComboBox cmb, int row)
         {
-
-
             try
             {
                 conexion.abrir();
