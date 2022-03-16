@@ -57,6 +57,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         {
             CrudProveedores ventana = new CrudProveedores();
             FrameProveedor.Content = ventana;
+            ventana.Operacion = "Insert";
         }
 
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
