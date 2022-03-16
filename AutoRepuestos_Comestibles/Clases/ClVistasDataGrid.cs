@@ -36,7 +36,6 @@ namespace AutoRepuestos_Comestibles.Clases
             da.Fill(dt);
             Tabla.ItemsSource = dt.DefaultView;
             conexion.cerrar();
-
         }
 
     }
