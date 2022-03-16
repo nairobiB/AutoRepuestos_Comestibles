@@ -564,6 +564,7 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
+                      IsReadOnly="True"
                       Style="{DynamicResource DataGridStyle}" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
                 <DataGrid.Columns>
 
