@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="Clases\ClCmb.cs" />
     <Compile Include="Clases\ClConexion.cs" />
+    <Compile Include="Clases\ClCrudVehiculo.cs" />
     <Compile Include="Clases\ClInsercion.cs" />
     <Compile Include="Clases\ClSeleccion.cs" />
     <Compile Include="Clases\ClSeleccionEmpleado.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Vistas\Ventas\CrudVentas.xaml.cs">
       <DependentUpon>CrudVentas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Ventas\DataItem.cs" />
     <Compile Include="Vistas\Ventas\Ventas.xaml.cs">
       <DependentUpon>Ventas.xaml</DependentUpon>
     </Compile>

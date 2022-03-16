@@ -34,5 +34,28 @@ namespace AutoRepuestos_Comestibles.Clases
                 System.Windows.MessageBox.Show(ex.Message);
             }
         }
+
+        public void fill_cmbVehiculo(ComboBox cmb, int row)
+        {
+
+
+            try
+            {
+                conexion.abrir();
+                string query = "select * from Vehiculos where FK_ID_Estado = 1";
+                SqlCommand command = new SqlCommand(query, conexion.Sc);
+                SqlDataReader dr = command.ExecuteReader();
+                while (dr.Read())
+                {
+                    string name = dr.GetString(row).ToString();
+                    cmb.Items.Add(name);
+                }
+                conexion.Sc.Close();
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
