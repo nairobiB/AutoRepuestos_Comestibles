@@ -12,7 +12,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
     public partial class Vehiculos : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        CrudVehiculos ventana = new CrudVehiculos();
         String valorID;
+        ClSeleccionVehiculo vehiculo = new ClSeleccionVehiculo();
         public Vehiculos()
         {
             InitializeComponent();
@@ -39,7 +41,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         {
             Buscar(TxtBuscar.Text);
         }
+        void llenarCampos(string idvehiculo)
+        {
+            vehiculo.seleccionar(idvehiculo);
 
+            ventana.TxtIdVehiculo.Text = vehiculo.Id_vehiculo;
+            ventana.TxtVenta.Text = vehiculo.PrecioVenta.ToString();
+            ventana.TxtRenta.Text = vehiculo.Preciorenta.ToString();
+
+            ventana.CmbColor.SelectedIndex = vehiculo.Color - 1;
+            ventana.CmbMarca.SelectedIndex = vehiculo.Marca - 1;
+            ventana.CmbModelo.SelectedIndex = vehiculo.Modelo - 1;
+            ventana.CmbEstado.SelectedIndex = vehiculo.Estado - 1;
+
+        }
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();
@@ -61,6 +76,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+
+            vehiculo.seleccionar(valorID);
+        }
+
+        private void Image_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+
+        }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
+            llenarCampos(valorID);
+            FrameEmpleado.Content = ventana;
+            ventana.Operacion = "Update";
         }
     }
 }
