@@ -41,5 +41,10 @@ namespace AutoRepuestos_Comestibles.Clases
 
         }
 
+        public void eliminar(string idCliente)
+        {
+
+        }
+
     }
 }

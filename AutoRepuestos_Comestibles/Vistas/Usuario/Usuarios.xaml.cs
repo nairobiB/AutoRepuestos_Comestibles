@@ -36,7 +36,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         }
         void CargarDG()
         {
-            obj.LlenarDG("UsuariosVista", GridDatos);
+            obj.LlenarDG("UsuariosVista where Estado = 1", GridDatos);
 
         }
 
@@ -59,7 +59,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             
             user.seleccionar(identidad);
 
-            ventana.TxtIdentidad.Text = user.Id;
+            
             ventana.TxtNombre.Text = user.Nombre;
             ventana.TxtPass.Password = user.Contra;
             ventana.CmbInvisible.Text = Empleado;
@@ -98,6 +98,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             ventana.Operacion = "Update";
             ventana.CmbEmpleado.Visibility = Visibility.Hidden;
             ventana.lblempleado.Visibility = Visibility.Hidden;
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Usuarios", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
         }
     }
 

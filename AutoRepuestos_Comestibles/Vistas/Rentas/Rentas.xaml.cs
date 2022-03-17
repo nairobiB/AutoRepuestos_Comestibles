@@ -18,7 +18,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
         }
         void CargarDG()
         {
-            obj.LlenarDG("RentasVista", GridDatos);
+            obj.LlenarDG("RentasVista where Estado = 1", GridDatos);
 
         }
 
@@ -45,6 +45,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Facturas", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
         }
     }
 }

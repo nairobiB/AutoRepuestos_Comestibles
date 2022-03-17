@@ -91,5 +91,19 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Update";
         }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Empleados", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
+        }
     }
 }

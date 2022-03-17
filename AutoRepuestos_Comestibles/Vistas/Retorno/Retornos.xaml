@@ -317,6 +317,7 @@
                      Grid.Row="4"
                      Margin="5"
                      Name="TxtMora"
+                     Text="0"
                      Style="{DynamicResource TextBoxStyle}"  />
             <TextBlock Grid.Column="3"
                        Grid.Row="3"
@@ -329,6 +330,7 @@
                      Grid.Row="3"
                      Name="TxtCombustible"
                      Margin="5"
+                     Text="0"
                      Style="{DynamicResource TextBoxStyle}"
                     
                      />
@@ -343,6 +345,7 @@
                      Grid.Row="5"
                      Name="TxtDanos"
                      Margin="5"
+                     Text="0"
                      Style="{DynamicResource TextBoxStyle}"  />
             <!--#endregion-->
 

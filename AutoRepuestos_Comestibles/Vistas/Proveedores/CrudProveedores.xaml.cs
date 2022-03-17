@@ -45,8 +45,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
             }
 
 
-            dynamic[] parametros = { "@ID", "@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
-            dynamic[] controlnames = { TxtIdproveedor.Text, TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
+            dynamic[] parametros = { "@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
+            dynamic[] controlnames = { TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
             String st;
             if (operacion == "Insert")
             {

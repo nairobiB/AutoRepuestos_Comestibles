@@ -1,18 +1,8 @@
 ﻿using AutoRepuestos_Comestibles.Clases;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 {
@@ -22,6 +12,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
     public partial class Vehiculos : UserControl
     {
         ClVistasDataGrid obj = new ClVistasDataGrid();
+        String valorID;
         public Vehiculos()
         {
             InitializeComponent();
@@ -29,7 +20,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         }
         void CargarDG()
         {
-            obj.LlenarDG("VehiculosVista", GridDatos);
+            obj.LlenarDG("VehiculosVista where Estado != 'Deshabilitado'", GridDatos);
 
         }
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
@@ -47,6 +38,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Vehiculos", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
+        }
+
+        private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            BtnModificar.IsEnabled = true;
+            BtnEliminar.IsEnabled = true;
+
+            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+            valorID = view.Row.ItemArray[0].ToString();
         }
     }
 }
