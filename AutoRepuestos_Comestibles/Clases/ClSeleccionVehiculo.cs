@@ -18,6 +18,7 @@ namespace AutoRepuestos_Comestibles.Clases
         private double _precioVenta;
         private double _preciorenta;
         private string _Descripcion;
+        private int _estado;
 
         public string Id_vehiculo { get => _id_vehiculo; set => _id_vehiculo = value; }
         public int Marca { get => _marca; set => _marca = value; }
@@ -26,6 +27,7 @@ namespace AutoRepuestos_Comestibles.Clases
         public double PrecioVenta { get => _precioVenta; set => _precioVenta = value; }
         public double Preciorenta { get => _preciorenta; set => _preciorenta = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
+        public int Estado { get => _estado; set => _estado = value; }
 
         public void vehiculoVenta(string vehiculo)
         {
@@ -51,5 +53,21 @@ namespace AutoRepuestos_Comestibles.Clases
             conexion.cerrar();
         }
 
+        public void seleccionar(string vehiculo)
+        {
+            conexion.abrir();
+            SqlCommand com = new SqlCommand("select * from Vehiculos where ID_Vehiculo ='" + vehiculo + "' ", conexion.Sc);
+            SqlDataReader rdr = com.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            rdr.Read();
+            Id_vehiculo = rdr["ID_Vehiculo"].ToString();
+            Marca = Convert.ToInt32(rdr["FK_ID_Marca"]);
+            Color = Convert.ToInt32(rdr["FK_ID_Color"]);
+            Modelo = Convert.ToInt32(rdr["FK_ID_Modelo"]);
+            PrecioVenta = Convert.ToDouble(rdr["Vehiculo_PrecioVenta"]);
+            Preciorenta = Convert.ToDouble(rdr["Vehiculo_PrecioRenta"]);
+            Estado = Convert.ToInt32(rdr["FK_ID_Estado"]);
+            conexion.cerrar();
+            
+        }
     }
 }

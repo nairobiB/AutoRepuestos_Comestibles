@@ -85,19 +85,5 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             cmb.fill_cmb(CmbInvisible, "Empleados", 0);
         }
 
-        public void Rellenar_cmb(string empleado) 
-        {
-            for (int i = 0; i < CmbEmpleado.Items.Count; i++)
-            {
-                CmbInvisible.SelectedIndex = i;
-                if (CmbInvisible.SelectedItem == empleado) 
-                {
-                    CmbEmpleado.SelectedIndex = CmbInvisible.SelectedIndex;
-                
-                }
-
-            }
-
-        }
     }
 }

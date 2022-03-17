@@ -22,21 +22,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
     {
         ClInsercion obj = new ClInsercion();
         ClCmb cmb = new ClCmb();
+        private String operacion;
+        private int color;
+        private int modelo;
+        private int marca;
+        private int estado;
+
+        public string Operacion { get => operacion; set => operacion = value; }
+        public int Color { get => color; set => color = value; }
+        public int Modelo { get => modelo; set => modelo = value; }
+        public int Marca { get => marca; set => marca = value; }
+        public int Estado { get => estado; set => estado = value; }
+
         public CrudVehiculos()
         {
             InitializeComponent();
             cmb.fill_cmb(CmbColor, "Colores", 1);
-            //cmb.fill_cmb(CmbInvisibleColor, "Colores", 0);
 
             cmb.fill_cmb(CmbMarca, "Marcas", 1);
-            //cmb.fill_cmb(CmbInvisibleMarca, "Marcas", 0);
 
             cmb.fill_cmb(CmbModelo, "Modelos", 1);
-          //  cmb.fill_cmb(CmbInvisibleModelo, "Modelos", 0);
 
             cmb.fill_cmb(CmbEstado, "Estado_Vehiculo", 1);
-          //  cmb.fill_cmb(CmbEstado, "Estado_Vehiculo", 0);
-
+            
         }
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
@@ -56,15 +64,24 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
 
             int indiceEstado = CmbEstado.SelectedIndex + 1;
-           
 
-            dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
-            dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
             String st;
 
-            st = "Ins_Vehiculos";
-            obj.Insertar(st, parametros, controlnames);
+            if (operacion == "Insert")
+            {
+                dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                st = "Ins_Vehiculos";
+                obj.Insertar(st, parametros, controlnames);
 
+            }
+            else
+            {
+                dynamic[] parametros = { "@ID", "@ID_Marca", "@ID_Color", "@ID_Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                st = "Upd_Vehiculos";
+                obj.Insertar(st, parametros, controlnames);
+            }
 
         }
 
