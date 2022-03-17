@@ -300,8 +300,8 @@
                         Name="BtnModificar"                       
                 HorizontalAlignment="Right"
                         IsEnabled="False"
-                        Style="{DynamicResource ButtonStyle}">
-                    <Image Source="/Imagenes/editing.png" Height="40"/>
+                        Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
+                    <Image Source="/Imagenes/editing.png" Height="40" ContextMenuClosing="Image_ContextMenuClosing"/>
                 </Button>
                 <!--#endregion-->
 
