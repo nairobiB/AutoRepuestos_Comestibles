@@ -314,7 +314,7 @@
                         Width="64"
                         Name="BtnEliminar"                       
                         HorizontalAlignment="Left"
-                        Style="{DynamicResource ButtonStyle}">
+                        Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
             <!--#endregion-->
@@ -348,6 +348,7 @@
                       Background="GhostWhite"
                       Foreground="Black"
                       FontSize="15"
+                      IsReadOnly="True"
                       CanUserAddRows="False"
                       CanUserResizeColumns="False"
                       CanUserSortColumns="False"

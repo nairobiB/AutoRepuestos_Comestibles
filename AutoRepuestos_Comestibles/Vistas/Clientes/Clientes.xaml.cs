@@ -94,5 +94,19 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             valorID = view.Row.ItemArray[0].ToString();
             Estado = view.Row.ItemArray[5].ToString();
         }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = {"@ID"};
+            dynamic[] controlnames = {valorID};
+
+            obj.Insertar("Del_Clientes", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
+        }
     }
 }

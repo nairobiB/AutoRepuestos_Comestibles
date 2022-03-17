@@ -18,7 +18,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
         }
         void CargarDG()
         {
-            obj.LlenarDG("PedidosVista", GridDatos);
+            obj.LlenarDG("PedidosVista where Estado = 1", GridDatos);
 
         }
         private void BtnAgregarPedido_Click(object sender, RoutedEventArgs e)
@@ -44,6 +44,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Pedidos", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
         }
     }
 }

@@ -74,7 +74,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo","@Mora","@Combustible","@Daños","@Fecha_Devolucion"};
             dynamic[] controlnames = {TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, hora };
             objeto.Insertar("Ins_Retorno", parametros, controlnames);
-            CargarDG();
+            //CargarDG();
             TxtIdFactura.Clear();
             CmbVehiculo.Items.Clear();
             BtnAgregarRetorno.IsEnabled = false;

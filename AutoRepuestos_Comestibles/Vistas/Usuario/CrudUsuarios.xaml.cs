@@ -63,7 +63,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             if (operacion == "Insert")
             {
                 dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
-                dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+                dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
                 String st;
                 st = "Ins_Usuarios";
                 obj.Insertar(st, parametros, controlnames);
@@ -71,7 +71,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             else
             {
                 dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@Estado" };
-                dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
+                dynamic[] controlnames = {  TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
                 String st;
                 st = "Upd_Usuarios";
                 obj.Insertar(st, parametros, controlnames);

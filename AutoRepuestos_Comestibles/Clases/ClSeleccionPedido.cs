@@ -8,5 +8,6 @@ namespace AutoRepuestos_Comestibles.Clases
 {
     class ClSeleccionPedido
     {
+
     }
 }

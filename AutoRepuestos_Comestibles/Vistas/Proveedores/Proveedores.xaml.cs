@@ -24,7 +24,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         }
         void CargarDG()
         {
-            obj.LlenarDG("ProveedoresVista", GridDatos);
+            obj.LlenarDG("ProveedoresVista where Estado = 1", GridDatos);
 
         }
 
@@ -37,7 +37,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         {
             prov.seleccionar(identidad);
 
-            ventana.TxtIdproveedor.Text = prov.Id;
+            
             ventana.TxtRTN.Text = prov.Rtn;
             ventana.TxtIdentidad.Text = prov.Identidad;
             ventana.TxtNombre.Text = prov.Nombre;
@@ -80,6 +80,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
             llenarcampos(valorID);
             FrameProveedor.Content = ventana;
             ventana.Operacion = "Update";
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            ClInsercion obj = new ClInsercion();
+            dynamic[] parametros = { "@ID" };
+            dynamic[] controlnames = { valorID };
+
+            obj.Insertar("Del_Proveedores", parametros, controlnames);
+            valorID = "";
+
+            //CargarDG();
+            BtnModificar.IsEnabled = false;
+            BtnEliminar.IsEnabled = false;
         }
     }
 }

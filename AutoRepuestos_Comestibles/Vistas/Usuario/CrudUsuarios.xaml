@@ -175,7 +175,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="30"/>
+                
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
 
@@ -228,47 +228,35 @@
             <!--#endregion-->
 
             <!--#region CONTENIDO-->
-            <TextBlock Grid.Column="2"
-                       Grid.Row="4"
-                       Text="ID Usuario:"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
-                       FontSize="20"
-                       Margin ="0,0,20,0"/>
-            <TextBox Grid.Column="3"
-                         Grid.Row="4"
-                         Name="TxtIdentidad"
-                        Style="{DynamicResource TextBoxStyle}"
-                     Width="200"/>
 
             <TextBlock Grid.Column="2"
-                       Grid.Row="6"
+                       Grid.Row="4"
                        Text="Nombre Usuario:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
-                         Grid.Row="6"
+                         Grid.Row="4"
                          Name="TxtNombre"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="390" Grid.ColumnSpan="2" Margin="0,0,0,12" Grid.RowSpan="2"/>
+                     Width="390" Grid.ColumnSpan="2" Margin="0" />
 
             <TextBlock Grid.Column="2"
-                       Grid.Row="8"
+                       Grid.Row="6"
                        Text="Contraseña:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <PasswordBox Grid.Column="3"
-                         Grid.Row="8"
+                         Grid.Row="6"
                          Name="TxtPass"
                       Background="White"
                          HorizontalAlignment="Left"
                      Width="300" CaretBrush="White" SelectionBrush="White"/>
             <TextBlock Grid.Column="2"
-                       Grid.Row="10"
+                       Grid.Row="8"
                        Text="Empleado:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
@@ -277,7 +265,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbEmpleado"
                       Grid.Column="3"
-                      Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
+                      Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
             <ComboBox Name="CmbInvisible"
@@ -287,7 +275,7 @@
                       Width="300"
                       HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
             <TextBlock Grid.Column="2"
-                       Grid.Row="14"
+                       Grid.Row="13"
                        Text="Estado:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
@@ -296,7 +284,7 @@
             <RadioButton  
                 x:Name="rbtnActivo"
                         Grid.Column="3"
-                       Grid.Row="13"                      
+                       Grid.Row="12"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
@@ -306,7 +294,7 @@
             <RadioButton  
                 x:Name="rbtnInActivo"
                         Grid.Column="3"
-                       Grid.Row="16"                      
+                       Grid.Row="14"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
                        FontSize="20"
