@@ -32,7 +32,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             InitializeComponent();
             cmb.fill_cmb(CmbCliente, "Clientes", 1);
             cmb.fill_cmb(CmbInvisible, "Clientes", 0);
-            cmb.fill_cmb(CmbVehiculo, "Vehiculos", 0);
+            cmb.fill_cmbVehiculo(CmbVehiculo, 0);
             DpFechFac.SelectedDate = DateTime.Now;
             TxtTotal.Text = "0";
         }

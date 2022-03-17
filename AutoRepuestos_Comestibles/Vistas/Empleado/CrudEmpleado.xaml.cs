@@ -34,7 +34,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         }
 
-        int estado;
+        int estado = 1;
 
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {

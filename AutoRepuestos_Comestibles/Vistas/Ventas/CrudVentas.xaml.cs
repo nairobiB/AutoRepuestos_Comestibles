@@ -112,7 +112,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
         void insertarDetalles( string vehiculo, double precio)
         {
             dynamic[] parametros1 = { "@ID_Factura", "@ID_Vehiculo", "@Precio_Historico", "@Operacion"};
-            dynamic[] controlnames1 = {numFac,vehiculo, precio, 1};
+            dynamic[] controlnames1 = {numFac, vehiculo, precio, 4};
             obj.Insertar("Ins_DetallesVentas", parametros1, controlnames1);
         }
 
