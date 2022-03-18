@@ -49,7 +49,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
             obj.Insertar("Del_Vehiculos", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
+            CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
         }
@@ -61,6 +61,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
+            //view.Row.Delete();
         }
     }
 }

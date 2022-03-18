@@ -175,7 +175,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
-                
+
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
 
@@ -267,7 +267,7 @@
                       Grid.Column="3"
                       Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
+                      HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top"/>
             <ComboBox Name="CmbInvisible"
                       Visibility="Hidden"
                       Grid.Column="4"
