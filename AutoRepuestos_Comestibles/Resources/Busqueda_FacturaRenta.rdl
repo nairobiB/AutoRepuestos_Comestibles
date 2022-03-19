@@ -7,7 +7,6 @@
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString>Data Source=34.70.153.7;Initial Catalog=BoddenRentals</ConnectString>
-        <Prompt>Specify a user name and password for data source BoddenRentals:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
       <rd:DataSourceID>f5ca1b6e-de2b-49d4-b551-b3683792825b</rd:DataSourceID>
@@ -842,8 +841,8 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>1.87375in</Top>
             <Left>0.28694in</Left>
-            <Height>0.65625in</Height>
-            <Width>7.41885in</Width>
+            <Height>0.65624in</Height>
+            <Width>7.41884in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
