@@ -60,5 +60,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
         }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            ReporteRentas repRen = new ReporteRentas();
+            repRen.Factura = valorID;
+            repRen.Show();
+        }
     }
 }

@@ -6,7 +6,7 @@
     <DataSource Name="BoddenRentals">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=34.70.153.7;Initial Catalog=BoddenRentals</ConnectString>
+        <ConnectString>Data Source=34.70.153.7;Initial Catalog=BoddenRentals; User id = sqlserver; Password = vE8wcHIvMBxec47v;</ConnectString>
         <Prompt>Specify a user name and password for data source BoddenRentals:</Prompt>
       </ConnectionProperties>
       <rd:SecurityType>DataBase</rd:SecurityType>
@@ -29,7 +29,6 @@
             <Functions>
               <SProc ColumnOwner="Busqueda_FacturaRenta">
                 <Parameter Name="@ID">
-                  <Null />
                 </Parameter>
               </SProc>
             </Functions>

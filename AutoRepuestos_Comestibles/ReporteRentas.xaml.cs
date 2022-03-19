@@ -25,10 +25,29 @@ namespace AutoRepuestos_Comestibles
             this.Loaded += new RoutedEventHandler(ReporteRentas_Loaded);
         }
 
+        private string _factura;
+
+        public string Factura { get => _factura; set => _factura = value; }
+
         private void ReporteRentas_Loaded(object sender, RoutedEventArgs e)
         {
+
+
+            /*this.ReportViewer.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Resources\Busqueda_FacturaRenta.rdl");
+            this.ReportViewer.RefreshReport();   */
+            this.ReportViewer.ReportLoaded += (sen, arg) =>
+            {
+                List<BoldReports.Windows.ReportParameter> parameters = new List<BoldReports.Windows.ReportParameter>();
+                BoldReports.Windows.ReportParameter parameter = new BoldReports.Windows.ReportParameter();
+               parameter.Name = "ID";
+                parameter.Values = new List<string>() { Factura};
+                parameters.Add(parameter);
+                this.ReportViewer.SetParameters(parameters);
+            };
+
             this.ReportViewer.ReportPath = System.IO.Path.Combine(Environment.CurrentDirectory, @"Resources\Busqueda_FacturaRenta.rdl");
-            this.ReportViewer.RefreshReport();           
+            this.ReportViewer.RefreshReport();
+
         }
     }
 }
