@@ -77,5 +77,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
         }
+
+        private void BtnModificar_Click(object sender, RoutedEventArgs e)
+        {
+            ReporteVentas repVen = new ReporteVentas();
+            repVen.Factura = valorID;
+            repVen.Show();
+        }
     }
 }
