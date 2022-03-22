@@ -132,8 +132,14 @@
     <Compile Include="Clases\ClSeleccionVehiculo.cs" />
     <Compile Include="Clases\ClSeleccionVenta.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
+    <Compile Include="ReportePedidos.xaml.cs">
+      <DependentUpon>ReportePedidos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReporteRentas.xaml.cs">
       <DependentUpon>ReporteRentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVentas.xaml.cs">
+      <DependentUpon>ReporteVentas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Clientes\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
@@ -214,7 +220,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ReportePedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReporteRentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReporteVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -317,6 +331,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Resources\Busqueda_FacturaRenta.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Busqueda_FacturaVenta.rdl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\ReportePedidos.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

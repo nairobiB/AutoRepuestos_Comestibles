@@ -23,7 +23,7 @@
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
-        <CommandText>Busqueda_FacturaRenta</CommandText>
+        <CommandText>Busqueda_FacturaVenta</CommandText>
       </Query>
       <Fields>
         <Field Name="ID_de_Factura">
@@ -38,40 +38,28 @@
           <DataField>Empleado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Tipo_de_Pago">
-          <DataField>Tipo de Pago</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Fecha">
-          <DataField>Fecha</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Hora_de_Entrega">
-          <DataField>Hora de Entrega</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="Hora_de_Retorno">
-          <DataField>Hora de Retorno</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
         <Field Name="Vehiculo">
           <DataField>Vehiculo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Pago_de_mora">
-          <DataField>Pago de mora</DataField>
+        <Field Name="Color_Descripcion">
+          <DataField>Color_Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Vehiculo_PrecioVenta">
+          <DataField>Vehiculo_PrecioVenta</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="Pago_de_combustible">
-          <DataField>Pago de combustible</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="Tipo_de_Pago">
+          <DataField>Tipo de Pago</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Pago_de_danos">
-          <DataField>Pago de danos</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="Forma_de_Compra">
+          <DataField>Forma de Compra</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Fecha_de_devolucion">
-          <DataField>Fecha de devolucion</DataField>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="Subtotal">
@@ -143,8 +131,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>1.94972in</Top>
-            <Left>0.37376in</Left>
+            <Top>1.41847in</Top>
+            <Left>4.37955in</Left>
             <Height>0.25in</Height>
             <Width>1.1431in</Width>
             <ZIndex>1</ZIndex>
@@ -162,25 +150,74 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.51849in</Width>
+                  <Width>2.2283in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.51849in</Width>
+                  <Width>2.23888in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.51849in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.23377in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.6296in</Width>
+                  <Width>1.60425in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.32812in</Height>
+                  <Height>0.3585in</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Vehículos</Value>
+                                  <Style>
+                                    <FontFamily>Century Gothic</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </TopBorder>
+                            <BottomBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <LeftBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </LeftBorder>
+                            <RightBorder>
+                              <Color>Black</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </RightBorder>
+                            <BackgroundColor>LightBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox30">
@@ -190,7 +227,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Vehiculos</Value>
+                                  <Value>Color</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -238,14 +275,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox32">
+                        <Textbox Name="Textbox3">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pago Mora</Value>
+                                  <Value>Precio</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -257,172 +294,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox32</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <BackgroundColor>LightBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox34">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Pago Combustible</Value>
-                                  <Style>
-                                    <FontFamily>Century Gothic</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox34</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <BackgroundColor>LightBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox36">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Pago Daños</Value>
-                                  <Style>
-                                    <FontFamily>Century Gothic</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox36</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <BackgroundColor>LightBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox38">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Fecha Devolucion</Value>
-                                  <Style>
-                                    <FontFamily>Century Gothic</FontFamily>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -459,11 +331,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.32812in</Height>
+                  <Height>0.3585in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Vehiculo">
+                        <Textbox Name="Vehiculo1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -481,7 +353,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Vehiculo</rd:DefaultName>
+                          <rd:DefaultName>Vehiculo1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -516,14 +388,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Pago_de_mora">
+                        <Textbox Name="Color_Descripcion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Pago_de_mora.Value</Value>
+                                  <Value>=Fields!Color_Descripcion.Value</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                   </Style>
@@ -534,7 +406,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Pago_de_mora</rd:DefaultName>
+                          <rd:DefaultName>Color_Descripcion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -569,14 +441,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Pago_de_combustible">
+                        <Textbox Name="Vehiculo_PrecioVenta">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Pago_de_combustible.Value</Value>
+                                  <Value>=Fields!Vehiculo_PrecioVenta.Value</Value>
                                   <Style>
                                     <FontFamily>Century Gothic</FontFamily>
                                   </Style>
@@ -587,113 +459,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Pago_de_combustible</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Pago_de_danos">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Pago_de_danos.Value</Value>
-                                  <Style>
-                                    <FontFamily>Century Gothic</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Pago_de_danos</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>Solid</Style>
-                            </Border>
-                            <TopBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </TopBorder>
-                            <BottomBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </BottomBorder>
-                            <LeftBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </LeftBorder>
-                            <RightBorder>
-                              <Color>Black</Color>
-                              <Style>Solid</Style>
-                              <Width>1pt</Width>
-                            </RightBorder>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Fecha_de_devolucion">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Fecha_de_devolucion.Value</Value>
-                                  <Style>
-                                    <FontFamily>Century Gothic</FontFamily>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Fecha_de_devolucion</rd:DefaultName>
+                          <rd:DefaultName>Vehiculo_PrecioVenta</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>Solid</Style>
@@ -735,8 +501,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -750,10 +514,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.46014in</Top>
-            <Left>0.28695in</Left>
-            <Height>0.65624in</Height>
-            <Width>7.41884in</Width>
+            <Top>2.06083in</Top>
+            <Left>1.26348in</Left>
+            <Height>0.717in</Height>
+            <Width>6.07143in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -768,7 +532,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Fecha entrega:</Value>
+                    <Value>Forma de compra:</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -779,44 +543,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>1.41847in</Top>
+            <Top>0.91083in</Top>
             <Left>4.37955in</Left>
             <Height>0.25in</Height>
-            <Width>1.22518in</Width>
+            <Width>1.46287in</Width>
             <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox28">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Fecha retorno:</Value>
-                    <Style>
-                      <FontFamily>Century Gothic</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>1.84097in</Top>
-            <Left>4.37955in</Left>
-            <Height>0.25in</Height>
-            <Width>1.22518in</Width>
-            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -845,11 +576,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>5.41543in</Left>
             <Height>0.25in</Height>
             <Width>1.05208in</Width>
-            <ZIndex>5</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -867,7 +598,7 @@
             <Left>2.5925in</Left>
             <Height>0.70486in</Height>
             <Width>3.44222in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -896,7 +627,7 @@
             <Left>0.37376in</Left>
             <Height>0.25in</Height>
             <Width>1.43169in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -914,8 +645,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>IDFactura</Label>
-                    <Value>=First(Fields!ID_de_Factura.Value, "DataSet1")</Value>
+                    <Value>=Fields!ID_de_Factura.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -930,8 +660,8 @@
             <Top>0.91083in</Top>
             <Left>1.72686in</Left>
             <Height>0.25in</Height>
-            <Width>1.09375in</Width>
-            <ZIndex>8</ZIndex>
+            <Width>1.41493in</Width>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -949,8 +679,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>Cliente</Label>
-                    <Value>=First(Fields!Cliente.Value, "DataSet1")</Value>
+                    <Value>=Fields!Cliente.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -966,7 +695,7 @@
             <Left>1.965in</Left>
             <Height>0.25in</Height>
             <Width>2.23698in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -984,8 +713,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>TipoPago</Label>
-                    <Value>=First(Fields!Tipo_de_Pago.Value, "DataSet1")</Value>
+                    <Value>=Fields!Tipo_de_Pago.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -997,11 +725,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Tipo_de_Pago</rd:DefaultName>
-            <Top>1.94972in</Top>
-            <Left>1.53075in</Left>
+            <Top>1.41847in</Top>
+            <Left>5.53654in</Left>
             <Height>0.25in</Height>
-            <Width>1in</Width>
-            <ZIndex>10</ZIndex>
+            <Width>2.10243in</Width>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1019,8 +747,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>Total</Label>
-                    <Value>=Sum(Fields!Total.Value, "DataSet1")</Value>
+                    <Value>=Fields!Total.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -1032,11 +759,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Total</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>6.33491in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1054,7 +781,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Hora_de_Entrega.Value, "DataSet1")</Value>
+                    <Value>=Fields!Forma_de_Compra.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -1066,45 +793,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Hora_de_Entrega</rd:DefaultName>
-            <Top>1.41847in</Top>
-            <Left>5.62451in</Left>
+            <Top>0.91083in</Top>
+            <Left>5.85631in</Left>
             <Height>0.25in</Height>
             <Width>2.08128in</Width>
-            <ZIndex>12</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Hora_de_Retorno">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!Hora_de_Retorno.Value, "DataSet1")</Value>
-                    <Style>
-                      <FontFamily>Century Gothic</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Hora_de_Retorno</rd:DefaultName>
-            <Top>1.84097in</Top>
-            <Left>5.61791in</Left>
-            <Height>0.25in</Height>
-            <Width>2.08128in</Width>
-            <ZIndex>13</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1133,11 +826,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>0.52306in</Left>
             <Height>0.25in</Height>
             <Width>0.9236in</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1155,7 +848,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!Subtotal.Value, "DataSet1")</Value>
+                    <Value>=Fields!Subtotal.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -1167,11 +860,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Subtotal</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>1.45326in</Left>
             <Height>0.25in</Height>
             <Width>1.2736in</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1200,11 +893,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox23</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>3.14309in</Left>
             <Height>0.25in</Height>
             <Width>0.65275in</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1222,7 +915,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Sum(Fields!ISV.Value, "DataSet1")</Value>
+                    <Value>=Fields!ISV.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -1234,11 +927,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ISV</rd:DefaultName>
-            <Top>3.43514in</Top>
+            <Top>3.21813in</Top>
             <Left>3.79584in</Left>
             <Height>0.25in</Height>
             <Width>1.2769in</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1257,7 +950,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>8.19792in</Width>
+      <Width>8.70579in</Width>
       <Page>
         <PageFooter>
           <Height>0.575in</Height>
@@ -1348,8 +1041,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Label>Empleado</Label>
-                      <Value>=First(Fields!Empleado.Value, "DataSet1")</Value>
+                      <Value>=Fields!Empleado.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                       </Style>
@@ -1383,8 +1075,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Label>Fecha</Label>
-                      <Value>=First(Fields!Fecha.Value, "DataSet1")</Value>
+                      <Value>=Fields!Fecha.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                       </Style>
