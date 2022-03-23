@@ -22,6 +22,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
     /// </summary>
     public partial class CrudVentas : Page
     {
+        ClValidaciones val = new ClValidaciones();
         ClCmb cmb = new ClCmb();
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
         ClInsercion obj = new ClInsercion();
@@ -39,6 +40,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             cmb.fill_cmbVehiculo(CmbVehiculo, 0);
             DpFechFac.SelectedDate = DateTime.Now;
             TxtTotal.Text = "0";
+            
            
         }
 
@@ -118,52 +120,62 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
 
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            int pago=1;
-            obj.num_factura();
-            numFac = obj.Factura + 1;
+            if (GridDatos.Items.Count > 0)
+            {
+                #region Contenido
+                int pago = 1;
+                obj.num_factura();
+                numFac = obj.Factura + 1;
 
 
-            if (rbtnCash.IsChecked == true)
-            {
-                pago = 1;
-            }
-            else if(rbtnTarjeta.IsChecked == true)
-            {
-                pago = 2;
+                if (rbtnCash.IsChecked == true)
+                {
+                    pago = 1;
+                }
+                else if (rbtnTarjeta.IsChecked == true)
+                {
+                    pago = 2;
+                }
+                else
+                {
+                    pago = 3;
+                }
+
+
+
+
+                String forma_compra;
+
+                if (rbtnContado.IsChecked == true)
+                {
+                    forma_compra = "Contado";
+                }
+                else
+                {
+                    forma_compra = "Credito";
+                }
+
+                int indice = CmbCliente.SelectedIndex;
+                CmbInvisible.SelectedIndex = indice;
+
+                dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado", "@ID_TipoPago", "@FormaCompra" };
+                dynamic[] controlnames = { numFac, CmbInvisible.Text, "123", pago, forma_compra };
+                obj.Insertar("Ins_FacturasVentas", parametros, controlnames);
+
+
+                for (int i = 0; i < GridDatos.Items.Count; i++)
+                {
+                    GridDatos.SelectedIndex = i;
+                    view = (Item)GridDatos.SelectedItem;
+                    insertarDetalles(view.vehiculo, view.precio);
+
+                }
+
+                #endregion
             }
             else
             {
-                pago = 3;
-            }
-
-                
-            
-
-            String forma_compra;
-
-            if (rbtnContado.IsChecked == true)
-            {
-                forma_compra = "Contado";
-            }
-            else
-            {
-                forma_compra = "Credito";
-            }
-
-            int indice = CmbCliente.SelectedIndex;
-            CmbInvisible.SelectedIndex = indice;
-
-            dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado", "@ID_TipoPago", "@FormaCompra" };
-            dynamic[] controlnames = { numFac, CmbInvisible.Text, "123",pago, forma_compra};
-            obj.Insertar("Ins_FacturasVentas", parametros, controlnames);
-
-
-            for (int i = 0; i < GridDatos.Items.Count; i++)
-            {
-                GridDatos.SelectedIndex = i;
-                view = (Item)GridDatos.SelectedItem;
-                insertarDetalles(view.vehiculo, view.precio);
-
+                val.mensajeError("Agregue vehiculo que desea vender al contenedor");
             }
         }
 
