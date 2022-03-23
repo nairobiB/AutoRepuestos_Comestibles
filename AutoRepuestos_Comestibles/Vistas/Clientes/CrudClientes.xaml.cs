@@ -30,6 +30,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         public CrudClientes()
         {
             InitializeComponent();
+            TxtFechNac.SelectedDate = DateTime.Now.AddYears(-25);
         }
 
 
