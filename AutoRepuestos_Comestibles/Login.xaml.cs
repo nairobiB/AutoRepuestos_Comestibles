@@ -27,6 +27,7 @@ namespace AutoRepuestos_Comestibles
         public Login()
         {
             InitializeComponent();
+            txtUsername.Focus();
         }
 
         ClConexion conexion = new ClConexion();
@@ -106,5 +107,15 @@ namespace AutoRepuestos_Comestibles
         {
             ingresar(txtUsername.Text, txtPassword.Password);
         }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                ingresar(txtUsername.Text, txtPassword.Password);
+            }
+        }
+
+
     }
 }

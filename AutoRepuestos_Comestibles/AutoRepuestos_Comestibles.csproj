@@ -131,6 +131,7 @@
     <Compile Include="Clases\ClSeleccionUsuario.cs" />
     <Compile Include="Clases\ClSeleccionVehiculo.cs" />
     <Compile Include="Clases\ClSeleccionVenta.cs" />
+    <Compile Include="Clases\ClValidaciones.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
     <Compile Include="ReporteRentas.xaml.cs">
       <DependentUpon>ReporteRentas.xaml</DependentUpon>

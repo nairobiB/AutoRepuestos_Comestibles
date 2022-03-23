@@ -21,6 +21,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     /// </summary>
     public partial class CrudClientes : Page
     {
+        ClValidaciones val = new ClValidaciones();
         ClInsercion obj = new ClInsercion();
         private String operacion;
 
@@ -31,6 +32,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             InitializeComponent();
         }
 
+
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Clientes();
@@ -39,30 +41,97 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         int estado = 1;
 
+
+        DateTime fecha_actual = DateTime.Now;
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
+            
+            DateTime fecha = TxtFechNac.SelectedDate.Value;
 
-            if (rbtnInActivo.IsChecked == true)
+            if (TxtIdCliente.Text.Length > 12 && val.ValidarEspaciosEnBlancos(TxtIdCliente.Text))
             {
-                estado = 0;
-            }
+                if(TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                {
+                    if (fecha.Year > (fecha_actual.AddYears(-69).Year) && fecha.Year < (fecha_actual.AddYears(-18).Year))
+                    {
+                        if (TxtTelefono.Text.Length > 7)
+                        {
+                            if(val.email(TxtCorreo.Text) && TxtCorreo.Text.Length > 17)
+                            {                            
+                                if (rbtnInActivo.IsChecked == true)
+                                {
+                                    estado = 0;
+                                }                                dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "@ID_Estado" };
+                                dynamic[] controlnames = { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString() };
+                                String st;
+                                if (operacion == "Insert")
+                                {
+                                    st = "Ins_Clientes";
+                                    obj.Insertar(st, parametros, controlnames);
+                                }
+                                else
+                                {
+                                    st = "Upd_Clientes";
+                                    obj.Insertar(st, parametros, controlnames);
+                                    Content = new Clientes();
+                                }
+                            }
+                            else
+                            {
+                                val.mensajeError("Su correo es invalido");
+                            }
+                        }
+                        else
+                        {
+                            val.mensajeError("Ingrese un numero de telefono valido");
+                        }
 
-            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "@ID_Estado" };
-            dynamic[] controlnames = { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString() };
-            String st;
-            if (operacion == "Insert")
-            {
-                st = "Ins_Clientes";
-                obj.Insertar(st, parametros, controlnames);
+                    }
+                    else
+                    {
+                        val.mensajeError("La persona no cumple los requisitos de edad");
+                    }
+
+                }
+                else
+                {
+                    val.mensajeError("El nombre ingresado no cumple los requisitos");
+                }  
+
             }
             else
             {
-                st = "Upd_Clientes";
-                obj.Insertar(st, parametros, controlnames);
-                Content = new Clientes();
+                val.mensajeError("La identidad ingresada es invalida, no debe tener espacios");
             }
+
 
             
         }
+
+
+        private void TxtIdCliente_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
+
+        }
+
+        private void TxtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarLetras(e);
+        }
+
+        private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
+        }
+
+        private void TxtCorreo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            //val.email(e);
+        }
     }
-}
+
+
+
+  }
+
