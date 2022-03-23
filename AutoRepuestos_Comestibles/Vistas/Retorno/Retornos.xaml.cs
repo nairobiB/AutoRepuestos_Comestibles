@@ -118,17 +118,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
 
         private void TxtCombustible_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            val.validarNumeros(e);
+            val.validarNumerosDecimales(e);
         }
 
         private void TxtMora_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            val.validarNumeros(e);
+            val.validarNumerosDecimales(e);
         }
 
         private void TxtDanos_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            val.validarNumeros(e);
+            val.validarNumerosDecimales(e);
         }
     }
 }
