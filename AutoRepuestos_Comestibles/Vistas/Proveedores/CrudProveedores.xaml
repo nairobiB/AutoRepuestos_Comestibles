@@ -239,7 +239,8 @@
                          Grid.Row="3"
                          Name="TxtIdentidad"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="201" Margin="48.4,10.8,0,0.4" Grid.RowSpan="2"/>
+                     Width="201" Margin="48.4,10.8,0,0.4" Grid.RowSpan="2"
+                     MaxLength="13" PreviewTextInput="TxtIdentidad_PreviewTextInput"/>
 
             <TextBlock Grid.Column="2"
                        Grid.Row="5"
@@ -252,7 +253,8 @@
                          Grid.Row="5"
                          Name="TxtNombre"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="300" Margin="48.4,5.6,0,5.6" Grid.RowSpan="2"/>
+                     Width="300" Margin="48.4,5.6,0,5.6" Grid.RowSpan="2"
+                     MaxLength="50"/>
             <TextBlock Grid.Column="2"
                        Grid.Row="7"
                        Text="Correo:"
@@ -264,7 +266,8 @@
                          Grid.Row="7"
                          Name="TxtCorreo"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="300" Margin="48.4,4.4,0,6.8" Grid.RowSpan="2"/>
+                     Width="300" Margin="48.4,4.4,0,6.8" Grid.RowSpan="2"
+                     MaxLength="50" PreviewTextInput="TxtCorreo_PreviewTextInput"/>
             <TextBlock Grid.Column="2"
                        Grid.Row="13"
                        Text="Telefono:"
@@ -276,7 +279,8 @@
                          Grid.Row="13"
                          Name="TxtTelefono"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="167" Grid.ColumnSpan="2" Margin="148,12.2,0,0" Grid.RowSpan="2"/>
+                     Width="167" Grid.ColumnSpan="2" Margin="148,12.2,0,0" Grid.RowSpan="2"
+                     MaxLength="15" PreviewTextInput="TxtTelefono_PreviewTextInput" />
             <TextBlock Grid.Column="3"
                        Grid.Row="13"
                        Text="Direccion:"
@@ -288,7 +292,8 @@
                          Grid.Row="13"
                          Name="TxtDireccion"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="220" Margin="211.4,12.2,0,20.4" Grid.RowSpan="6"/>
+                     Width="220" Margin="211.4,12.2,0,20.4" Grid.RowSpan="6"
+                     MaxLength="200"/>
             <TextBlock Grid.Column="2"
                 Grid.Row="16"
                 Text="Estado:"
@@ -327,7 +332,8 @@
                 Grid.Row="9"
                 x:Name="TxtRTN"
                 Style="{DynamicResource TextBoxStyle}"
-                Width="300" Margin="48.4,5.2,0,6" Grid.RowSpan="2"/>
+                Width="300" Margin="48.4,5.2,0,6" Grid.RowSpan="2"
+                     MaxLength="15" PreviewTextInput="TxtRTN_PreviewTextInput" />
             <TextBlock Grid.Column="2"
                 Grid.Row="11"
                 Text="Encargado:"
@@ -339,7 +345,8 @@
                 Grid.Row="11"
                 x:Name="TxtEncargado"
                 Style="{DynamicResource TextBoxStyle}"
-                Width="300" Margin="48.4,10,0,0.8" Grid.RowSpan="2"/>
+                Width="300" Margin="48.4,10,0,0.8" Grid.RowSpan="2"
+                     MaxLength="50" PreviewTextInput="TxtEncargado_PreviewTextInput" />
 
             <!--#endregion-->
 

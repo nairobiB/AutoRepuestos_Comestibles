@@ -61,7 +61,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
                                 if (rbtnInActivo.IsChecked == true)
                                 {
                                     estado = 0;
-                                }                                dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "@ID_Estado" };
+                                }                                
+                                dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "@ID_Estado" };
                                 dynamic[] controlnames = { TxtIdCliente.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, estado.ToString() };
                                 String st;
                                 if (operacion == "Insert")
