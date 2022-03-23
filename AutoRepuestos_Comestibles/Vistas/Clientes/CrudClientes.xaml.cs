@@ -73,12 +73,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
                                 {
                                     st = "Upd_Clientes";
                                     obj.Insertar(st, parametros, controlnames);
-                                    Content = new Clientes();
+                                    
                                 }
+                                Content = new Clientes();
                             }
                             else
                             {
-                                val.mensajeError("Su correo es invalido");
+                                val.mensajeError("Su correo es invalido. Debe contener 8 caracteres antes del @");
                             }
                         }
                         else
