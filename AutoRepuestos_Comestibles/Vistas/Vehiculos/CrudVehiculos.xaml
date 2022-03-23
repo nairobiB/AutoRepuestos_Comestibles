@@ -241,7 +241,8 @@
                          Grid.Row="4"
                          Name="TxtIdVehiculo"
                         Style="{DynamicResource TextBoxStyle}"
-                     Width="200"/>
+                     Width="200"
+                     MaxLength="15"/>
 
             <TextBlock Grid.Column="2"
                        Grid.Row="6"
@@ -254,7 +255,7 @@
                       Grid.Column="3"
                       Grid.Row="6" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"/>
     
             <!--#endregion-->
             <Button x:Name="BtnAddMarca"
@@ -280,7 +281,7 @@
                       Grid.Column="3"
                       Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"/>
            
             <!--#endregion-->
             <Button x:Name="BtnAddModelo"
@@ -305,7 +306,7 @@
                       Grid.Column="3"
                       Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"/>
             <!--#endregion-->
             <!--#region  Color invisible-->
             <ComboBox Name="CmbInvisibleColor"
@@ -347,7 +348,8 @@
                          Name="TxtVenta" 
                             Width="200"
                         HorizontalAlignment="Left"
-                      Style="{DynamicResource TextBoxStyle}"/>
+                     Text="0.00"
+                      Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtVenta_PreviewTextInput"/>
             <TextBlock Grid.Column="3"
                        Grid.Row="12"
                        Text="Renta"
@@ -359,6 +361,7 @@
                          Grid.Row="12"
                          Name="TxtRenta" 
                             Width="200"
+                     Text="0.00"
                         HorizontalAlignment="Right"
                       Style="{DynamicResource TextBoxStyle}"
                      />
@@ -375,7 +378,7 @@
                       Grid.Column="3"
                       Grid.Row="15" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"/>
             
             <!--#region  Estado Invisible-->            
             <ComboBox Name="CmbInvisibleEstado"
