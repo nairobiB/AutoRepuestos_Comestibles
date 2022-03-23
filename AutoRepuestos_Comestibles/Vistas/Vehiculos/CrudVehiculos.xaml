@@ -242,7 +242,7 @@
                          Name="TxtIdVehiculo"
                         Style="{DynamicResource TextBoxStyle}"
                      Width="200"
-                     MaxLength="15"/>
+                     MaxLength="7" PreviewTextInput="TxtIdVehiculo_PreviewTextInput"/>
 
             <TextBlock Grid.Column="2"
                        Grid.Row="6"
@@ -349,6 +349,8 @@
                             Width="200"
                         HorizontalAlignment="Left"
                      Text="0.00"
+                     MaxLength="12"
+                     
                       Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtVenta_PreviewTextInput"/>
             <TextBlock Grid.Column="3"
                        Grid.Row="12"
@@ -362,8 +364,10 @@
                          Name="TxtRenta" 
                             Width="200"
                      Text="0.00"
+                     MaxLength="10"
+                    
                         HorizontalAlignment="Right"
-                      Style="{DynamicResource TextBoxStyle}"
+                      Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtRenta_PreviewTextInput"
                      />
 
             <TextBlock Grid.Column="2"
@@ -378,7 +382,7 @@
                       Grid.Column="3"
                       Grid.Row="15" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left" SelectedIndex="1"/>
+                      HorizontalAlignment="Left" SelectedIndex="0"/>
             
             <!--#region  Estado Invisible-->            
             <ComboBox Name="CmbInvisibleEstado"

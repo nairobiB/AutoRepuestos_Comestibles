@@ -59,41 +59,59 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            #region BTNCONFIRMAR
-            int indiceColor = CmbColor.SelectedIndex + 1;
-
-
-            int indiceMarcas = CmbMarca.SelectedIndex + 1;
-
-
-            int indiceModelo = CmbModelo.SelectedIndex + 1;
-
-
-            int indiceEstado = CmbEstado.SelectedIndex + 1;
-
-
-            String st;
-            if (TxtIdVehiculo.Text.Length > 14 && val.ValidarEspaciosEnBlancos(TxtIdVehiculo.Text))
+            if (TxtIdVehiculo.Text.Length > 6 && val.ValidarEspaciosEnBlancos(TxtIdVehiculo.Text))
             {
-
-                if (operacion == "Insert")
+                if(TxtVenta.Text.Length > 4 && val.ValidarEspaciosEnBlancos(TxtVenta.Text))
                 {
-                    dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
-                    dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
-                    st = "Ins_Vehiculos";
-                    obj.Insertar(st, parametros, controlnames);
+                    if (TxtRenta.Text.Length > 2 && val.ValidarEspaciosEnBlancos(TxtRenta.Text))
+                    {
+                        #region BTNCONFIRMAR
+                        int indiceColor = CmbColor.SelectedIndex + 1;
 
+
+                        int indiceMarcas = CmbMarca.SelectedIndex + 1;
+
+
+                        int indiceModelo = CmbModelo.SelectedIndex + 1;
+
+
+                        int indiceEstado = CmbEstado.SelectedIndex + 1;
+
+
+                        String st;
+
+                        if (operacion == "Insert")
+                        {
+                            dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                            dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                            st = "Ins_Vehiculos";
+                            obj.Insertar(st, parametros, controlnames);
+
+                        }
+                        else
+                        {
+                            dynamic[] parametros = { "@ID", "@ID_Marca", "@ID_Color", "@ID_Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                            dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                            st = "Upd_Vehiculos";
+                            obj.Insertar(st, parametros, controlnames);
+                        }
+                        #endregion
+                        Content = new Vehiculos();
+                    }
+                    else
+                    {
+                        val.mensajeError("El precio de renta no puede ser menos que L. 100.00");
+                    }
                 }
                 else
                 {
-                    dynamic[] parametros = { "@ID", "@ID_Marca", "@ID_Color", "@ID_Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
-                    dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
-                    st = "Upd_Vehiculos";
-                    obj.Insertar(st, parametros, controlnames);
+                    val.mensajeError("El precio de venta no puede ser menos que L. 1,000.00");
                 }
             }
-            #endregion
-
+            else
+            {
+                val.mensajeError("El ID del vehículo debe debe ser mayor de 14 caracteres y no debe tener espacios en blanco");
+            }
         }
 
         private void BtnAddMarca_Click(object sender, RoutedEventArgs e)
@@ -124,6 +142,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         }
 
         private void TxtVenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumerosDecimales(e);
+        }
+
+        private void TxtIdVehiculo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros_letras(e);
+        }
+
+        private void TxtRenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);
         }

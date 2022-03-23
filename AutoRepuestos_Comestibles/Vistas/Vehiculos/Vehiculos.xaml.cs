@@ -29,6 +29,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         {
             CrudVehiculos ventana = new CrudVehiculos();
             FrameEmpleado.Content = ventana;
+            ventana.Operacion = "Insert";
         }
 
         void Buscar(string texto)
