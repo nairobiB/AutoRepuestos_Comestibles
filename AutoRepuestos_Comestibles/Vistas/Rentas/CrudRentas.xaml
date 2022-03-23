@@ -343,7 +343,7 @@
                       Grid.Row="4" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"/>
             <ComboBox Name="CmbInvisible"
                       Visibility="Hidden"
                       Grid.Column="4"
@@ -481,7 +481,7 @@
                       Style="{DynamicResource TextBoxStyle}"
                      Width="100"
                      
-                     IsEnabled="True" Margin="0,21.4" Grid.RowSpan="3"/>
+                     IsEnabled="True" Margin="0,21.4" Grid.RowSpan="3" PreviewTextInput="TxtTiempo_PreviewTextInput"/>
             <!--#endregion-->
 
             <!--#region Vehiculo-->
@@ -501,7 +501,7 @@
                       Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"    
                       Width="230"
                       HorizontalAlignment="Left"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2" SelectedIndex="0"/>
             <!--#endregion-->
 
             <!--#region BTN Agregar-->
@@ -576,21 +576,6 @@
 
 
             <!--#region Buttom -->
-            <TextBlock Grid.Column="1"
-                       Grid.Row="22"
-                       
-                       Text="Rentado por:"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Center"
-                       FontSize="15"
-                       Margin ="0,0,20,0"/>
-            <TextBox Grid.Column="2"
-                     Grid.Row="22"
-                     Grid.ColumnSpan="2"
-                     Name="TxtUsuario"
-                     IsReadOnly="True"
-                      Style="{DynamicResource TextBoxStyle}"
-                     Width="230"/>
 
             <TextBlock Grid.Column="5"
                        Grid.Row="22"
@@ -605,7 +590,7 @@
                      Grid.ColumnSpan="2"
                      Name="TxtTotal"
                      Style="{DynamicResource TextBoxStyle}"
-                     Width="190"/>
+                     Width="190" IsEnabled="False"/>
             <TextBlock Grid.Column="2"
                 Grid.Row="8"
                 Text="Horas"

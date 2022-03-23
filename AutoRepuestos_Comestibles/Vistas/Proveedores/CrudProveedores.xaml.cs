@@ -41,76 +41,62 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
 
-            if(TxtIdentidad.Text.Length > 12  && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text))
-            {
-                if(TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                if ((TxtIdentidad.Text.Length > 12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text)) || TxtIdentidad.Text.Length < 1)
                 {
-                    if(TxtCorreo.Text.Length > 17 && val.email(TxtCorreo.Text))
+                    if (TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
                     {
-                        if(TxtRTN.Text.Length > 14 && val.ValidarEspaciosEnBlancos(TxtRTN.Text))
+                        if (val.email(TxtCorreo.Text) && TxtCorreo.Text.Length > 17)
                         {
-                            if(TxtEncargado.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtEncargado.Text))
+                            if (TxtRTN.Text.Length > 14 && val.ValidarEspaciosEnBlancos(TxtRTN.Text))
                             {
-                                if(TxtTelefono.Text.Length > 7)
+                                if (TxtEncargado.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtEncargado.Text))
                                 {
-                                    if(TxtDireccion.Text.Length > 8)
+                                    if (rbtnInActivo.IsChecked == true)
                                     {
-                                        if (rbtnInActivo.IsChecked == true)
-                                        {
-                                            estado = 0;
-                                        }
+                                        estado = 0;
+                                    }
 
 
-                                        dynamic[] parametros = { "@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
-                                        dynamic[] controlnames = { TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
-                                        String st;
-                                        if (operacion == "Insert")
-                                        {
-                                            st = "Ins_Proveedores";
-                                            obj.Insertar(st, parametros, controlnames);
-                                        }
-                                        else
-                                        {
-                                            st = "Upd_Proveedores";
-                                            obj.Insertar(st, parametros, controlnames);
-                                        }
-                                        Content = new Proveedores();
+                                    dynamic[] parametros = { "@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
+                                    dynamic[] controlnames = { TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
+                                    String st;
+                                    if (operacion == "Insert")
+                                    {
+                                        st = "Ins_Proveedores";
+                                        obj.Insertar(st, parametros, controlnames);
                                     }
                                     else
                                     {
-                                            val.mensajeError("La direccion ingresada es invalida");
+                                        st = "Upd_Proveedores";
+                                        obj.Insertar(st, parametros, controlnames);
                                     }
+                                    Content = new Proveedores();
                                 }
                                 else
                                 {
-                                    val.mensajeError("Ingrese un numero de telefono valido");
+                                    val.mensajeError("El encargado ingresado no cumple con los requisitos");
                                 }
                             }
                             else
                             {
-                                val.mensajeError("El encargado ingresado no cumple con los requisitos");
+                                val.mensajeError("El RTN es invalido, no debe contener espacios");
                             }
                         }
                         else
                         {
-                            val.mensajeError("El RTN es invalido, no debe contener espacios");
+                            val.mensajeError("Su correo es invalido. Debe contener 8 caracteres antes del @");
                         }
                     }
                     else
                     {
-                        val.mensajeError("Su correo es invalido. Debe contener 8 caracteres antes del @");
+                        val.mensajeError("El nombre ingresado no cumple los requisitos");
                     }
                 }
+
                 else
                 {
-                    val.mensajeError("El nombre ingresado no cumple los requisitos");
-                }
-            }
-            else
-            {
-                val.mensajeError("La identidad ingresada es invalida, no debe tener espacios");
-            }
-
+                    val.mensajeError("La identidad ingresada es invalida (asegurese que no contiene espacios)");
+                }              
         }
 
         private void TxtIdentidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
