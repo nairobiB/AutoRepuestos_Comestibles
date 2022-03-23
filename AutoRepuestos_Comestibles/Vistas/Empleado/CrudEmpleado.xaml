@@ -234,10 +234,11 @@
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
+                     MaxLength="13"
                          Grid.Row="4"
                          Name="TxtIdentidad"
                         Style="{DynamicResource TextBoxStyle}"
-                     Width="200"/>
+                     Width="200" PreviewTextInput="TxtIdentidad_PreviewTextInput"/>
                      
             <TextBlock Grid.Column="2"
                        Grid.Row="6"
@@ -250,6 +251,7 @@
                          Grid.Row="6"
                          Name="TxtNombre"
                       Style="{DynamicResource TextBoxStyle}"
+                     MaxLength="50"
                      Width="400"/>
             
             <TextBlock Grid.Column="2"
@@ -262,6 +264,7 @@
             <TextBox Grid.Column="3"
                          Grid.Row="8"
                          Name="TxtTelefono"
+                     MaxLength="15"
                       Style="{DynamicResource TextBoxStyle}"
                      Width="300"/>
             <TextBlock Grid.Column="2"
@@ -275,6 +278,7 @@
                          Grid.Row="10"
                          Name="TxtCorreo"
                       Style="{DynamicResource TextBoxStyle}"
+                     MaxLength="50"
                      Width="350"/>
             <TextBlock Grid.Column="2"
                        Grid.Row="12"
@@ -297,6 +301,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbPuesto"
                       Grid.Column="3"
+                      SelectedIndex="0"
                       Grid.Row="14" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left"/>
