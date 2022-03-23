@@ -240,7 +240,8 @@
                          Grid.Row="4"
                          Name="TxtNombre"
                       Style="{DynamicResource TextBoxStyle}"
-                     Width="390" Grid.ColumnSpan="2" Margin="0" />
+                     Width="390" Grid.ColumnSpan="2" Margin="0" PreviewTextInput="TxtNombre_PreviewTextInput" 
+                     MaxLength="50"/>
 
             <TextBlock Grid.Column="2"
                        Grid.Row="6"
@@ -249,25 +250,43 @@
                        VerticalAlignment="Center"
                        FontSize="20"
                        Margin ="0,0,20,0"/>
+            <TextBlock Grid.Column="2"
+                       Grid.Row="8"
+                       Text="Confirmar contraseña:"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       FontSize="20"
+                       Margin ="0,0,20,0"/>
             <PasswordBox Grid.Column="3"
                          Grid.Row="6"
                          Name="TxtPass"
-                      Background="White"
+                        Background="White"
                          HorizontalAlignment="Left"
-                     Width="300" CaretBrush="White" SelectionBrush="White"/>
+                     Width="300" CaretBrush="White" SelectionBrush="White" PreviewTextInput="TxtPass_PreviewTextInput"/>
+            <PasswordBox Grid.Column="3"
+                         Grid.Row="8"
+                         Name="TxtPassConf"
+                        Background="White"
+                         HorizontalAlignment="Left"
+                     Width="300" CaretBrush="White" SelectionBrush="White" PreviewTextInput="TxtPassConf_PreviewTextInput" 
+                         />
             <TextBlock Grid.Column="2"
-                       Grid.Row="8"
+                       Grid.Row="10"
                        Text="Empleado:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="20"
                        Name="lblempleado"
                        Margin ="0,0,20,0"/>
+            
             <ComboBox Name="CmbEmpleado"
                       Grid.Column="3"
-                      Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
+                      Grid.Row="10" 
+                      Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
-                      HorizontalAlignment="Left" Margin="0,0,0,3" VerticalAlignment="Bottom"/>
+                      Height="30"
+                      HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                      SelectedIndex="0"/>
             <ComboBox Name="CmbInvisible"
                       Visibility="Hidden"
                       Grid.Column="4"

@@ -48,6 +48,25 @@ namespace AutoRepuestos_Comestibles.Clases
 
         }
 
+        public void validarNumeros_letras(TextCompositionEventArgs e)
+        {
+
+            int character = Convert.ToInt32(Convert.ToChar(e.Text));
+
+
+            if ((character >= 48 && character <= 57)|| Regex.IsMatch(e.Text, "^[a-zA-Z]"))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+
+                e.Handled = true;
+
+            }
+
+        }
+
         public void validarNumeros(TextCompositionEventArgs e)
         {
             

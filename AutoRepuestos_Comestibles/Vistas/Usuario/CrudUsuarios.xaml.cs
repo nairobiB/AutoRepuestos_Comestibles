@@ -24,6 +24,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     {
         ClCmb cmb = new ClCmb();
         ClInsercion obj = new ClInsercion();
+        ClValidaciones val = new ClValidaciones();
         private String operacion;
 
         public String Operacion { get => operacion; set => operacion = value; }
@@ -46,37 +47,72 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            if (rbtnInActivo.IsChecked == true)
+            if(TxtNombre.Text.Length > 5 && val.ValidarEspaciosEnBlancos(TxtNombre.Text))
             {
-                estado = 0;
-            }
+                if(TxtPass.Password.Length > 5 )
+                {
+                    if(TxtPassConf.Password == TxtPass.Password)
+                    {
+                        #region Boton confirmar
 
-            int indice = CmbEmpleado.SelectedIndex;
-            CmbInvisible.SelectedIndex = indice;
+                        if (rbtnInActivo.IsChecked == true)
+                        {
+                            estado = 0;
+                        }
 
-            string empleado = CmbInvisible.Text;
+                        int indice = CmbEmpleado.SelectedIndex;
+                        CmbInvisible.SelectedIndex = indice;
 
-            /*dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
-            dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
-            String st;*/
+                        string empleado = CmbInvisible.Text;
 
-            if (operacion == "Insert")
-            {
-                dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
-                dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
-                String st;
-                st = "Ins_Usuarios";
-                obj.Insertar(st, parametros, controlnames);
+                        /*dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
+                        dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+                        String st;*/
+
+                        if (operacion == "Insert")
+                        {
+                            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
+                            dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+                            String st;
+                            st = "Ins_Usuarios";
+                            obj.Insertar(st, parametros, controlnames);
+                        }
+                        else
+                        {
+                            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@Estado" };
+                            dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
+                            String st;
+                            st = "Upd_Usuarios";
+                            obj.Insertar(st, parametros, controlnames);
+                            Content = new Usuarios();
+                        }
+
+                        #endregion
+                    }
+                    else
+                    {
+                        val.mensajeError("Las contraseñas ingresadas no coinciden");
+                        TxtPass.Clear();
+                        TxtPassConf.Clear();
+                        TxtPass.Focus();
+                    }
+
+                }
+                else
+                {
+                    val.mensajeError("La contraseña es muy corta, debe contener como minimo 6 caracteres");
+                    TxtPass.Clear();
+                    TxtPassConf.Clear();
+                    TxtPass.Focus();
+                }
+
             }
             else
             {
-                dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@Estado" };
-                dynamic[] controlnames = {  TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
-                String st;
-                st = "Upd_Usuarios";
-                obj.Insertar(st, parametros, controlnames);
-                Content = new Usuarios();
+                val.mensajeError("El usuario ingresado es invalido, intente ingresar uno nuevo");
+                TxtNombre.Focus();
             }
+            
         }
 
         public void Llenar_cmb() 
@@ -98,6 +134,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
             }
 
+        }
+
+        private void TxtPassConf_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros_letras(e);
+        }
+
+        private void TxtPass_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros_letras(e);
+        }
+
+        private void TxtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros_letras(e);
         }
     }
 }
