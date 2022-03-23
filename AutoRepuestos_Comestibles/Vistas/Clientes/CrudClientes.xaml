@@ -263,10 +263,9 @@
                        FontSize="20"
                        Margin ="27,8.4,0,17.8" Grid.RowSpan="2"/>
             <DatePicker Grid.Column="3"
-                         Grid.Row="7"
-                         Name="TxtFechNac" 
+                        Grid.Row="7"
+                        Name="TxtFechNac" 
                         Width="127"
-                        SelectedDate="01/01/2000"
                         HorizontalAlignment="Left" Margin="0.4,10.4,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
             <TextBlock Grid.Column="2"
                        Grid.Row="11"

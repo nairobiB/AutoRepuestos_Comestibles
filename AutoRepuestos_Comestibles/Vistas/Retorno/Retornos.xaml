@@ -317,8 +317,9 @@
                      Grid.Row="4"
                      Margin="5"
                      Name="TxtMora"
+                     MaxLength="10"
                      Text="0"
-                     Style="{DynamicResource TextBoxStyle}"  />
+                     Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtMora_PreviewTextInput"  />
             <TextBlock Grid.Column="3"
                        Grid.Row="3"
                        Text="Combustible:"
@@ -330,8 +331,9 @@
                      Grid.Row="3"
                      Name="TxtCombustible"
                      Margin="5"
+                     MaxLength="10"
                      Text="0"
-                     Style="{DynamicResource TextBoxStyle}"
+                     Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtCombustible_PreviewTextInput"
                     
                      />
             <TextBlock Grid.Column="3"
@@ -344,9 +346,10 @@
             <TextBox Grid.Column="5"
                      Grid.Row="5"
                      Name="TxtDanos"
+                     MaxLength="15"
                      Margin="5"
                      Text="0"
-                     Style="{DynamicResource TextBoxStyle}"  />
+                     Style="{DynamicResource TextBoxStyle}" PreviewTextInput="TxtDanos_PreviewTextInput"  />
             <!--#endregion-->
 
             <!--#region BUSCADOR-->

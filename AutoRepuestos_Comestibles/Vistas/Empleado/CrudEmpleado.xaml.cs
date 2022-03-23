@@ -22,6 +22,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     /// </summary>
     public partial class CrudEmpleado : Page
     {
+        ClValidaciones val = new ClValidaciones();
         ClCmb cmb = new ClCmb();
         ClInsercion obj = new ClInsercion();
         private String operacion;
@@ -31,7 +32,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         {
             InitializeComponent();
             cmb.fill_cmb(CmbPuesto, "Puestos", 1);
-
+            TxtFechNac.SelectedDate = DateTime.Now.AddYears(-25);
         }
 
         int estado = 1;
@@ -44,37 +45,96 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         int puesto=0;
 
+        DateTime fecha_actual = DateTime.Now;
+
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
-            if (rbtnInActivo.IsChecked == true)
+            DateTime fecha = TxtFechNac.SelectedDate.Value;
+
+            if (TxtIdentidad.Text.Length>12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text))
             {
-                estado = 0;
-            }
-            if (CmbPuesto.SelectedIndex == 0)
-            {
-                puesto = 1;
+                if(TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                {
+                    if(TxtTelefono.Text.Length > 7)
+                    {
+                        if(val.email(TxtCorreo.Text) && TxtCorreo.Text.Length > 17)
+                        {
+                            if(fecha.Year > (fecha_actual.AddYears(-69).Year) && fecha.Year < (fecha_actual.AddYears(-18).Year))
+                            {
+                                #region Boton confirmar
+
+                                if (rbtnInActivo.IsChecked == true)
+                                {
+                                    estado = 0;
+                                }
+                                if (CmbPuesto.SelectedIndex == 0)
+                                {
+                                    puesto = 1;
+                                }
+                                else
+                                {
+                                    puesto = 2;
+                                }
+                                dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC", "ID_PUESTO", "@ID_ESTADO" };
+                                dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text, puesto, estado.ToString() };
+                                String st;
+
+                                if (operacion == "Insert")
+                                {
+                                    st = "Ins_Empleados";
+                                    obj.Insertar(st, parametros, controlnames);
+                                }
+                                else
+                                {
+                                    st = "Upd_Empleados";
+                                    obj.Insertar(st, parametros, controlnames);
+                                    Content = new Empleados();
+                                }
+                                #endregion
+                            }
+                            else
+                            {
+                                val.mensajeError("La persona no cumple los requisitos de edad");
+                                TxtFechNac.Focus();
+                            }
+                        }
+                        else
+                        {
+                            val.mensajeError("Su correo es invalido. Debe contener 8 caracteres antes del @");
+                            TxtTelefono.Clear();
+                            TxtTelefono.Focus();
+                        }
+
+                    }
+                    else
+                    {
+                        val.mensajeError("El numero de telefono es invalido");
+                        TxtTelefono.Clear();
+                        TxtTelefono.Focus();
+                    }
+
+                }
+                else
+                {
+                    val.mensajeError("El nombre ingresado es incorrecto");
+                    TxtNombre.Clear();
+                    TxtNombre.Focus();
+                }
+
             }
             else
             {
-                puesto = 2;
-            }
-            dynamic[] parametros = { "@ID", "@NOMBRE", "@TELEFONO", "@CORREO", "@FECHA_NAC","ID_PUESTO" ,"@ID_ESTADO" };
-            dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtTelefono.Text, TxtCorreo.Text, TxtFechNac.Text,puesto, estado.ToString() };
-            String st;
-
-            if (operacion == "Insert")
-            {
-                st = "Ins_Empleados";
-                obj.Insertar(st, parametros, controlnames);
-            }
-            else
-            {
-                st = "Upd_Empleados";
-                obj.Insertar(st, parametros, controlnames);
-                Content = new Empleados();
+                val.mensajeError("La identidad ingresada es invalida, no debe tener espacios");
+                TxtIdentidad.Focus();
             }
 
 
+
+        }
+
+        private void TxtIdentidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
         }
     }
 }
