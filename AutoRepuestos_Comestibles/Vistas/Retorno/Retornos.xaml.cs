@@ -22,6 +22,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
     /// </summary>
     public partial class Retornos : UserControl
     {
+        ClValidaciones val = new ClValidaciones();
         ClVistasDataGrid obj = new ClVistasDataGrid();
         ClCmb cmb = new ClCmb();
         ClInsercion objeto = new ClInsercion();
@@ -69,16 +70,65 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             }
         }
 
+        DateTime fecha_actual = DateTime.Now;
+
         private void BtnAgregarRetorno_Click(object sender, RoutedEventArgs e)
         {
-            dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo","@Mora","@Combustible","@Daños","@Fecha_Devolucion"};
-            dynamic[] controlnames = {TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, hora };
-            objeto.Insertar("Ins_Retorno", parametros, controlnames);
-            //CargarDG();
-            TxtIdFactura.Clear();
-            CmbVehiculo.Items.Clear();
-            BtnAgregarRetorno.IsEnabled = false;
-            
+            DateTime fecha = DpFechRetorno.SelectedDate.Value;
+
+            if(val.ValidarEspaciosEnBlancos(TxtCombustible.Text))
+            {
+                if(fecha > fecha_actual)
+                {
+                    if (val.ValidarEspaciosEnBlancos(TxtDanos.Text))
+                    {
+                        if (val.ValidarEspaciosEnBlancos(TxtMora.Text))
+                        {
+                            dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo", "@Mora", "@Combustible", "@Daños", "@Fecha_Devolucion" };
+                            dynamic[] controlnames = { TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, hora };
+                            objeto.Insertar("Ins_Retorno", parametros, controlnames);
+                            //CargarDG();
+                            TxtIdFactura.Clear();
+                            CmbVehiculo.Items.Clear();
+                            BtnAgregarRetorno.IsEnabled = false;
+                        }
+                        else
+                        {
+                            val.mensajeError("Total de mora escrito con espacios");
+                        }
+                        
+                    }
+                    else
+                    {
+                        val.mensajeError("Total de da;os escrito con espacios");
+                    }
+                }
+                else
+                {
+                    val.mensajeError("Fecha ingresada incorrectamente");
+                }
+                
+            }
+            else
+            {
+                val.mensajeError("Total de combustible escrito con espacios");
+            }
+
+        }
+
+        private void TxtCombustible_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
+        }
+
+        private void TxtMora_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
+        }
+
+        private void TxtDanos_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
         }
     }
 }
