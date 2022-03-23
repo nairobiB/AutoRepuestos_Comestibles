@@ -83,6 +83,23 @@ namespace AutoRepuestos_Comestibles.Clases
             }
 
         }
+
+        public void validarNumerosDecimales(TextCompositionEventArgs e)
+        {
+
+            int character = Convert.ToInt32(Convert.ToChar(e.Text));
+
+
+            if (character >= 48 && character <= 57 || Regex.IsMatch(e.Text, "^[.]"))
+                e.Handled = false;
+            else
+            {
+
+                e.Handled = true;
+
+            }
+
+        }
         public bool ValidarEspaciosEnBlancos(string dato)
         {
             string val = "^[A-Za-z0-9]*$";
@@ -95,5 +112,7 @@ namespace AutoRepuestos_Comestibles.Clases
             }
             
         }
+
+
     }
 }

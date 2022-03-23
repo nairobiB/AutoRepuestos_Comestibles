@@ -22,7 +22,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
     {
         ClInsercion obj = new ClInsercion();
         ClCmb cmb = new ClCmb();
-
+        ClValidaciones val = new ClValidaciones();
         private String operacion;
         private int color;
         private int modelo;
@@ -56,9 +56,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         {
             Content = new Vehiculos();
         }
-
+        
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
+            #region BTNCONFIRMAR
             int indiceColor = CmbColor.SelectedIndex + 1;
 
 
@@ -72,22 +73,26 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
 
             String st;
-
-            if (operacion == "Insert")
+            if (TxtIdVehiculo.Text.Length > 14 && val.ValidarEspaciosEnBlancos(TxtIdVehiculo.Text))
             {
-                dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
-                dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
-                st = "Ins_Vehiculos";
-                obj.Insertar(st, parametros, controlnames);
 
+                if (operacion == "Insert")
+                {
+                    dynamic[] parametros = { "@ID", "@Marca", "@color", "@Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                    dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                    st = "Ins_Vehiculos";
+                    obj.Insertar(st, parametros, controlnames);
+
+                }
+                else
+                {
+                    dynamic[] parametros = { "@ID", "@ID_Marca", "@ID_Color", "@ID_Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
+                    dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
+                    st = "Upd_Vehiculos";
+                    obj.Insertar(st, parametros, controlnames);
+                }
             }
-            else
-            {
-                dynamic[] parametros = { "@ID", "@ID_Marca", "@ID_Color", "@ID_Modelo", "@Precio_Venta", "@Precio_Renta", "@ID_Estado" };
-                dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
-                st = "Upd_Vehiculos";
-                obj.Insertar(st, parametros, controlnames);
-            }
+            #endregion
 
         }
 
@@ -116,6 +121,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
             CmbColor.Items.Clear();
             cmb.fill_cmb(CmbColor, "Colores", 1);
             CmbColor.Text = color;
+        }
+
+        private void TxtVenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumerosDecimales(e);
         }
     }
 }
