@@ -252,29 +252,29 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="20.8" />
+                <RowDefinition Height="21*" />
+                <RowDefinition Height="22*" />
+                <RowDefinition Height="22*" />
                 <RowDefinition Height="20"/>
 
             </Grid.RowDefinitions>
@@ -342,7 +342,7 @@
                       Grid.Row="4" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left" SelectedIndex="0"/>
             <ComboBox Name="CmbInvisible"
                       Visibility="Hidden"
                       Grid.Column="4"
@@ -577,14 +577,14 @@
                     <DataGridTextColumn Header="Descripcion"
                                     Width="*"
                                         Binding="{Binding descripcion}"/>
-                    
+
                     <DataGridTextColumn Header="Precio de vehiculo"
                                     Width="*"
                                       Binding="{Binding precio}" />
 
 
                 </DataGrid.Columns>
-                
+
 
             </DataGrid>
             <!--#endregion-->
