@@ -23,7 +23,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
 
         ClCmb cmb = new ClCmb();
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
-
+        ClValidaciones val = new ClValidaciones();
         ClInsercion obj = new ClInsercion();
         int numFac;
 
@@ -133,21 +133,48 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
                 deposito = "Transferencia";
             }
 
-            int indice = CmbCliente.SelectedIndex;
-            CmbInvisible.SelectedIndex = indice;
-
-            dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado","@ID_TipoPago", "@horas", "@Comprobante" };
-            dynamic[] controlnames = { numFac, CmbInvisible.Text, "123", pago, TxtTiempo.Text, deposito};
-            obj.Insertar("Ins_FacturasRentas", parametros, controlnames);
+            
 
 
-            for (int i = 0; i < GridDatos.Items.Count; i++)
+            if (TxtTiempo.Text.Length > 0)
             {
-                GridDatos.SelectedIndex = i;
-                view = (Item)GridDatos.SelectedItem;
-                insertarDetalles(view.vehiculo, view.precio);
 
+                if (GridDatos.Items.Count < 1)
+                {
+                    val.mensajeError("Agregue al menos un vehiculo a rentar");
+                }
+                else
+                {
+                    int indice = CmbCliente.SelectedIndex;
+                    CmbInvisible.SelectedIndex = indice;
+
+                    dynamic[] parametros = { "@ID_Factura", "@ID_Cliente", "@ID_Empleado", "@ID_TipoPago", "@horas", "@Comprobante" };
+                    dynamic[] controlnames = { numFac, CmbInvisible.Text, "123", pago, TxtTiempo.Text, deposito };
+                    obj.Insertar("Ins_FacturasRentas", parametros, controlnames);
+
+
+                    for (int i = 0; i < GridDatos.Items.Count; i++)
+                    {
+                        GridDatos.SelectedIndex = i;
+                        view = (Item)GridDatos.SelectedItem;
+                        insertarDetalles(view.vehiculo, view.precio);
+
+                    }
+                    Content = new Rentas();
+                }
             }
+            else 
+            {
+                val.mensajeError("Ingrese un tiempo de renta");
+            }
+            
+               
+            
+        }
+
+        private void TxtTiempo_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            val.validarNumeros(e);
         }
     }
 }

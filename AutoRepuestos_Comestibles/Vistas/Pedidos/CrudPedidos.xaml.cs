@@ -24,7 +24,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
         ClInsercion obj = new ClInsercion();
         ClCmb cmb = new ClCmb();
-
+        ClValidaciones val = new ClValidaciones();
         public CrudPedidos()
         {
             InitializeComponent();
@@ -131,20 +131,25 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
 
             int indice = CmbProveedor.SelectedIndex + 1;
-            
 
-            dynamic[] parametros = { "@ID_Factura", "@ID_Proveedor", "@ID_Empleado", "@ID_TipoPago", "@TipoCompra" };
-            dynamic[] controlnames = { numPedido, indice, "123",forma_pago, formacompra };
-            obj.Insertar("Ins_Pedidos", parametros, controlnames);
-
-
-            for (int i = 0; i < GridDatos.Items.Count; i++)
+            if (GridDatos.Items.Count < 1)
             {
-                GridDatos.SelectedIndex = i;
-                view = (Item)GridDatos.SelectedItem;
-                insertarDetalles(view.vehiculo, view.precio);
-
+                val.mensajeError("Añada al menos un vehiculo a Rentar");
             }
+            else
+            {
+                 dynamic[] parametros = { "@ID_Factura", "@ID_Proveedor", "@ID_Empleado", "@ID_TipoPago", "@TipoCompra" };
+                 dynamic[] controlnames = { numPedido, indice, "123",forma_pago, formacompra };
+                 obj.Insertar("Ins_Pedidos", parametros, controlnames);
+            
+                for (int i = 0; i < GridDatos.Items.Count; i++)
+                {
+                    GridDatos.SelectedIndex = i;
+                    view = (Item)GridDatos.SelectedItem;
+                    insertarDetalles(view.vehiculo, view.precio);
+                }
+            }
+            
 
 
         }
