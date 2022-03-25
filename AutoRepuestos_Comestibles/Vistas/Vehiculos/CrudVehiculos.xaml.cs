@@ -110,7 +110,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
             }
             else
             {
-                val.mensajeError("El ID del vehículo debe debe ser mayor de 14 caracteres y no debe tener espacios en blanco");
+                val.mensajeError("El ID del vehículo debe contener 7 caracteres y no debe tener espacios en blanco");
             }
         }
 

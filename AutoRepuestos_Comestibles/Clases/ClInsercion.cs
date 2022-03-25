@@ -32,11 +32,11 @@ namespace AutoRepuestos_Comestibles.Clases
             try
             {
                 cmd.ExecuteNonQuery();
-                System.Windows.MessageBox.Show("Registro Agregado Correctamente");
+                //System.Windows.MessageBox.Show("Exitoso");
             }
             catch (SqlException x)
             {
-                System.Windows.MessageBox.Show("Ocurrió un error al insertar el registro" + x.Message);
+                System.Windows.MessageBox.Show("Ocurrió un error al realizar la accion" + x.Message);
             }
 
             conexion.cerrar();
