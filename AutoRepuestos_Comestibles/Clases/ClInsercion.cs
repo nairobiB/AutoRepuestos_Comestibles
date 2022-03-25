@@ -12,6 +12,8 @@ namespace AutoRepuestos_Comestibles.Clases
     class ClInsercion
     {
         ClConexion conexion = new ClConexion();
+        
+
 
         public void Insertar(string Sp, dynamic[] parametros, dynamic[] controlsNames)
         {
@@ -42,9 +44,11 @@ namespace AutoRepuestos_Comestibles.Clases
 
         private int _factura;
         private int _Pedido;
+        private int _usuario;
 
         public int Factura { get => _factura; set => _factura = value; }
         public int Pedido { get => _Pedido; set => _Pedido = value; }
+        public int Usuario { get => _usuario; set => _usuario = value; }
 
         public void num_factura()
         {
@@ -70,6 +74,18 @@ namespace AutoRepuestos_Comestibles.Clases
             conexion.cerrar();
 
         }
+        public void num_usuario()
+        {
+
+            conexion.abrir();
+            SqlCommand com = new SqlCommand("select count(ID_Usuario) as num from Usuarios", conexion.Sc);
+            SqlDataReader rdr = com.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+            rdr.Read();
+            Usuario = Convert.ToInt32(rdr["num"]);
+
+            conexion.cerrar();
+        }
+
 
     }
 }

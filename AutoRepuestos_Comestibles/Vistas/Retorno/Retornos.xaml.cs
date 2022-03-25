@@ -34,6 +34,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             InitializeComponent();
             CargarDG();
             cmb.fill_cmb(CmbVehiculo, "RetornosVista", 2);
+            DpFechRetorno.SelectedDate = DateTime.Now;
         }
         void CargarDG()
         {
@@ -50,7 +51,6 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             TxtIdFactura.Clear();
             CmbVehiculo.Items.Clear();
             BtnAgregarRetorno.IsEnabled = false;
-            
             Buscar(Txtbuscar.Text);
             
         }
@@ -66,7 +66,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                 CmbVehiculo.Text = view.Row.ItemArray[2].ToString();
                 idVehiculo = view.Row.ItemArray[1].ToString();
                 DpFechRetorno.SelectedDate = DateTime.Now;
-                hora = DateTime.Now.ToString();
+               
             }
         }
 
@@ -85,7 +85,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                         if (val.ValidarEspaciosEnBlancos(TxtMora.Text))
                         {
                             dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo", "@Mora", "@Combustible", "@Daños", "@Fecha_Devolucion" };
-                            dynamic[] controlnames = { TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, hora };
+                            dynamic[] controlnames = { TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, DateTime.Now };
                             objeto.Insertar("Ins_Retorno", parametros, controlnames);
                             //CargarDG();
                             TxtIdFactura.Clear();

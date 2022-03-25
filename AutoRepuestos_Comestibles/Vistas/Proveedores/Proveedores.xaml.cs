@@ -15,7 +15,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         ClSeleccionProveeedor prov = new ClSeleccionProveeedor();
         String valorID;
         string Estado;
-
+       
         public Proveedores()
         {
             InitializeComponent();
@@ -36,8 +36,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         void llenarcampos(string identidad)
         {
             prov.seleccionar(identidad);
-
-            
+                       
             ventana.TxtRTN.Text = prov.Rtn;
             ventana.TxtIdentidad.Text = prov.Identidad;
             ventana.TxtNombre.Text = prov.Nombre;
@@ -77,9 +76,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 
         private void BtnModificar_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            ventana.Id =Convert.ToInt32(valorID);
             llenarcampos(valorID);
             FrameProveedor.Content = ventana;
             ventana.Operacion = "Update";
+            prov.seleccionar(valorID);
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)

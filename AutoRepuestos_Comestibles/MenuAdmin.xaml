@@ -13,6 +13,7 @@
         xmlns:viewmodels7="clr-namespace:AutoRepuestos_Comestibles.Vistas.Rentas"
         xmlns:viewmodels8="clr-namespace:AutoRepuestos_Comestibles.Vistas.Pedidos"
         xmlns:viewmodels20="clr-namespace:AutoRepuestos_Comestibles.Vistas.Retorno"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Menú Admin" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen"
@@ -287,7 +288,9 @@
     </Window.Resources>
     <Border CornerRadius="10"
             Background="#edffff">
+        
         <Grid Name="Principal" Background="Transparent" >
+            
             <!--#region HEADER-->
             <Grid Name ="Header" Height="70" VerticalAlignment="Top" 
                   Background="Transparent">
@@ -304,16 +307,17 @@
                                FontSize="40" HorizontalAlignment="Center" 
                                VerticalAlignment="Center"
                                FontFamily="Century Gothic" FontWeight="Bold"/>
+                    
                     <TextBlock Name="Nombre" Text="Administrador" 
                                Grid.Column="0" Foreground="Black"
                                FontSize="20" HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
-                               Margin="30, 10, 0, 0"
+                               Margin="40, 10, 0, 0"
                                FontFamily="Century Gothic" FontWeight="Bold"/>
                     <!--#endregion-->
 
                     <!--#region BOTONES CERRAR Y MINIMIZAR-->
-
+                    
                     <Button Style="{DynamicResource BtnHeader}" x:Name="BtnMinimizar"
                             Grid.Column="3"
                             Background="Transparent"
@@ -448,6 +452,7 @@
                         <!--#endregion-->
                         <!--#region Vehiculos-->
                         <ListViewItem Style="{DynamicResource LISTSTYLE}" Height="50">
+                            
                             <Button Style="{DynamicResource BTNLISTA}" x:Name="btnVehiculos"
                                     Height="50"
                                     Width="200"

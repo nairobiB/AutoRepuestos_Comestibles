@@ -26,8 +26,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         ClValidaciones val = new ClValidaciones();
         int estado = 1;
         private String operacion;
+        private int id;
 
         public String Operacion { get => operacion; set => operacion = value; }
+        public int Id { get => id; set => id = value; }
+
         public CrudProveedores()
         {
             InitializeComponent();
@@ -56,18 +59,19 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
                                         estado = 0;
                                     }
 
-
-                                    dynamic[] parametros = { "@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
-                                    dynamic[] controlnames = { TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
                                     String st;
                                     if (operacion == "Insert")
                                     {
-                                        st = "Ins_Proveedores";
+                                    dynamic[] parametros = {"@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
+                                    dynamic[] controlnames = { TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
+                                    st = "Ins_Proveedores";
                                         obj.Insertar(st, parametros, controlnames);
                                     }
                                     else
                                     {
-                                        st = "Upd_Proveedores";
+                                    dynamic[] parametros = {"@ID","@RTN", "@Identidad", "@Nombre", "@Encargado", "@Telefono", "@Correo", "@Direccion", "@ID_Estado" };
+                                    dynamic[] controlnames = { Id,TxtRTN.Text, TxtIdentidad.Text, TxtNombre.Text, TxtEncargado.Text, TxtTelefono.Text, TxtCorreo.Text, TxtDireccion.Text, estado.ToString() };
+                                    st = "Upd_Proveedores";
                                         obj.Insertar(st, parametros, controlnames);
                                     }
                                     Content = new Proveedores();
