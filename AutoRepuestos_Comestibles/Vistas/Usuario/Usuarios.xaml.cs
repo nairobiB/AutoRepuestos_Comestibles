@@ -58,17 +58,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         {
             
             user.seleccionar(identidad);
-
-            
             ventana.TxtNombre.Text = user.Nombre;
-            ventana.TxtPass.Password = user.Contra;
-            ventana.CmbInvisible.Text = Empleado;
+            ventana.Id_usuario = Convert.ToInt32(user.Id);
 
-            if (Estado == "False")
+            for (int i = 0; i < ventana.CmbInvisible.Items.Count; i++)
             {
-                ventana.rbtnInActivo.IsChecked = true;
+                ventana.CmbInvisible.SelectedIndex = i;
+                if (ventana.CmbInvisible.Text == user.Idemp)
+                {
+                    ventana.CmbEmpleado.SelectedIndex = ventana.CmbInvisible.SelectedIndex;
+                }
             }
-
 
         }
 
@@ -84,8 +84,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             valorID = view.Row.ItemArray[0].ToString();
-            Estado = view.Row.ItemArray[4].ToString();
-            Empleado = view.Row.ItemArray[3].ToString();
+            user.seleccionar(valorID);
+            view.CancelEdit();
+
 
         }
 
@@ -96,8 +97,6 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             llenarcampos(valorID);
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Update";
-            ventana.CmbEmpleado.Visibility = Visibility.Hidden;
-            ventana.lblempleado.Visibility = Visibility.Hidden;
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)

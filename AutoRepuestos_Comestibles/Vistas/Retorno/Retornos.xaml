@@ -239,7 +239,7 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="90"/>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
@@ -281,18 +281,21 @@
                       Width="210"
                       HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>
             <TextBlock Grid.Column="3"
-                       Text="Fecha Devolucion:"
-                       HorizontalAlignment="Right"
+                       Text="Fecha:"
+                       HorizontalAlignment="Center"
+                       Margin="50,0,0,0"
                        VerticalAlignment="Center"
                        FontSize="15"
                         Grid.Row="1" 
                       />
-            <DatePicker Grid.Column="5"
+            <DatePicker Grid.Column="3"
+                        Grid.ColumnSpan="3"
                         Name="DpFechRetorno" 
-                        
+                        Margin="160,0,0,0"
+                        IsEnabled="False"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Width="100"  Grid.Row="1"/>
+                        Width="200"  Grid.Row="1" SelectedDateFormat="Long"/>
             <TextBlock Grid.Column="1"
                        Grid.Row="1"
                       

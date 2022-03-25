@@ -375,7 +375,7 @@
                                     Binding="{Binding Encargado}"/>
                     <DataGridTextColumn Header="Telefono"
                                     Width="100"
-                                    Binding="{Binding Telefono}"/>
+                                    Binding="{Binding Teléfono}"/>
                     <DataGridTextColumn Header="Correo"
                                     Width="90"
                                     Binding="{Binding Correo}"/>

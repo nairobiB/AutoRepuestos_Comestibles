@@ -22,18 +22,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     /// </summary>
     public partial class CrudUsuarios : Page
     {
+        ClSeleccionUsuario user = new ClSeleccionUsuario();
         ClCmb cmb = new ClCmb();
-        ClInsercion obj = new ClInsercion();
+        ClInsercion ob = new ClInsercion();
         ClValidaciones val = new ClValidaciones();
         private String operacion;
+        private int id_usuario;
+
+
 
         public String Operacion { get => operacion; set => operacion = value; }
+        public int Id_usuario { get => id_usuario; set => id_usuario = value; }
 
         public CrudUsuarios()
         {
             InitializeComponent();
-            //cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
-            //cmb.fill_cmb(CmbInvisible, "Empleados", 0);
             Llenar_cmb();
 
         }
@@ -64,26 +67,30 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
                         CmbInvisible.SelectedIndex = indice;
 
                         string empleado = CmbInvisible.Text;
+                        ob.num_usuario();
 
-                        /*dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
+
+
+                       /* dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado","@Estado" };
                         dynamic[] controlnames = { TxtIdentidad.Text, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
                         String st;*/
 
                         if (operacion == "Insert")
                         {
+                            Id_usuario = ob.Usuario + 1;
                             dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
-                            dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
+                            dynamic[] controlnames = { Id_usuario, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
                             String st;
                             st = "Ins_Usuarios";
-                            obj.Insertar(st, parametros, controlnames);
+                            ob.Insertar(st, parametros, controlnames);
                         }
                         else
                         {
-                            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@Estado" };
-                            dynamic[] controlnames = { TxtNombre.Text, TxtPass.Password.ToString(), estado.ToString() };
+                            dynamic[] parametros = { "@ID", "@Nombre", "@Password", "@ID_Empleado", "@Estado" };
+                            dynamic[] controlnames = { Id_usuario, TxtNombre.Text, TxtPass.Password.ToString(), empleado, estado.ToString() };
                             String st;
                             st = "Upd_Usuarios";
-                            obj.Insertar(st, parametros, controlnames);
+                            ob.Insertar(st, parametros, controlnames);
                             Content = new Usuarios();
                         }
 
@@ -129,7 +136,6 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
                 if (CmbInvisible.SelectedItem == empleado) 
                 {
                     CmbEmpleado.SelectedIndex = CmbInvisible.SelectedIndex;
-                
                 }
 
             }
