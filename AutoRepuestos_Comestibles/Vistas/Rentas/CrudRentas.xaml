@@ -478,6 +478,7 @@
                      materialDesign:HintAssist.Hint="Tiempo en Horas" 
                      Grid.Row="7"
                      Name="TxtTiempo"
+                     MaxLength="3"
                       Style="{DynamicResource TextBoxStyle}"
                      Width="100"
                      
