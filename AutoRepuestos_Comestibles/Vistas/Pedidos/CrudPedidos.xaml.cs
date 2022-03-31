@@ -135,6 +135,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             if (GridDatos.Items.Count < 1)
             {
                 val.mensajeError("Añada al menos un vehiculo a Rentar");
+                CmbVehiculo.Focus();
             }
             else
             {
@@ -148,6 +149,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
                     view = (Item)GridDatos.SelectedItem;
                     insertarDetalles(view.vehiculo, view.precio);
                 }
+                System.Windows.MessageBox.Show("Pedido guardado exitosamente");
+                Content = new Pedidos();
             }
             
 
