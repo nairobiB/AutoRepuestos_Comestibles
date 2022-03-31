@@ -56,9 +56,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             obj.Insertar("Del_Facturas", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Rentas();
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)

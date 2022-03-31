@@ -91,6 +91,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                             TxtIdFactura.Clear();
                             CmbVehiculo.Items.Clear();
                             BtnAgregarRetorno.IsEnabled = false;
+                            System.Windows.MessageBox.Show("Recargo actualizado exitosamente");
+                            Content = new Retornos();
                         }
                         else
                         {

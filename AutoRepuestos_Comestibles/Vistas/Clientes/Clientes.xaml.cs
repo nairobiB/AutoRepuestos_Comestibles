@@ -104,9 +104,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             obj.Insertar("Del_Clientes", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Clientes();
         }
     }
 }

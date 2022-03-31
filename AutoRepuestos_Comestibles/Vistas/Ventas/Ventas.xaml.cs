@@ -73,9 +73,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             obj.Insertar("Del_Facturas", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Ventas();
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
