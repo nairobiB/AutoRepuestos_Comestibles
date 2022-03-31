@@ -116,7 +116,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
                 }
                 else
                 {
-                    val.mensajeError("El nombre ingresado es incorrecto");
+                    val.mensajeError("El nombre ingresado es no cumple con los requisitos");
                     TxtNombre.Clear();
                     TxtNombre.Focus();
                 }
