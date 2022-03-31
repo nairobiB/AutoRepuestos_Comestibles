@@ -108,9 +108,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             obj.Insertar("Del_Usuarios", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Usuarios();
         }
     }
 

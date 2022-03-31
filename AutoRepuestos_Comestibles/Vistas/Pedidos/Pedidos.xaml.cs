@@ -55,9 +55,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             obj.Insertar("Del_Pedidos", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Pedidos();
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)

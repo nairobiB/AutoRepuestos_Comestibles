@@ -160,6 +160,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
                         insertarDetalles(view.vehiculo, view.precio);
 
                     }
+                    System.Windows.MessageBox.Show("Renta guardada exitosamente");
                     Content = new Rentas();
                 }
             }

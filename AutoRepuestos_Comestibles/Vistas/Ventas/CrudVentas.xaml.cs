@@ -172,6 +172,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
                 }
 
                 #endregion
+                System.Windows.MessageBox.Show("Operacion Realizada exitosamente");
+                Content = new Ventas();
             }
             else
             {

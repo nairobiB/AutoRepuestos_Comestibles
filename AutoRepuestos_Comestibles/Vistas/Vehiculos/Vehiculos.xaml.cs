@@ -65,9 +65,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
             obj.Insertar("Del_Vehiculos", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Vehiculos();
         }
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)

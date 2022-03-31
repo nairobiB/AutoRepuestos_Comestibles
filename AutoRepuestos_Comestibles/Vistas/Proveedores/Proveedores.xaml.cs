@@ -92,9 +92,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
             obj.Insertar("Del_Proveedores", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Proveedores();
         }
     }
 }

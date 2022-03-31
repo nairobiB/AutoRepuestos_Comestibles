@@ -101,9 +101,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             obj.Insertar("Del_Empleados", parametros, controlnames);
             valorID = "";
 
-            //CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
+            Content = new Empleados();
         }
     }
 }

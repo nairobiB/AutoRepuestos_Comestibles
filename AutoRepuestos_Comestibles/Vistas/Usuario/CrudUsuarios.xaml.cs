@@ -83,6 +83,8 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
                             String st;
                             st = "Ins_Usuarios";
                             ob.Insertar(st, parametros, controlnames);
+                            System.Windows.MessageBox.Show("Usuario creado exitosamente");
+                            
                         }
                         else
                         {
@@ -91,10 +93,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
                             String st;
                             st = "Upd_Usuarios";
                             ob.Insertar(st, parametros, controlnames);
-                            Content = new Usuarios();
+                            System.Windows.MessageBox.Show("Usuario modificado exitosamente");
                         }
 
-                        #endregion
+                        #endregion 
+                        Content = new Usuarios();
+
                     }
                     else
                     {
