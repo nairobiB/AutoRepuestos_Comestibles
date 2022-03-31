@@ -48,6 +48,37 @@ namespace AutoRepuestos_Comestibles.Clases
 
         }
 
+        public bool colores(string e)
+        {
+            string val = "\\w+([a-zA-Z]\\w+)* \\w+([a-zA-Z]\\w+)";
+            string val2 = "\\w+([ a-zA-Z]\\w+)";
+            if ((Regex.IsMatch(e, val)) || (Regex.IsMatch(e, val2)))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+           
+
+        }
+        public bool marcaModelo(string e)
+        {
+
+            if ((Regex.IsMatch(e, "\\w+([a-zA-Z0-9]\\w+)* \\w+([a-zA-Z0-9]\\w+)")) || (Regex.IsMatch(e, "\\w+([ a-zA-Z0-9]\\w+)")))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
         public void validarNumeros_letras(TextCompositionEventArgs e)
         {
 

@@ -116,29 +116,53 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
         private void BtnAddMarca_Click(object sender, RoutedEventArgs e)
         {
+
             string marca = Microsoft.VisualBasic.Interaction.InputBox("Ingrese la Marca: ", "Marcas");
-            obj.Insertar("Add_Marca", new string[] { "@Marca" }, new string[] { marca });
-            CmbMarca.Items.Clear();
-            cmb.fill_cmb(CmbMarca, "Marcas", 1);
-            CmbMarca.Text = marca;
+            if(val.marcaModelo(marca))
+            {
+            
+                obj.Insertar("Add_Marca", new string[] { "@Marca" }, new string[] { marca });
+                CmbMarca.Items.Clear();
+                cmb.fill_cmb(CmbMarca, "Marcas", 1);
+                CmbMarca.Text = marca;
+            }
+           else
+            {
+                val.mensajeError("Error, no se pueden introducir valores nulos");
+            }
         }
 
         private void BtnAddModelo_Click(object sender, RoutedEventArgs e)
         {
+
             string modelo = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Modelo: ", "Modelos");
-            obj.Insertar("Add_Modelo", new string[] { "@Modelo" }, new string[] { modelo });
+            if (val.marcaModelo(modelo))
+            {
+                obj.Insertar("Add_Modelo", new string[] { "@Modelo" }, new string[] { modelo });
             CmbModelo.Items.Clear();
             cmb.fill_cmb(CmbModelo, "Modelos", 1);
             CmbModelo.Text = modelo;
+            }
+            else
+            {
+                val.mensajeError("Error, no se pueden introducir valores nulos");
+            }
         }
 
         private void BtnAddcolor_Click(object sender, RoutedEventArgs e)
         {
             string color = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Color: ", "Colores");
-            obj.Insertar("Add_Color", new string[] { "@Color" }, new string[] { color });
+            if (val.colores(color))
+            {
+                obj.Insertar("Add_Color", new string[] { "@Color" }, new string[] { color });
             CmbColor.Items.Clear();
             cmb.fill_cmb(CmbColor, "Colores", 1);
             CmbColor.Text = color;
+            }
+            else
+            {
+                val.mensajeError("Error, no se pueden introducir valores nulos");
+            }
         }
 
         private void TxtVenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
