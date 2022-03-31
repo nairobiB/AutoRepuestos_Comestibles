@@ -261,10 +261,12 @@
                          Grid.Row="6"
                          Name="TxtPass"
                         Background="White"
+                         MaxLength="20"
                          HorizontalAlignment="Left"
                      Width="300" CaretBrush="White" SelectionBrush="White" PreviewTextInput="TxtPass_PreviewTextInput"/>
             <PasswordBox Grid.Column="3"
                          Grid.Row="8"
+                         MaxLength="20"
                          Name="TxtPassConf"
                         Background="White"
                          HorizontalAlignment="Left"
