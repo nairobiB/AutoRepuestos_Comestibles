@@ -361,7 +361,7 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
-                      ToolTip="Si el empleado no aparece realize una busqueda"
+                      ToolTip="Si el empleado no aparece realice una busqueda"
                       Style="{DynamicResource DataGridStyle}"
                       IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged" >
                 <DataGrid.Columns >

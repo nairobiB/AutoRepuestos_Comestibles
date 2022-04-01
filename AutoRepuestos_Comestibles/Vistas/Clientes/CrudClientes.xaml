@@ -239,7 +239,8 @@
                          Name="TxtIdCliente"
                         Style="{DynamicResource TextBoxStyle}"
                      Width="300" Margin="151,0,0,11" Grid.RowSpan="2" Grid.ColumnSpan="2" 
-                     MaxLength="13"  PreviewTextInput="TxtIdCliente_PreviewTextInput"/>
+                     MaxLength="13"  PreviewTextInput="TxtIdCliente_PreviewTextInput"
+                      ToolTip="Ingrese la identidad del cliente, solo acepta números"/>
             
 
             <TextBlock Grid.Column="2"
@@ -252,6 +253,8 @@
             <TextBox Grid.Column="2"
                          Grid.Row="5"
                          Name="TxtNombre"
+                      ToolTip="Ingrese el nombre del cliente, solo acepta letras"
+                    
                       Style="{DynamicResource TextBoxStyle}"
                      Width="300" Margin="151,10.6,0,0.6" Grid.RowSpan="2" Grid.ColumnSpan="2"
                      MaxLength="50" PreviewTextInput="TxtNombre_PreviewTextInput"/>
@@ -265,6 +268,7 @@
             <DatePicker Grid.Column="3"
                         Grid.Row="7"
                         Name="TxtFechNac" 
+                         ToolTip="Seleccione la fecha de nacimiento del cliente"
                         Width="127"
                         HorizontalAlignment="Left" 
                         Margin="0.4,10.4,0,0" 
@@ -282,6 +286,8 @@
             <TextBox Grid.Column="2"
                          Grid.Row="11"
                          Name="TxtCorreo"
+                     ToolTip="Ingrese el correo del cliente. Asegurese de escribirlo de manera correcta"
+                        
                          Style="{DynamicResource TextBoxStyle}"
                          Width="232" Margin="120,10,0,0.8" Grid.RowSpan="2" Grid.ColumnSpan="2" PreviewTextInput="TxtCorreo_PreviewTextInput"
                         MaxLength="50"/>
@@ -295,6 +301,8 @@
             <TextBox Grid.Column="2"
                          Grid.Row="9"
                          Name="TxtTelefono"
+                     ToolTip="Ingrese el número de teléfono del cliente, solo acepta números"
+                       
                          Style="{DynamicResource TextBoxStyle}"
                          Width="167" Grid.ColumnSpan="2" Margin="151,10.2,0,1" Grid.RowSpan="2"
                          MaxLength="15" PreviewTextInput="TxtTelefono_PreviewTextInput"/>
@@ -308,7 +316,9 @@
             <RadioButton  
                 x:Name="rbtnActivo"
                 Grid.Column="2"
-                Grid.Row="14"                      
+                Grid.Row="14" 
+                 ToolTip="Seleccionar activo"
+               
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 FontSize="20"
@@ -318,7 +328,9 @@
             <RadioButton  
                 x:Name="rbtnInActivo"
                 Grid.Column="3"
-                Grid.Row="14"                      
+                Grid.Row="14" 
+                 ToolTip="Seleccionar inactivo"
+               
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
                 FontSize="20"
