@@ -70,12 +70,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
                                 {
                                     st = "Ins_Clientes";
                                     obj.Insertar(st, parametros, controlnames);
+                                    System.Windows.MessageBox.Show("Cliente agregado exitosamente");
                                 }
                                 else
                                 {
                                     st = "Upd_Clientes";
                                     obj.Insertar(st, parametros, controlnames);
-                                    
+                                    System.Windows.MessageBox.Show("Cliente agregado exitosamente");
                                 }
                                 Content = new Clientes();
                             }

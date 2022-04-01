@@ -440,7 +440,9 @@
                         Name="DpFechPedido" 
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Width="150" />
+                        Width="150"
+                        IsEnabled="False"
+                        />
 
 
             <!--#region Vehiculo-->

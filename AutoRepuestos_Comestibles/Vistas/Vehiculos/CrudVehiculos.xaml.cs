@@ -86,7 +86,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                             dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
                             st = "Ins_Vehiculos";
                             obj.Insertar(st, parametros, controlnames);
-
+                            System.Windows.MessageBox.Show("Vehiculo agregado exitosamente");
                         }
                         else
                         {
@@ -94,6 +94,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                             dynamic[] controlnames = { TxtIdVehiculo.Text, indiceMarcas, indiceColor, indiceModelo, TxtVenta.Text, TxtRenta.Text, indiceEstado };
                             st = "Upd_Vehiculos";
                             obj.Insertar(st, parametros, controlnames);
+                            System.Windows.MessageBox.Show("Vehiculo modificado exitosamente");
                         }
                         #endregion
                         Content = new Vehiculos();

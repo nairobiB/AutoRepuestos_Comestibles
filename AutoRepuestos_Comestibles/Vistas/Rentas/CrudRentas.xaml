@@ -457,7 +457,9 @@
                         Name="DpFechFac" 
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Width="100"/>
+                        Width="100"
+                        Focusable="False"
+                        />
 
 
             <!--#endregion-->
