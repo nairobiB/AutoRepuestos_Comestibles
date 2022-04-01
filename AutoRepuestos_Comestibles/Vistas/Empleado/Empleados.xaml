@@ -284,6 +284,7 @@
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
+                         ToolTip="Buscar mediante identidad, nombre, puesto"
                          FontSize="15" Style="{DynamicResource TextBoxStyle}"
                          Margin="10" TextChanged="TxtBuscar_TextChanged"/>
                 <!--#endregion-->
@@ -299,6 +300,7 @@
                         Name="BtnModificar"                       
                         HorizontalAlignment="Right"
                         IsEnabled="False"
+                        ToolTip="Click para modificar registro de empleado"
                         Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/editing.png" Height="40"/>
             </Button>
@@ -315,6 +317,7 @@
                         Name="BtnEliminar"                       
                 HorizontalAlignment="Left"
                     IsEnabled="False"
+                    ToolTip="Click para borrar registro de empleado"
                         Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
                 
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
@@ -332,6 +335,7 @@
                     Width="64"
                     Name="BtnAgregarEmpleado"
                     HorizontalAlignment="Left" 
+                    ToolTip="Click para crear nuevo registro de empleado"
                     Style="{DynamicResource ButtonStyle}"
                     Click="BtnAgregarEmpleado_Click">
                     <Image Source="/Imagenes/addition.png" Height="40"/>
@@ -357,6 +361,7 @@
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
+                      ToolTip="Si el empleado no aparece realize una busqueda"
                       Style="{DynamicResource DataGridStyle}"
                       IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged" >
                 <DataGrid.Columns >

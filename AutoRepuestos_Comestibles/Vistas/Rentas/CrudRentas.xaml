@@ -320,7 +320,7 @@
                     Cursor="Hand"
                     Background="Transparent" 
                     Width="64"
-                    
+                    ToolTip="Click para completar la petición"
                     Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
@@ -343,7 +343,8 @@
                       Grid.Row="4" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
-                      HorizontalAlignment="Left" SelectedIndex="1"/>
+                      HorizontalAlignment="Left" SelectedIndex="1"
+                      ToolTip="Cliente al que le hara la renta"/>
             <ComboBox Name="CmbInvisible"
                       Visibility="Hidden"
                       Grid.Column="4"
@@ -354,6 +355,7 @@
 
             <!--#region Tipo de Deposito-->
             <Grid Grid.Column="5"
+                  ToolTip="Objeto que depositaria por la renta"
                   Grid.Row="3"
                   Grid.RowSpan="4"
                   Grid.ColumnSpan="4">
@@ -401,6 +403,7 @@
             <Grid Grid.Column="5"
                   Grid.Row="8"
                   Grid.RowSpan="4"
+                  ToolTip="Seleccione forma de pago"
                   Grid.ColumnSpan="4">
                 <TextBlock Grid.Column="1"
                        Grid.Row="6"
@@ -452,6 +455,7 @@
                        FontSize="15"
                        Margin ="0,0,20,0"/>
             <DatePicker Grid.Column="2"
+                        ToolTip="Fecha a realizar la renta"
                         Grid.Row="6"
                         Grid.ColumnSpan="2"
                         Name="DpFechFac" 
@@ -477,6 +481,7 @@
                        FontSize="15"
                        Margin ="0,1.8,19,0.8"/>
             <TextBox Grid.Column="2"
+                     ToolTip="Ingrese una cantidad de horas"
                      materialDesign:HintAssist.Hint="Tiempo en Horas" 
                      Grid.Row="7"
                      Name="TxtTiempo"
@@ -498,6 +503,7 @@
                        Margin ="0,0,20,0"/>
 
             <ComboBox Name="CmbVehiculo"
+                      ToolTip="Seleccione el vehiculo a Rentar"
                       Grid.Column="2"
                       Grid.Row="12"
                       Grid.RowSpan="2"
@@ -518,6 +524,7 @@
                         Width="32"
                         Name="BtnAgregar"                       
                         HorizontalAlignment="Right"
+                        ToolTip="Agregar vehiculo a la rentar"
                         Style="{DynamicResource ButtonStyle}" Click="BtnAgregar_Click">
                 <Image Source="/Imagenes/addition.png" Height="40"/>
             </Button>
@@ -534,6 +541,7 @@
                         Width="32"
                         Name="BtnEliminar"                       
                         HorizontalAlignment="Left"
+                        ToolTip="Eliminar vehiculo de la renta"
                         Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
@@ -555,7 +563,8 @@
                       RowBackground="Transparent"
                       HeadersVisibility="Column"
                       GridLinesVisibility="Horizontal"
-                      HorizontalGridLinesBrush="Black" 
+                      HorizontalGridLinesBrush="Black"
+                      ToolTip="Vehiculos a rentar"
                       Style="{DynamicResource DataGridStyle}" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
                 <DataGrid.Columns>
 
