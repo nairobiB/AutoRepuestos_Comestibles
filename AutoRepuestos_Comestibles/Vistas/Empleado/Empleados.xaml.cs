@@ -24,7 +24,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         void CargarDG()
         {
-            obj.LlenarDG("EmpleadosVista", GridDatos);
+            obj.LlenarDG("EmpleadosVista where Estado = 1", GridDatos);
 
         }
 
@@ -49,6 +49,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             ventana.TxtTelefono.Text = emp.Telefono;
             ventana.TxtCorreo.Text = emp.Correo;
             ventana.TxtFechNac.Text = emp.FechaNac;
+            ventana.TxtIdentidad.IsEnabled = false;
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
 
             if (Puesto == "Administrador")
