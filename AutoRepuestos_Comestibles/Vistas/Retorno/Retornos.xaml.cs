@@ -63,7 +63,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                 DataRowView view = (DataRowView)GridDatos.SelectedItem;
                 if(view != null)
                 {
-                    
+                    BtnAgregarRetorno.IsEnabled =true;
                     TxtIdFactura.Text = view.Row.ItemArray[0].ToString();
                     CmbVehiculo.Text = view.Row.ItemArray[2].ToString();
                     idVehiculo = view.Row.ItemArray[1].ToString();
