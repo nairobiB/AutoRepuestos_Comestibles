@@ -279,6 +279,8 @@
                       Grid.Column="2" Foreground="Black" 
                       Background="White" BorderBrush="#FF1A1A1A"
                       Width="210"
+                      IsEnabled="False"
+                      ToolTip="Se muestra la descipcion del vehiculo"
                       HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>
             <TextBlock Grid.Column="3"
                        Text="Fecha:"
@@ -290,7 +292,8 @@
                       />
             <DatePicker Grid.Column="3"
                         Grid.ColumnSpan="3"
-                        Name="DpFechRetorno" 
+                        Name="DpFechRetorno"
+                        ToolTip="Calendario"
                         Margin="160,0,0,0"
                         IsEnabled="False"
                         HorizontalAlignment="Left"
@@ -299,13 +302,14 @@
             <TextBlock Grid.Column="1"
                        Grid.Row="1"
                       
-                       Text="Id de renta:"
+                       Text="ID Factura:"
                        HorizontalAlignment="Right"
                        VerticalAlignment="Center"
                        FontSize="15"
                        />
             <TextBox Grid.Column="2"
                      Grid.Row="1"
+                     ToolTip="Placa del veiculo a devolver"
                      Name="TxtIdFactura"
                      IsEnabled="False"
                      Style="{DynamicResource TextBoxStyle}" Margin="28,0,171,0"/>
@@ -318,6 +322,7 @@
                       />
             <TextBox Grid.Column="5"
                      Grid.Row="4"
+                     ToolTip="Recargo por mora"
                      Margin="5"
                      Name="TxtMora"
                      MaxLength="10"
@@ -332,6 +337,7 @@
                        />
             <TextBox Grid.Column="5"
                      Grid.Row="3"
+                     ToolTip="Recargo por combustible"
                      Name="TxtCombustible"
                      Margin="5"
                      MaxLength="10"
@@ -348,6 +354,7 @@
                        />
             <TextBox Grid.Column="5"
                      Grid.Row="5"
+                     ToolTip="Recargo por daños causados al vehiculo"
                      Name="TxtDanos"
                      MaxLength="15"
                      Margin="5"
@@ -370,6 +377,7 @@
 
             <TextBox TextAlignment="Center"  
                      x:Name="Txtbuscar"
+                     ToolTip="Buscar mediante detalles del vehiculo, placa y cliente"
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="5"
@@ -380,6 +388,7 @@
             <!--#region BTN AGREGAR Retorno-->
             <Button Grid.Column="3"
                     Grid.Row="3"
+                    ToolTip="Click para completar el retorno"
                     Background="Transparent"
                     BorderBrush="Transparent"
                     Grid.RowSpan="3"
@@ -402,6 +411,7 @@
                       Grid.Column="1"
                       Grid.RowSpan="9"
                       Grid.ColumnSpan="5"
+                      ToolTip="Seleccione el vehiculo que retorna"
                       x:Name="GridDatos"
                       AutoGenerateColumns="False"
                       Background="GhostWhite"

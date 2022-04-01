@@ -39,11 +39,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
+            if (view != null)
+            {
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+            }
+            else
+            {
+                BtnModificar.IsEnabled = false;
+                BtnEliminar.IsEnabled = false;
+            }
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)

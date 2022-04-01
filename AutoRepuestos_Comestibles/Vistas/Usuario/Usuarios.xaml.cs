@@ -79,13 +79,23 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
-            user.seleccionar(valorID);
-            view.CancelEdit();
+            if(view != null)
+            {
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+                user.seleccionar(valorID);
+            }
+            else
+            {
+                BtnModificar.IsEnabled = false;
+                BtnEliminar.IsEnabled = false;
+            }
+            
+            
 
 
         }
