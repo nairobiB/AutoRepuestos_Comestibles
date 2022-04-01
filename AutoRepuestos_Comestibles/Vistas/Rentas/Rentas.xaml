@@ -106,8 +106,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -282,6 +282,7 @@
 
             <TextBox TextAlignment="Center" 
                      x:Name="TxtBuscar"
+                     ToolTip="Buscar renta mediante cliente, empleado y fecha"
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
@@ -298,7 +299,9 @@
                         Cursor="Hand"
                         Width="64"
                         Name="BtnModificar"                       
-                HorizontalAlignment="Right"
+                        HorizontalAlignment="Right"
+                        IsEnabled="False"
+                        ToolTip="Click para ver factura de renta"
                         Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/view.png" Height="40"/>
             </Button>
@@ -314,6 +317,7 @@
                         Width="64"
                         Name="BtnEliminar"                       
                         HorizontalAlignment="Left"
+                        ToolTip="Click para borrar una factura"
                         Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
                 <Image Source="/Imagenes/trash-bin.png" Height="40"/>
             </Button>
@@ -331,7 +335,9 @@
                     Name="BtnAgregarRenta"
                     HorizontalAlignment="Left" 
                     Style="{DynamicResource ButtonStyle}" 
+                    ToolTip="Click para agregar nueva factura de Renta"
                     Click="BtnAgregarRenta_Click">
+                
                 <Image Source="/Imagenes/addition.png" Height="40"/>
 
             </Button>
@@ -343,6 +349,7 @@
                       Grid.Column="1"
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
+                      ToolTip="Lista de facturas"
                       x:Name="GridDatos"
                       AutoGenerateColumns="False"
                       Background="GhostWhite"

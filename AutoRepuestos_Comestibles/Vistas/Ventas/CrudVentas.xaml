@@ -109,8 +109,8 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="transparent"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="transparent"/>
                                 <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -511,6 +511,7 @@
                       Grid.Column="2"
                       Grid.Row="10"
                       Grid.RowSpan="2"
+                      SelectedIndex="0"
                       Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"    
                       Width="230"
                       HorizontalAlignment="Left"

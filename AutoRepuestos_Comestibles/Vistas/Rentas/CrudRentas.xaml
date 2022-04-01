@@ -320,7 +320,7 @@
                     Cursor="Hand"
                     Background="Transparent" 
                     Width="64"
-                    ToolTip="Click para completar la petición"
+                    ToolTip="Click para completar la operacion"
                     Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>

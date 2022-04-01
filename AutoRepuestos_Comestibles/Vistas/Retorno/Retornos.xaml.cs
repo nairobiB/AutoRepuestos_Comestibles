@@ -59,13 +59,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
         {
             if (GridDatos.Items.Count > 0)
             {
-                BtnAgregarRetorno.IsEnabled = true;
+                
                 DataRowView view = (DataRowView)GridDatos.SelectedItem;
-
-                TxtIdFactura.Text = view.Row.ItemArray[0].ToString();
-                CmbVehiculo.Text = view.Row.ItemArray[2].ToString();
-                idVehiculo = view.Row.ItemArray[1].ToString();
-                DpFechRetorno.SelectedDate = DateTime.Now;
+                if(view != null)
+                {
+                    
+                    TxtIdFactura.Text = view.Row.ItemArray[0].ToString();
+                    CmbVehiculo.Text = view.Row.ItemArray[2].ToString();
+                    idVehiculo = view.Row.ItemArray[1].ToString();
+                    DpFechRetorno.SelectedDate = DateTime.Now;
+                }
+                else
+                {
+                    BtnAgregarRetorno.IsEnabled = false;
+                }
                
             }
         }
@@ -87,7 +94,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                             dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo", "@Mora", "@Combustible", "@Daños", "@Fecha_Devolucion" };
                             dynamic[] controlnames = { TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, DateTime.Now };
                             objeto.Insertar("Ins_Retorno", parametros, controlnames);
-                            //CargarDG();
+                            CargarDG();
                             TxtIdFactura.Clear();
                             CmbVehiculo.Items.Clear();
                             BtnAgregarRetorno.IsEnabled = false;

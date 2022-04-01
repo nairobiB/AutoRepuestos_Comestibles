@@ -57,11 +57,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
+            if(view != null)
+            {
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+            }
+            else
+            {
+                BtnModificar.IsEnabled = false;
+                BtnEliminar.IsEnabled = false;
+
+            }
+            
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
@@ -72,7 +83,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
 
             obj.Insertar("Del_Facturas", parametros, controlnames);
             valorID = "";
-
+            CargarDG();
             BtnModificar.IsEnabled = false;
             BtnEliminar.IsEnabled = false;
             Content = new Ventas();

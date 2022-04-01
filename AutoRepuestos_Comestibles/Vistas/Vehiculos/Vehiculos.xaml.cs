@@ -72,13 +72,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
-
+            
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
+            if (view != null)
+            {   
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+                vehiculo.seleccionar(valorID);
+            }
+            else
+            {
 
-            vehiculo.seleccionar(valorID);
+                BtnModificar.IsEnabled = false;
+                BtnEliminar.IsEnabled = false;
+            }
+
         }
 
         private void Image_ContextMenuClosing(object sender, ContextMenuEventArgs e)

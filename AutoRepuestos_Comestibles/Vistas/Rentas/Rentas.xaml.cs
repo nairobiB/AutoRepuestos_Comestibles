@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Data;
+using System;
+
 namespace AutoRepuestos_Comestibles.Vistas.Rentas
 {
     /// <summary>
@@ -35,16 +37,30 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
         }
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
+            
             Buscar(TxtBuscar.Text);
         }
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
-            DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
+       
+                DataRowView view = (DataRowView)GridDatos.SelectedItem;
+                if(view!= null)
+                {
+                    BtnModificar.IsEnabled = true;
+                    BtnEliminar.IsEnabled = true;
+                    valorID = view.Row.ItemArray[0].ToString();
+                }
+                else
+                {
+                    BtnModificar.IsEnabled = false;
+                    BtnEliminar.IsEnabled = false;
+                }
+                
+         
+
         }
 
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)

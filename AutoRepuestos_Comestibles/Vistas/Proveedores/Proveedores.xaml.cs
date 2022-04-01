@@ -66,12 +66,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
-            Estado = view.Row.ItemArray[8].ToString();
+            if(view != null)
+            {
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+                Estado = view.Row.ItemArray[8].ToString();
+            }
+            
         }
 
         private void BtnModificar_Click(object sender, System.Windows.RoutedEventArgs e)

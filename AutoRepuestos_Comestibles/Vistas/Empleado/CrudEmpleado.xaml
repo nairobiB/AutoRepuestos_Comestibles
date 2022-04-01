@@ -204,7 +204,7 @@
                     Cursor="Hand"
                     Background="Transparent" 
                     Width="64"
-                    
+                    ToolTip="Click para regresar al formulario de empleados"
                     Style= "{DynamicResource ButtonStyle}" Click="BtnRegresar_Click">
                 <Image Source="/Imagenes/back.png"/>
             </Button>
@@ -218,7 +218,7 @@
                     Cursor="Hand"
                     Background="Transparent" 
                     Width="64"
-                    
+                    ToolTip="Click para completar la operacion"
                     Style= "{DynamicResource ButtonStyle}" Click="BtnConfirmar_Click">
                 <Image Source="/Imagenes/confirm.png"/>
             </Button>
@@ -234,6 +234,7 @@
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
+                     ToolTip="Ingrese la identidad del empleado, solo acepta números"
                      MaxLength="13"
                          Grid.Row="4"
                          Name="TxtIdentidad"
@@ -248,9 +249,10 @@
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
-                         Grid.Row="6"
-                         Name="TxtNombre"
-                      Style="{DynamicResource TextBoxStyle}"
+                     ToolTip="Ingrese el nombre del empleado, solo acepta letras"
+                     Grid.Row="6"
+                     Name="TxtNombre"
+                     Style="{DynamicResource TextBoxStyle}"
                      MaxLength="50"
                      Width="400"/>
             
@@ -262,6 +264,7 @@
                        FontSize="20"
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
+                     ToolTip="Ingrese el número de teléfono del empleado, solo acepta números"
                          Grid.Row="8"
                          Name="TxtTelefono"
                      MaxLength="15"
@@ -276,6 +279,7 @@
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
                          Grid.Row="10"
+                     ToolTip="Ingrese el correo del empleado. Asegurese de escribirlo de manera correcta"
                          Name="TxtCorreo"
                       Style="{DynamicResource TextBoxStyle}"
                      MaxLength="50"
@@ -290,6 +294,7 @@
             <DatePicker Grid.Column="3"
                          Grid.Row="12"
                          Name="TxtFechNac" 
+                        ToolTip="Seleccione la fecha de nacimiento del empleado"
                             Width="250"
                         HorizontalAlignment="Left"
                         Focusable="False"
@@ -303,6 +308,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbPuesto"
                       Grid.Column="3"
+                      ToolTip="Seleccione el cargo del empleado"
                       SelectedIndex="0"
                       Grid.Row="14" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
@@ -317,6 +323,7 @@
                        Margin ="0,0,20,0"/>
             <RadioButton  
                 x:Name="rbtnActivo"
+                ToolTip="Seleccionar activo"
                         Grid.Column="3"
                        Grid.Row="16"                      
                        HorizontalAlignment="Left"
@@ -327,6 +334,7 @@
                  IsChecked="True"/>
             <RadioButton  
                 x:Name="rbtnInActivo"
+                ToolTip="Seleccionar inactivo"
                         Grid.Column="3"
                        Grid.Row="16"                      
                        HorizontalAlignment="Left"

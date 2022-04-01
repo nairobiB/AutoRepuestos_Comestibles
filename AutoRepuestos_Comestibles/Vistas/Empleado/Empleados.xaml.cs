@@ -50,7 +50,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             ventana.TxtCorreo.Text = emp.Correo;
             ventana.TxtFechNac.Text = emp.FechaNac;
             ventana.TxtIdentidad.IsEnabled = false;
-            DataRowView view = (DataRowView)GridDatos.SelectedItem;
+
 
             if (Puesto == "Administrador")
             {
@@ -77,13 +77,23 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            BtnModificar.IsEnabled = true;
-            BtnEliminar.IsEnabled = true;
+            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
-            valorID = view.Row.ItemArray[0].ToString();
-            Estado = view.Row.ItemArray[6].ToString();
-            Puesto = view.Row.ItemArray[5].ToString();
+            if(view != null)
+            {
+                BtnModificar.IsEnabled = true;
+                BtnEliminar.IsEnabled = true;
+                valorID = view.Row.ItemArray[0].ToString();
+                Estado = view.Row.ItemArray[6].ToString();
+                Puesto = view.Row.ItemArray[5].ToString();
+            }
+            else
+            {
+                BtnModificar.IsEnabled = false;
+                BtnEliminar.IsEnabled = false;
+            }
+            
         }
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
