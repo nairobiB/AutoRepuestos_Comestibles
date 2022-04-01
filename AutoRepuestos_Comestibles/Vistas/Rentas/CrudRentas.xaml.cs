@@ -53,22 +53,30 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
-            sel.vehiculoRenta(CmbVehiculo.Text);
-
-            CmbVehiculo.Items.Remove(CmbVehiculo.SelectedItem);
-
-            GridDatos.Items.Add(new Item() { vehiculo = sel.Id_vehiculo, descripcion = sel.Descripcion, precio = sel.Preciorenta });
-            CmbVehiculo.SelectedIndex = 0;
-            double total = 0;
-            for (int i = 0; i < GridDatos.Items.Count; i++)
+            if (CmbVehiculo.Text == string.Empty)
             {
-                GridDatos.SelectedIndex = i;
-                view = (Item)GridDatos.SelectedItem;
-                total += view.precio;
+                System.Windows.MessageBox.Show("No hay vehiculos disponibles");
+            }
+            else 
+            {
+                sel.vehiculoRenta(CmbVehiculo.Text);
 
+                CmbVehiculo.Items.Remove(CmbVehiculo.SelectedItem);
+
+                GridDatos.Items.Add(new Item() { vehiculo = sel.Id_vehiculo, descripcion = sel.Descripcion, precio = sel.Preciorenta });
+                CmbVehiculo.SelectedIndex = 0;
+                double total = 0;
+                for (int i = 0; i < GridDatos.Items.Count; i++)
+                {
+                    GridDatos.SelectedIndex = i;
+                    view = (Item)GridDatos.SelectedItem;
+                    total += view.precio;
+
+                }
+
+                TxtTotal.Text = total.ToString();
             }
 
-            TxtTotal.Text = total.ToString();
 
         }
 
@@ -136,7 +144,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             
 
 
-            if (TxtTiempo.Text.Length > 0)
+            if (TxtTiempo.Text.Length > 0 && TxtTiempo.Text != "0")
             {
 
                 if (GridDatos.Items.Count < 1)

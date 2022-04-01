@@ -76,13 +76,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
         {
             DateTime fecha = DpFechRetorno.SelectedDate.Value;
 
-            if(val.ValidarEspaciosEnBlancos(TxtCombustible.Text))
+            if(val.ValidarEspaciosEnBlancos(TxtCombustible.Text) && TxtCombustible.Text != String.Empty)
             {
                 if(fecha > fecha_actual)
                 {
-                    if (val.ValidarEspaciosEnBlancos(TxtDanos.Text))
+                    if (val.ValidarEspaciosEnBlancos(TxtDanos.Text) && TxtDanos.Text != String.Empty)
                     {
-                        if (val.ValidarEspaciosEnBlancos(TxtMora.Text))
+                        if (val.ValidarEspaciosEnBlancos(TxtMora.Text) && TxtMora.Text != String.Empty)
                         {
                             dynamic[] parametros = { "@ID_Factura", "@ID_Vehiculo", "@Mora", "@Combustible", "@Daños", "@Fecha_Devolucion" };
                             dynamic[] controlnames = { TxtIdFactura.Text, idVehiculo, TxtMora.Text, TxtCombustible.Text, TxtDanos.Text, DateTime.Now };
@@ -102,7 +102,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                     }
                     else
                     {
-                        val.mensajeError("Total de da;os escrito con espacios");
+                        val.mensajeError("Total de daños escrito con espacios");
                     }
                 }
                 else
