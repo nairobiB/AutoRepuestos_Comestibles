@@ -83,13 +83,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
                                 {
                                     st = "Ins_Empleados";
                                     obj.Insertar(st, parametros, controlnames);
+                                    System.Windows.MessageBox.Show("Empleado actualizado exitosamente");
                                 }
                                 else
                                 {
                                     st = "Upd_Empleados";
                                     obj.Insertar(st, parametros, controlnames);
-                                    Content = new Empleados();
+                                    System.Windows.MessageBox.Show("Empleado actualizado exitosamente");
                                 }
+                                Content = new Empleados();
                                 #endregion
                             }
                             else

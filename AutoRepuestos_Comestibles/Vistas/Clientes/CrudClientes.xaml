@@ -266,7 +266,12 @@
                         Grid.Row="7"
                         Name="TxtFechNac" 
                         Width="127"
-                        HorizontalAlignment="Left" Margin="0.4,10.4,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                        HorizontalAlignment="Left" 
+                        Margin="0.4,10.4,0,0" 
+                        Grid.RowSpan="2" 
+                        VerticalAlignment="Top"
+                        Focusable="False"
+                        />
             <TextBlock Grid.Column="2"
                        Grid.Row="11"
                        Text="Correo:"

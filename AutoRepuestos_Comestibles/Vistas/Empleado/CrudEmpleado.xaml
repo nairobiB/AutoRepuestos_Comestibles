@@ -291,7 +291,9 @@
                          Grid.Row="12"
                          Name="TxtFechNac" 
                             Width="250"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left"
+                        Focusable="False"
+                        />
             <TextBlock Grid.Column="2"
                        Grid.Row="14"
                        Text="Cargo:"
