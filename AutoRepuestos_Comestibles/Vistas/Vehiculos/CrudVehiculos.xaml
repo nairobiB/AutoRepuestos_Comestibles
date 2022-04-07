@@ -203,6 +203,7 @@
                     Grid.Column="1"
                     Grid.Row="1"
                     Grid.RowSpan="2"
+                    ToolTip="Regresar"
                     Cursor="Hand"
                     Background="Transparent" 
                     Width="64"
@@ -218,6 +219,7 @@
                     Grid.Row="1"
                     Grid.RowSpan="2"
                     Cursor="Hand"
+                    ToolTip="Confirmar"
                     Background="Transparent" 
                     Width="64"
                     
@@ -239,6 +241,7 @@
             <TextBox Grid.Column="3"
                          Grid.Row="4"
                          Name="TxtIdVehiculo"
+                     ToolTip="Ingrese la placa del Vehiculo, acepta letras y dígitos. Ejemplo: 4AD12B3"
                         Style="{DynamicResource TextBoxStyle}"
                      Width="200"
                      MaxLength="7" PreviewTextInput="TxtIdVehiculo_PreviewTextInput"/>
@@ -252,6 +255,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbMarca"
                       Grid.Column="3"
+                      ToolTip="Seleccione una marca de la lista,también puede agregar marcas en los 3 puntos a la derecha"
                       Grid.Row="6" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left" SelectedIndex="1"/>
@@ -278,6 +282,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbModelo"
                       Grid.Column="3"
+                      ToolTip="Seleccione un modelo de la lista,también puede agregar modelos en los 3 puntos a la derecha"
                       Grid.Row="8" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left" SelectedIndex="1"/>
@@ -303,6 +308,7 @@
                        Margin ="0,0,20,0"/>
             <ComboBox Name="CmbColor"
                       Grid.Column="3"
+                      ToolTip="Seleccione un color de la lista,también puede agregar colores en los 3 puntos a la derecha"
                       Grid.Row="10" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left" SelectedIndex="1"/>
@@ -344,6 +350,7 @@
                        Margin ="0,0,20,0"/>
             <TextBox Grid.Column="3"
                          Grid.Row="12"
+                        ToolTip="Ingrese el precio de venta para el vehiculo. Ejemplo: 20000.40"
                          Name="TxtVenta" 
                             Width="200"
                         HorizontalAlignment="Left"
@@ -360,8 +367,9 @@
                        Margin ="0,0,210,0"/>
             <TextBox Grid.Column="3"
                          Grid.Row="12"
-                         Name="TxtRenta" 
-                            Width="200"
+                         Name="TxtRenta"
+                        ToolTip="Ingrese el precio de renta para el vehiculo. Ejemplo: 430"
+                         Width="200"
                      Text="0.00"
                      MaxLength="10"
                     
@@ -379,6 +387,7 @@
 
             <ComboBox Name="CmbEstado"
                       Grid.Column="3"
+                      ToolTip="Seleccione el estado del vehiculo en la lista"
                       Grid.Row="15" Foreground="Black" Background="White" BorderBrush="#FF1A1A1A"
                       Width="300"
                       HorizontalAlignment="Left" SelectedIndex="0"/>

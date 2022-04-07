@@ -76,7 +76,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
                                 {
                                     st = "Upd_Clientes";
                                     obj.Insertar(st, parametros, controlnames);
-                                    System.Windows.MessageBox.Show("Cliente agregado exitosamente");
+                                    System.Windows.MessageBox.Show("Cliente modificado exitosamente");
                                 }
                                 Content = new Clientes();
                             }
