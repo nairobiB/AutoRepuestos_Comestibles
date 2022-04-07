@@ -299,6 +299,7 @@
 
             <!--#region  BTN REGRESAR-->
             <Button x:Name="BtnRegresar"
+                    ToolTip="Regresar"
                     Grid.Column="1"
                     Grid.Row="1"
                     Grid.RowSpan="2"
@@ -313,6 +314,7 @@
 
             <!--#region  BTN Confirmar-->
             <Button x:Name="BtnConfirmar"
+                    ToolTip="Confirmar"
                     Grid.Column="8"
                     Grid.Row="1"
                     Grid.RowSpan="2"
@@ -337,6 +339,7 @@
                        FontSize="15"
                        Margin ="0,0,10,0"/>
             <ComboBox Name="CmbCliente"
+                      ToolTip="Seleccione un cliente de la lista"
                       Grid.Column="2"
                       Grid.ColumnSpan="2"
                       Grid.Row="4" Foreground="Black" 
@@ -361,7 +364,8 @@
                        Margin ="0,0,10,0"/>
             <RadioButton  
                 x:Name="rbtnContado"
-                        Grid.Column="2"
+                       Grid.Column="2"
+                       ToolTip="Seleccione el tipo de venta a realizar"
                        Grid.Row="6"                      
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
@@ -381,6 +385,7 @@
                         Content="Credito"
                         />
             <Grid Grid.Column="5"
+                  ToolTip="Seleccione la forma de pago proporcionada por el cliente"
                   Grid.Row="6"
                   Grid.RowSpan="4"
                   Grid.ColumnSpan="4">
@@ -435,6 +440,7 @@
                        FontSize="15"
                        Margin ="60,0,0,0"/>
             <DatePicker Grid.Column="7"
+                        ToolTip="Fecha de la Venta"
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
                         Name="DpFechFac" 
@@ -508,6 +514,7 @@
                        Margin ="0,0,20,0"/>
 
             <ComboBox Name="CmbVehiculo"
+                      ToolTip="Seleccione la placa del vehiculo a vender"
                       Grid.Column="2"
                       Grid.Row="10"
                       Grid.RowSpan="2"
@@ -520,6 +527,7 @@
 
             <!--#region BTN Agregar-->
             <Button Grid.Column="4"
+                        ToolTip="Agregar vehiculo a la venta"
                         Grid.Row="10"
                         Grid.RowSpan="2"
                         Background="Transparent"
@@ -536,6 +544,7 @@
 
             <!--#region BTN Eliminar-->
             <Button Grid.Column="5"
+                        ToolTip="Quitar vehiculo de la venta"
                         Grid.Row="10"
                         Grid.RowSpan="2"
                         Background="Transparent"
@@ -553,6 +562,7 @@
 
             <!--#region dataGrid-->
             <DataGrid Grid.Row="13"
+                      ToolTip="Vehiculos ingresados para la venta"
                       Grid.Column="1"
                       Grid.RowSpan="8"
                       Grid.ColumnSpan="8"

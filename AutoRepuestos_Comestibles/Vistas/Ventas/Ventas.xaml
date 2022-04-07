@@ -284,6 +284,7 @@
 
             <TextBox TextAlignment="Center"
                          x:Name="TxtBuscar"
+                        ToolTip="Buscar mediante Cliente, Empleado y Tipo de Pago"
                          BorderBrush="Black"
                          Grid.Column="2"
                          Grid.Row="2"
@@ -299,8 +300,9 @@
                         Margin="0,0,15,0"
                         Cursor="Hand"
                         Width="64"
-                        Name="BtnModificar" 
-                    IsEnabled="False"
+                        Name="BtnModificar"
+                        ToolTip="Ver Factura de la Venta"
+                        IsEnabled="False"
                 HorizontalAlignment="Right"
                         Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
                 <Image Source="/Imagenes/view.png" Height="40"/>
@@ -316,6 +318,7 @@
                         Cursor="Hand"
                         Width="64"
                         Name="BtnEliminar"
+                        ToolTip="Click para Eliminar el Registro de Venta"
                         IsEnabled="False"
                         HorizontalAlignment="Left"
                         Style="{DynamicResource ButtonStyle}" Click="BtnEliminar_Click">
@@ -333,6 +336,7 @@
                     Cursor="Hand"
                     Width="64"
                     Name="BtnAgregarVenta"
+                    ToolTip="Click para Crear un Nuevo Registro de Venta"
                     HorizontalAlignment="Left" 
                     Style="{DynamicResource ButtonStyle}" 
                     Click="BtnAgregarVenta_Click">
@@ -344,6 +348,7 @@
 
             <!--#region dataGrid-->
             <DataGrid Grid.Row="4"
+                      ToolTip="Lista de Facturas"
                       Grid.Column="1"
                       Grid.RowSpan="3"
                       Grid.ColumnSpan="4"
