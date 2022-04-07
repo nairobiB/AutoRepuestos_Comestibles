@@ -118,7 +118,7 @@ namespace AutoRepuestos_Comestibles
 
         private void signupBtn_Click(object sender, RoutedEventArgs e)
         {
-            System.Windows.MessageBox.Show("Pongase en contacto con el tecnico. Correo: paolatecnica@gmail.com");
+            System.Windows.MessageBox.Show("Pongase en contacto con el tecnico, direccion: paolamartel593@gmail.com");
         }
     }
 }
