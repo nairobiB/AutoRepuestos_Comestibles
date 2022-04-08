@@ -127,13 +127,9 @@
     <Compile Include="Clases\ClInsercion.cs" />
     <Compile Include="Clases\ClSeleccion.cs" />
     <Compile Include="Clases\ClSeleccionEmpleado.cs" />
-    <Compile Include="Clases\ClSeleccionPedido.cs" />
     <Compile Include="Clases\ClSeleccionProveeedor.cs" />
-    <Compile Include="Clases\ClSeleccionRenta.cs" />
-    <Compile Include="Clases\ClSeleccionRetorno.cs" />
     <Compile Include="Clases\ClSeleccionUsuario.cs" />
     <Compile Include="Clases\ClSeleccionVehiculo.cs" />
-    <Compile Include="Clases\ClSeleccionVenta.cs" />
     <Compile Include="Clases\ClValidaciones.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
     <Compile Include="ReportePedidos.xaml.cs">
