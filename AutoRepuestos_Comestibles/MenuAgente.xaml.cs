@@ -5,7 +5,6 @@ using AutoRepuestos_Comestibles.Vistas.Clientes;
 using AutoRepuestos_Comestibles.Vistas.Ventas;
 using AutoRepuestos_Comestibles.Vistas.Rentas;
 using AutoRepuestos_Comestibles.Vistas.Retorno;
-using System.Windows.Controls;
 
 namespace AutoRepuestos_Comestibles
 {
@@ -19,7 +18,11 @@ namespace AutoRepuestos_Comestibles
             InitializeComponent();
             Nombre.Text = nombre;
         }
-
+        /// <summary>
+        /// Cambia opacidad del formulario 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TBShow(object sender, RoutedEventArgs e)
         {
             GridContent.Opacity = 0.5;
@@ -34,7 +37,11 @@ namespace AutoRepuestos_Comestibles
         {
             BtnShowHide.IsChecked = false;
         }
-
+        /// <summary>
+        /// BOTONES QUE ABREN LOS OTROS FORMULARIOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnVehiculos_Click(object sender, RoutedEventArgs e)
         {
             Vehiculos vehiculo = new Vehiculos();
@@ -57,20 +64,29 @@ namespace AutoRepuestos_Comestibles
         {
             DataContext = new Rentas();
         }
-
+    
+        private void btnRetorno_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new Retornos();
+        }
+        /// <summary>
+        /// Cambia opacidad del formulario 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
+        /// <summary>
+        /// Boton para minimizar formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
 
-        private void btnRetorno_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new Retornos();
-        }
     }
 }

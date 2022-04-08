@@ -18,14 +18,20 @@ namespace AutoRepuestos_Comestibles
     /// Interaction logic for MenuAdmin.xaml
     /// </summary>
     public partial class MenuAdmin : Window
-    {
+    {/// <summary>
+    /// Instancia de clase
+    /// </summary>
         ClConexion conexion = new ClConexion();
         public MenuAdmin(string nombre)
         {
             InitializeComponent();
             Nombre.Text = nombre;
         }
-
+        /// <summary>
+        /// Cambia opacidad del formulario 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TBShow(object sender, RoutedEventArgs e)
         {
             GridContent.Opacity = 0.5;
@@ -40,18 +46,32 @@ namespace AutoRepuestos_Comestibles
         {
             BtnShowHide.IsChecked = false;
         }
-
+        /// <summary>
+        /// Boton para cerrar formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnCerrar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
+        /// <summary>
+        /// Boton para minimizar formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
 
         }
 
+        /// <summary>
+        /// BOTONES QUE ABREN LOS OTROS FORMULARIOS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
         private void btnEmpleado_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Empleados();
