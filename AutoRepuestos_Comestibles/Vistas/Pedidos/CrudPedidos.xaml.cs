@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Pedidos
@@ -21,10 +10,17 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
     /// </summary>
     public partial class CrudPedidos : Page
     {
+        /// <summary>
+        /// Intancia de clases
+        /// </summary>
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
         ClInsercion obj = new ClInsercion();
         ClCmb cmb = new ClCmb();
         ClValidaciones val = new ClValidaciones();
+
+        /// <summary>
+        /// Evento Load
+        /// </summary>
         public CrudPedidos()
         {
             InitializeComponent();
@@ -33,6 +29,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             cmb.fill_cmbVehiculo(CmbVehiculo, 0);
             DpFechPedido.SelectedDate = DateTime.Now;
         }
+
+        /// <summary>
+        /// clase Item que se usaran para guardar en el datagridview
+        /// </summary>
         public class Item
         {
             public string vehiculo { get; set; }
@@ -49,7 +49,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
         }
 
 
-
+        /// <summary>
+        /// Evento Click en agregar realizara una addicion de un objeto de tipo item a el datagridviwe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
             sel.vehiculoVenta(CmbVehiculo.Text);
@@ -60,6 +64,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
             CmbVehiculo.SelectedIndex = 0;
             double total = 0;
+            
             for (int i = 0; i < GridDatos.Items.Count; i++)
             {
                 GridDatos.SelectedIndex = i;
@@ -70,7 +75,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
             TxtTotal.Text = total.ToString();
         }
-
+        /// <summary>
+        /// Elimina el objeto de tipo que esta seleccionado item del datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             BtnEliminar.IsEnabled = false;
@@ -87,19 +96,32 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             TxtTotal.Text = total.ToString();
         }
 
+        /// <summary>
+        /// Seleccionar un objeto de tipo item del datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             view = (Item)GridDatos.SelectedItem;
             BtnEliminar.IsEnabled = true;
         }
-
+        /// <summary>
+        /// se usa la clase de ClInsercion para enviar valores y parametros a un procedimiento almacenado llamado Ins_PedidosDetalles
+        /// </summary>
+        /// <param name="vehiculo">Se recibe del objeto de tipo ITEM </param>
+        /// <param name="precio"> Se recibe del objeto de tipo ITEM </param>
         void insertarDetalles(string vehiculo, double precio)
         {
             dynamic[] parametros1 = { "@ID_Factura", "@ID_Vehiculo", "@Precio"};
             dynamic[] controlnames1 = { numPedido, vehiculo, precio, 1 };
             obj.Insertar("Ins_PedidosDetalles", parametros1, controlnames1);
         }
-
+        /// <summary>
+        /// Realiza las acciones agregar registro a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             obj.num_pedido();

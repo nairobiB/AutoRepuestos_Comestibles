@@ -8,7 +8,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
     /// Lógica de interacción para Pedidos.xaml
     /// </summary>
     public partial class Pedidos : UserControl
-    {
+    {/// <summary>
+    /// instancia de clases
+    /// </summary>
         ClVistasDataGrid obj = new ClVistasDataGrid();
         string valorID;
         public Pedidos()
@@ -16,27 +18,47 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             InitializeComponent();
             CargarDG();
         }
+        /// <summary>
+        /// hace referencia a la clase vistas datagrid view, enviando texto y un objeto tipo datagrid
+        /// </summary>
         void CargarDG()
         {
             obj.LlenarDG("PedidosVista where Estado = 1", GridDatos);
 
         }
+        /// <summary>
+        /// Abre el formulario CrudPedidos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarPedido_Click(object sender, RoutedEventArgs e)
         {
             CrudPedidos ventana = new CrudPedidos();
             FramePedidos.Content = ventana;
         }
+        /// <summary>
+        /// Hace referencia a la clase VistaDatagrid usando el metodo busqueda usando nombre, Fecha del Pedido, Encargado del Pedido
+        /// </summary>
+        /// <param name="texto">texto ingresado en la textbox de busqueda</param>
         void Buscar(string texto)
         {
             obj.Busqueda("PedidosVista", GridDatos, texto, "Proveedor", "[Fecha del Pedido]", "[Encargado del Pedido]");
 
         }
-
+        /// <summary>
+        /// llama la funcion buscar cada vez que ingresa una letra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
         }
-
+        /// <summary>
+        /// Permite seleccionar un objeto del datagrid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             
@@ -44,17 +66,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             if (view != null)
             {
-                BtnModificar.IsEnabled = true;
+
                 BtnEliminar.IsEnabled = true;
                 valorID = view.Row.ItemArray[0].ToString();
             }
             else
             {
-                BtnModificar.IsEnabled = false;
+
                 BtnEliminar.IsEnabled = false;
             }
         }
-
+        /// <summary>
+        /// Se usa para eliminar una registro mediante un procedimiento almacenado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();
@@ -64,14 +90,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
             obj.Insertar("Del_Pedidos", parametros, controlnames);
             valorID = "";
 
-            BtnModificar.IsEnabled = false;
+
             BtnEliminar.IsEnabled = false;
             Content = new Pedidos();
         }
 
-        private void BtnModificar_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+
     }
 }

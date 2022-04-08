@@ -1,19 +1,9 @@
 ﻿using AutoRepuestos_Comestibles.Clases;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AutoRepuestos_Comestibles.Vistas.Retorno
 {
@@ -22,6 +12,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
     /// </summary>
     public partial class Retornos : UserControl
     {
+        /// <summary>
+        /// Instancia de clases
+        /// </summary>
         ClValidaciones val = new ClValidaciones();
         ClVistasDataGrid obj = new ClVistasDataGrid();
         ClCmb cmb = new ClCmb();
@@ -36,16 +29,26 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             cmb.fill_cmb(CmbVehiculo, "RetornosVista", 2);
             DpFechRetorno.SelectedDate = DateTime.Now;
         }
+        /// <summary>
+        /// hace referencia a la clase vistas datagrid view, enviando texto y un objeto tipo datagrid
+        /// </summary>
         void CargarDG()
         {
             obj.LlenarDG("RetornosVista", GridDatos);
         }
+        /// <summary>
+        /// Hace referencia a la clase VistaDatagrid usando el metodo busqueda usando Clientes, vehiculo, placa
+        /// </summary>
         void Buscar(string texto)
         {
             obj.Busqueda("RetornosVista", GridDatos, texto, "Cliente", "Vehiculo", "[Placa de Vehiculo]");
 
         }
-
+        /// <summary>
+        /// para realizar busqueda de autos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Txtbuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             TxtIdFactura.Clear();
@@ -54,7 +57,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
             Buscar(Txtbuscar.Text);
             
         }
-
+        /// <summary>
+        /// Permite selecionar una fila
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             if (GridDatos.Items.Count > 0)
@@ -76,13 +83,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
                
             }
         }
+        /// <summary>
+        /// Crea una variable tipodate time para actualizar la fecha actual
+        /// </summary>
 
         DateTime fecha_actual = DateTime.Now;
-
+        /// <summary>
+        /// se usa para agregar valores a la base de datos usando un procedimiento almacenado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarRetorno_Click(object sender, RoutedEventArgs e)
         {
             DateTime fecha = DpFechRetorno.SelectedDate.Value;
-
+            
             if(val.ValidarEspaciosEnBlancos(TxtCombustible.Text) && TxtCombustible.Text != String.Empty)
             {
                 if(fecha > fecha_actual)
@@ -125,16 +139,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Retorno
 
         }
 
+        /// <summary>
+        /// Valida la entrada de numeros y tambien ingresar "."
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtCombustible_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);
         }
-
+        /// <summary>
+        /// Valida la entrada de numeros y tambien ingresar "."
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtMora_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);
         }
-
+        /// <summary>
+        /// Valida la entrada de numeros y tambien ingresar "."
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtDanos_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);
