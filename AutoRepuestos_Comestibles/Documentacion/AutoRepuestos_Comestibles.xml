@@ -57,7 +57,7 @@
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.Buscar(System.String)">
             <summary>
-            
+            Realiza búsqueda de datos en el datagrid
             </summary>
             <param name="texto"></param>
         </member>
@@ -76,7 +76,7 @@
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.BtnModificar_Click_1(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
-            
+            Abre la ventana de CrudClientes con los campos llenados
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
@@ -166,6 +166,44 @@
             CrudEmpleado
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.val">
+            <summary>
+            Instancia de clases
+            </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.operacion">
+            <summary>
+            Declaracion de variable y encapsulacion
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa el usuario a la pantalla pricnipal de empleados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Realiza la operación de modificar o agregar un nuevo empleado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.TxtIdentidad_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar letras al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.TxtTelefono_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.InitializeComponent">
             <summary>
             InitializeComponent
@@ -178,6 +216,61 @@
             <summary>
             Empleados
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.obj">
+            <summary>
+            Instancias de clases
+            </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.valorID">
+            <summary>
+            Declaracion de variables
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.CargarDG">
+            <summary>
+            cargar datos almacenados en la base de datos datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.Buscar(System.String)">
+            <summary>
+            Realiza búsqueda de datos en el datagrid
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.BtnAgregarEmpleado_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre ventana de CrudEmpleados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.llenarcampos(System.String)">
+            <summary>
+            LLena campos de la ventana CrudEmpleados
+            </summary>
+            <param name="identidad">Identidad del cliente que desea modificar</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            cuando selesccione una fila se guarda valores de un registro de la base datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre la ventana de CrudEmpleados con los campos llenados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Se elimina el registro de empleados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.InitializeComponent">
             <summary>
@@ -218,6 +311,60 @@
             CrudProveedores
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.obj">
+            <summary>
+            Instancia de clases
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa el usuario a la pantalla pricnipal de proveedores
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Realiza la operación de modificar o agregar un nuevo proveedor
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.TxtIdentidad_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar letras al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.TxtNombre_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar numeros al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.TxtRTN_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar numeros al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.TxtEncargado_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar letras al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.TxtTelefono_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.InitializeComponent">
             <summary>
             InitializeComponent
@@ -230,6 +377,63 @@
             <summary>
             Proveedores
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.obj">
+            <summary>
+            INstancias de clases
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.CargarDG">
+            <summary>
+            cargar datos almacenados en la base de datos datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.Buscar(System.String)">
+            <summary>
+            Realiza búsqueda de datos en el datagrid
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.llenarcampos(System.String)">
+            <summary>
+            LLena campos de la ventana CrudClientes
+            </summary>
+            <param name="identidad">Identidad del cliente que desea modificar</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.BtnAgregarProveedor_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abrir Crud'Proveedores
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.TxtBuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Realizar busqueda de proveedores
+            </summary>
+            <param name="sender"></param>
+            <param name="e"> texto ingresado</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            cuando selesccione una fila se guarda valores de un registro de la base datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre la ventana de CrudProveedores con los campos llenados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Se elimina el registro de proveedores
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.InitializeComponent">
             <summary>
@@ -244,6 +448,51 @@
             CrudRentas
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.cmb">
+            <summary>
+            Instancias de clases
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.Item">
+            <summary>
+            Encapsulacion
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.BtnAgregar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Agrega vehiculo al datagrid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Selecciona fila en datagrid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Elimina registro del datagrid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.insertarDetalles(System.String,System.Double)">
+            <summary>
+            Inserta un vehiculo al datagrid
+            </summary>
+            <param name="vehiculo"></param>
+            <param name="precio"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Confirma la rtenta y agrega el registro a la base de datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.InitializeComponent">
             <summary>
             InitializeComponent
@@ -256,6 +505,38 @@
             <summary>
             Rentas
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.obj">
+            <summary>
+            INstancia de clase
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.BtnAgregarRenta_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre ventana de CrudRentas
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.Buscar(System.String)">
+            <summary>
+            Realiza busqueda en datagrid
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Elimina registro de la base de datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre ventana de crudrentas y carga los datos a los campos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.InitializeComponent">
             <summary>
@@ -283,6 +564,56 @@
             CrudUsuarios
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.user">
+            <summary>
+            Instancias de clases
+            </summary>
+        </member>
+        <member name="P:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.Operacion">
+            <summary>
+            Declaracion de variable y encapsulacion
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa el usuario a la pantalla pricnipal de usuarios
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Realiza la operación de modificar o agregar un nuevo usuario
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.Llenar_cmb">
+            <summary>
+            Llena los combobox del formulario
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.TxtPassConf_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Permite letras y numeros
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.TxtPass_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Permite letras y numeros
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.TxtNombre_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Permite letras y numeros
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.InitializeComponent">
             <summary>
             InitializeComponent
@@ -295,6 +626,61 @@
             <summary>
             Usuarios
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.obj">
+            <summary>
+            Instancias de clases
+            </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.valorID">
+            <summary>
+            Declaracion de variables
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.CargarDG">
+            <summary>
+            cargar datos almacenados en la base de datos datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.BtnAgregarEmpleado_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre ventana de CrudUsuarios
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.Buscar(System.String)">
+            <summary>
+            Realiza búsqueda de datos en el datagrid
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.llenarcampos(System.String)">
+            <summary>
+            LLena campos de la ventana CrudUsuarios
+            </summary>
+            <param name="identidad">Identidad del cliente que desea modificar</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            cuando selesccione una fila se guarda valores de un registro de la base datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre la ventana de CrudUsuarios con los campos llenados
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Se elimina el registro de usuarios
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.InitializeComponent">
             <summary>
@@ -392,6 +778,39 @@
             MenuAdmin
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.MenuAdmin.conexion">
+            <summary>
+            Instancia de clase
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAdmin.TBShow(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia opacidad del formulario 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAdmin.BtnCerrar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para cerrar formulario
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAdmin.BtnMinimizar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para minimizar formulario
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAdmin.btnEmpleado_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BOTONES QUE ABREN LOS OTROS FORMULARIOS
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.MenuAdmin.InitializeComponent">
             <summary>
             InitializeComponent
@@ -404,6 +823,34 @@
             <summary>
             MenuAgente
             </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAgente.TBShow(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia opacidad del formulario 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAgente.btnVehiculos_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            BOTONES QUE ABREN LOS OTROS FORMULARIOS
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAgente.BtnCerrar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia opacidad del formulario 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAgente.BtnMinimizar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para minimizar formulario
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.MenuAgente.InitializeComponent">
             <summary>
