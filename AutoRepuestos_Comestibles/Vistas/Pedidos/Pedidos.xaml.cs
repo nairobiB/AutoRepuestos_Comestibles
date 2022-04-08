@@ -71,9 +71,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Pedidos
 
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
-            ReportePedidos repPed = new ReportePedidos();
-            repPed.Factura = valorID;
-            repPed.Show();
+            
         }
     }
 }
