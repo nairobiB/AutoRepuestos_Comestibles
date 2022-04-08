@@ -22,6 +22,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
     /// </summary>
     public partial class CrudVentas : Page
     {
+        /// <summary>
+        /// Instansias de clase y definicion de variable
+        /// </summary>
         ClValidaciones val = new ClValidaciones();
         ClCmb cmb = new ClCmb();
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
@@ -29,7 +32,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
         int tipoPago = 1;
 
 
-
+        /// <summary>
+        /// Rellenar el combobox
+        /// </summary>
         public CrudVentas()
         {
 
@@ -43,7 +48,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             
            
         }
-
+        /// <summary>
+        /// Definicion de metodos
+        /// </summary>
         public class Item
         {
             public string vehiculo { get; set; }
@@ -52,14 +59,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
         }
 
 
-
+        /// <summary>
+        /// Regresa al formulario sin guardar cambios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Ventas();
         }
 
         int numFac;
-
+        /// <summary>
+        /// Boton que agrega el vehiculo con sus detalles para hacer una venta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)    
         {
            sel.vehiculoVenta(CmbVehiculo.Text);
@@ -80,9 +95,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             TxtTotal.Text=total.ToString();
 
         }
-
+        /// <summary>
+        /// Instancia de la clase
+        /// </summary>
         Item view = new Item();
 
+        /// <summary>
+        /// Hacer seleccion de un registro y activa el boton para eliminar. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
 
@@ -93,7 +115,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
 
         }
 
-
+        /// <summary>
+        /// Cambia el estado de una venta a falso para que ya no aparezca en la vista. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             BtnEliminar.IsEnabled = false;
@@ -110,14 +136,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
             TxtTotal.Text = total.ToString();
 
         }
-
+        /// <summary>
+        /// Insercion de los detalles del venta por medio de procedimiento almacenado. 
+        /// </summary>
+        /// <param name="vehiculo"></param>
+        /// <param name="precio"></param>
         void insertarDetalles( string vehiculo, double precio)
         {
             dynamic[] parametros1 = { "@ID_Factura", "@ID_Vehiculo", "@Precio_Historico", "@Operacion"};
             dynamic[] controlnames1 = {numFac, vehiculo, precio, 4};
             obj.Insertar("Ins_DetallesVentas", parametros1, controlnames1);
         }
-
+        /// <summary>
+        /// Validaciones. Si cumple todos los requisitos se realiza la venta y guarda los detalles a la base.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             if (GridDatos.Items.Count > 0)
@@ -180,12 +214,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Ventas
                 val.mensajeError("Agregue vehiculo que desea vender al contenedor");
             }
         }
-
+        /// <summary>
+        /// Cambia el estado del tipo de pago si es seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbtnTranferencia_Checked(object sender, RoutedEventArgs e)
         {
             tipoPago = 3;
         }
-
+        /// <summary>
+        /// Cambia el estado del tipo de pago si es seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rbtnTarjeta_Checked(object sender, RoutedEventArgs e)
         {
             tipoPago = 2;

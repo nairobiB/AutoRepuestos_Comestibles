@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
 {
@@ -20,6 +10,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
     /// </summary>
     public partial class CrudVehiculos : Page
     {
+        /// <summary>
+        /// Definicion de atributos y instancias de clase
+        /// </summary>
         ClInsercion obj = new ClInsercion();
         ClCmb cmb = new ClCmb();
         ClValidaciones val = new ClValidaciones();
@@ -35,28 +28,39 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
         public int Marca { get => marca; set => marca = value; }
         public int Estado { get => estado; set => estado = value; }
 
+        /// <summary>
+        /// Metodo para llenar combobox
+        /// </summary>
         public CrudVehiculos()
         {
             InitializeComponent();
             cmb.fill_cmb(CmbColor, "Colores", 1);
-            //cmb.fill_cmb(CmbInvisibleColor, "Colores", 0);
 
             cmb.fill_cmb(CmbMarca, "Marcas", 1);
-            //cmb.fill_cmb(CmbInvisibleMarca, "Marcas", 0);
 
             cmb.fill_cmb(CmbModelo, "Modelos", 1);
-          //  cmb.fill_cmb(CmbInvisibleModelo, "Modelos", 0);
 
             cmb.fill_cmb(CmbEstado, "Estado_Vehiculo", 1);
-          //  cmb.fill_cmb(CmbEstado, "Estado_Vehiculo", 0);
+        
 
         }
-
+        /// <summary>
+        /// Regresa al formulario de vehiculo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Vehiculos();
         }
-        
+        /// <summary>
+        /// Validaciones. Se rellena combobox con primera opcion para evitar que quede vacio.
+        /// Decision Si es Insersion o actualizacion.
+        /// Se guarda la informacion o se actualiza, regresando tambien al 
+        /// formulario de vehiculos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             if (TxtIdVehiculo.Text.Length > 6 && val.ValidarEspaciosEnBlancos(TxtIdVehiculo.Text))
@@ -114,7 +118,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                 val.mensajeError("El ID del vehículo debe contener 7 caracteres y no debe tener espacios en blanco");
             }
         }
-
+        /// <summary>
+        /// Boton para agregar marca por medio de procedimiento almacenado. 
+        /// Si esta vacio no se guarda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddMarca_Click(object sender, RoutedEventArgs e)
         {
 
@@ -132,7 +141,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                 val.mensajeError("Error, no se pueden introducir valores nulos");
             }
         }
-
+        /// <summary>
+        /// Boton para agregar marca por medio de procedimiento almacenado. 
+        /// Si esta vacio no se guarda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddModelo_Click(object sender, RoutedEventArgs e)
         {
 
@@ -149,7 +163,12 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                 val.mensajeError("Error, no se pueden introducir valores nulos");
             }
         }
-
+        /// <summary>
+        /// Boton para agregar marca por medio de procedimiento almacenado. 
+        /// Si esta vacio no se guarda.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddcolor_Click(object sender, RoutedEventArgs e)
         {
             string color = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el Color: ", "Colores");
@@ -165,17 +184,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Vehiculos
                 val.mensajeError("Error, no se pueden introducir valores nulos");
             }
         }
-
+        /// <summary>
+        /// Impide que escriba caracteres no permitidos en el textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtVenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);
         }
-
+        /// <summary>
+        /// Impide que escriba caracteres no permitidos en el textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtIdVehiculo_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros_letras(e);
         }
-
+        /// <summary>
+        /// Impide que escriba caracteres no permitidos en el textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtRenta_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumerosDecimales(e);

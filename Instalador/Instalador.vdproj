@@ -524,6 +524,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -548,6 +556,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -1317,7 +1333,7 @@
         "Manufacturer" = "8:UnknownProgs"
         "ARPHELPTELEPHONE" = "8:+504 3346-4114"
         "ARPHELPLINK" = "8:paolamartel593@gmail.com"
-        "Title" = "8:Instalador"
+        "Title" = "8:Instalador BoddenRentals"
         "Subject" = "8:Aplicacion oficial para Bodden Rentals"
         "ARPCONTACT" = "8:UnknownProgs"
         "Keywords" = "8:"
