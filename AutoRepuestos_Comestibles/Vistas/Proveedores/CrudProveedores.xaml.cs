@@ -44,13 +44,13 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
 
-                if ((TxtIdentidad.Text.Length > 12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text)) || TxtIdentidad.Text.Length < 1)
+                if ((TxtIdentidad.Text.Length > 12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text)) || TxtIdentidad.Text.Length < 1 || TxtIdentidad.Text!="0000000000000")
                 {
-                    if (TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                    if (TxtNombre.Text.Length >= 4 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
                     {
                         if (val.email(TxtCorreo.Text) && TxtCorreo.Text.Length > 17)
                         {
-                            if (TxtRTN.Text.Length > 14 && val.ValidarEspaciosEnBlancos(TxtRTN.Text))
+                            if (TxtRTN.Text.Length >= 14 && val.ValidarEspaciosEnBlancos(TxtRTN.Text) || TxtRTN.Text != "00000000000000" || TxtRTN.Text != "000000000000000")
                             {
                                 if (TxtEncargado.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtEncargado.Text))
                                 {
@@ -132,7 +132,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
 
         private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            val.validarNumeros(e);
+            if (TxtTelefono.Text.Length == 0)
+            {
+                val.validarTelefonos(e);
+            }
+            else
+            {
+                val.validarNumeros(e);
+            }
+
         }
     }
 }

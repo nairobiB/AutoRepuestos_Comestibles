@@ -51,9 +51,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         {
             DateTime fecha = TxtFechNac.SelectedDate.Value;
 
-            if (TxtIdentidad.Text.Length>12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text))
+            if (TxtIdentidad.Text.Length>12 && val.ValidarEspaciosEnBlancos(TxtIdentidad.Text) || TxtIdentidad.Text != "0000000000000")
             {
-                if(TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                if(TxtNombre.Text.Length >= 4 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
                 {
                     if(TxtTelefono.Text.Length > 7)
                     {
@@ -137,6 +137,19 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         private void TxtIdentidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros(e);
+        }
+
+        private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if(TxtTelefono.Text.Length==0)
+            {
+                val.validarTelefonos(e);
+            }
+            else
+            {
+                val.validarNumeros(e);
+            }
+            
         }
     }
 }

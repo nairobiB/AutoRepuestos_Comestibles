@@ -51,7 +51,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
             if (TxtIdCliente.Text.Length > 12 && val.ValidarEspaciosEnBlancos(TxtIdCliente.Text))
             {
-                if(TxtNombre.Text.Length > 5 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
+                if(TxtNombre.Text.Length >= 4 && !val.ValidarEspaciosEnBlancos(TxtNombre.Text))
                 {
                     if (fecha.Year > (fecha_actual.AddYears(-69).Year) && fecha.Year < (fecha_actual.AddYears(-18).Year))
                     {
@@ -126,7 +126,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            val.validarNumeros(e);
+            if (TxtTelefono.Text.Length == 0)
+            {
+                val.validarTelefonos(e);
+            }
+            else
+            {
+                val.validarNumeros(e);
+            }
+
         }
 
         private void TxtCorreo_PreviewTextInput(object sender, TextCompositionEventArgs e)

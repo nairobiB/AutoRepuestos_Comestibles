@@ -114,6 +114,22 @@ namespace AutoRepuestos_Comestibles.Clases
             }
 
         }
+        public void validarTelefonos(TextCompositionEventArgs e)
+        {
+
+            int character = Convert.ToInt32(Convert.ToChar(e.Text));
+
+
+            if (character >= 48 && character <= 57 || e.Text=="+")
+                e.Handled = false;
+            else
+            {
+
+                e.Handled = true;
+
+            }
+
+        }
 
         public void validarNumerosDecimales(TextCompositionEventArgs e)
         {
