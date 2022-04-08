@@ -289,7 +289,7 @@
                      ToolTip="Ingrese el correo del cliente. Asegurese de escribirlo de manera correcta"
                         
                          Style="{DynamicResource TextBoxStyle}"
-                         Width="232" Margin="120,10,0,0.8" Grid.RowSpan="2" Grid.ColumnSpan="2" PreviewTextInput="TxtCorreo_PreviewTextInput"
+                         Width="232" Margin="120,10,0,0.8" Grid.RowSpan="2" Grid.ColumnSpan="2" 
                         MaxLength="50"/>
             <TextBlock Grid.Column="2"
                        Grid.Row="9"

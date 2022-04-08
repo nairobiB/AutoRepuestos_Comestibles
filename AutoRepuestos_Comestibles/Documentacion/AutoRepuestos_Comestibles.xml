@@ -108,6 +108,51 @@
             CrudClientes
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.val">
+            <summary>
+            Instancia de clases
+            </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.operacion">
+            <summary>
+            Declaracion de variable y encapsulacion
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa el usuario a la pantalla pricnipal de clientes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Realiza la operación de modificar o agregar un nuevo cliente
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.TxtIdCliente_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar letras al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.TxtNombre_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para no ingresar numeros al textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.TxtTelefono_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.InitializeComponent">
             <summary>
             InitializeComponent

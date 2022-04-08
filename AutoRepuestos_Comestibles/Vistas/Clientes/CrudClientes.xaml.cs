@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Clientes
@@ -21,10 +11,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     /// </summary>
     public partial class CrudClientes : Page
     {
+        /// <summary>
+        /// Instancia de clases
+        /// </summary>
         ClValidaciones val = new ClValidaciones();
         ClInsercion obj = new ClInsercion();
+        /// <summary>
+        /// Declaracion de variable y encapsulacion
+        /// </summary>
         private String operacion;
-
         public String Operacion { get => operacion; set => operacion = value; }
 
         public CrudClientes()
@@ -33,7 +28,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             TxtFechNac.SelectedDate = DateTime.Now.AddYears(-25);
         }
 
-
+        /// <summary>
+        /// Regresa el usuario a la pantalla pricnipal de clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Clientes();
@@ -44,6 +43,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
 
         DateTime fecha_actual = DateTime.Now;
+        /// <summary>
+        /// Realiza la operación de modificar o agregar un nuevo cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             
@@ -112,18 +116,30 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             
         }
 
-
+        /// <summary>
+        /// Validacion para no ingresar letras al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtIdCliente_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros(e);
 
         }
-
+        /// <summary>
+        /// Validacion para no ingresar numeros al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarLetras(e);
         }
-
+        /// <summary>
+        /// Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (TxtTelefono.Text.Length == 0)
@@ -137,10 +153,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         }
 
-        private void TxtCorreo_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            //val.email(e);
-        }
+       
     }
 
 
