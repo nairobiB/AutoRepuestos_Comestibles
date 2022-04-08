@@ -246,20 +246,21 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition Height="20"/>
+                <RowDefinition Height="18.455"/>
+                <RowDefinition Height="1.545"/>
             </Grid.RowDefinitions>
             <!--#endregion-->
 
 
             <!--#region TITULO-->
             <TextBlock Grid.Row="0"
-                       Grid.ColumnSpan="6"
+                       Grid.ColumnSpan="2"
                        Text="Mantenimiento de Pedidos "
                        Foreground="Black"
                        FontSize="30"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center" Grid.Column="2" Margin="91,25,90,25"/>
 
 
 
@@ -273,7 +274,7 @@
                        Grid.Row="2"
                        Foreground="Black"
                        FontSize="15"
-                       Margin="0,0,10,0"/>
+                       Margin="0,15,10,15"/>
 
 
             <!--#region TEXTBOX-->
@@ -288,21 +289,7 @@
                          Margin="10" TextChanged="TxtBuscar_TextChanged"/>
             <!--#endregion-->
 
-            <!--#region BTN Modificar-->
-            <Button Grid.Column="3"
-                        Grid.Row="2"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Margin="0,0,15,0"
-                        Cursor="Hand"
-                        Width="64"
-                        Name="BtnModificar" 
-                    ToolTip="Click para ver factura de pedido"
-                HorizontalAlignment="Right"
-                    IsEnabled="False"
-                        Style="{DynamicResource ButtonStyle}" Click="BtnModificar_Click">
-                <Image Source="/Imagenes/view.png" Height="40"/>
-            </Button>
+
             <!--#endregion-->
 
             <!--#region BTN Eliminar-->
@@ -324,15 +311,14 @@
 
 
             <!--#region BTN CREAR Venta-->
-            <Button Grid.Column="4"
+            <Button Grid.Column="3"
                     Grid.Row="2"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="25,0,0,0"
                     Cursor="Hand"
                     Width="64"
                     Name="BtnAgregarPedido"
-                    HorizontalAlignment="Left" 
+                    HorizontalAlignment="Right" 
                     ToolTip="Click para realizar nuevo pedido"
                     Style="{DynamicResource ButtonStyle}" 
                     Click="BtnAgregarPedido_Click">
@@ -346,7 +332,7 @@
             <DataGrid Grid.Row="4"
                       Grid.Column="1"
                       Grid.RowSpan="3"
-                      Grid.ColumnSpan="4"
+                      Grid.ColumnSpan="5"
                       x:Name="GridDatos"
                        ToolTip="Lista de facturas"
                       AutoGenerateColumns="False"
@@ -361,7 +347,7 @@
                       GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="Black" 
                       Style="{DynamicResource DataGridStyle}"
-                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged">
+                      IsReadOnly="True" SelectedCellsChanged="GridDatos_SelectedCellsChanged" Margin="0,0,19.5,0">
                 <DataGrid.Columns >
 
                     <DataGridTextColumn Header="ID"
@@ -376,7 +362,7 @@
                     <DataGridTextColumn Header="Empleado"
                                     Width="250"
                                     Binding="{Binding [Encargado del Pedido]}"/>
-             
+
 
                 </DataGrid.Columns>
 
@@ -388,7 +374,7 @@
                    Grid.Column="0"
                    Grid.Row="0"
                    Grid.ColumnSpan="6"
-                   Grid.RowSpan="8"/>
+                   Grid.RowSpan="9" Margin="0,0,-0.5,0"/>
             <!--#endregion-->
 
 
