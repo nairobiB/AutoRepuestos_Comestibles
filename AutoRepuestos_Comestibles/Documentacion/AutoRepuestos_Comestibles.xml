@@ -192,6 +192,56 @@
             CrudPedidos
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.sel">
+            <summary>
+            Intancia de clases
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.#ctor">
+            <summary>
+            Evento Load
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.Item">
+            <summary>
+            clase Item que se usaran para guardar en el datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.BtnAgregar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Evento Click en agregar realizara una addicion de un objeto de tipo item a el datagridviwe
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Elimina el objeto de tipo que esta seleccionado item del datagrid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Seleccionar un objeto de tipo item del datagridview
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.insertarDetalles(System.String,System.Double)">
+            <summary>
+            se usa la clase de ClInsercion para enviar valores y parametros a un procedimiento almacenado llamado Ins_PedidosDetalles
+            </summary>
+            <param name="vehiculo">Se recibe del objeto de tipo ITEM </param>
+            <param name="precio"> Se recibe del objeto de tipo ITEM </param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Realiza las acciones agregar registro a la base de datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.InitializeComponent">
             <summary>
             InitializeComponent
@@ -204,6 +254,50 @@
             <summary>
             Pedidos
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.obj">
+            <summary>
+            instancia de clases
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.CargarDG">
+            <summary>
+            hace referencia a la clase vistas datagrid view, enviando texto y un objeto tipo datagrid
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.BtnAgregarPedido_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abre el formulario CrudPedidos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.Buscar(System.String)">
+            <summary>
+            Hace referencia a la clase VistaDatagrid usando el metodo busqueda usando nombre, Fecha del Pedido, Encargado del Pedido
+            </summary>
+            <param name="texto">texto ingresado en la textbox de busqueda</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.TxtBuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            llama la funcion buscar cada vez que ingresa una letra
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Permite seleccionar un objeto del datagrid view
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Se usa para eliminar una registro mediante un procedimiento almacenado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.InitializeComponent">
             <summary>
@@ -269,6 +363,68 @@
             <summary>
             Retornos
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.val">
+            <summary>
+            Instancia de clases
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.CargarDG">
+            <summary>
+            hace referencia a la clase vistas datagrid view, enviando texto y un objeto tipo datagrid
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.Buscar(System.String)">
+            <summary>
+            Hace referencia a la clase VistaDatagrid usando el metodo busqueda usando Clientes, vehiculo, placa
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.Txtbuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            para realizar busqueda de autos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Permite selecionar una fila
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.fecha_actual">
+            <summary>
+            Crea una variable tipodate time para actualizar la fecha actual
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.BtnAgregarRetorno_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            se usa para agregar valores a la base de datos usando un procedimiento almacenado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.TxtCombustible_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Valida la entrada de numeros y tambien ingresar "."
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.TxtMora_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Valida la entrada de numeros y tambien ingresar "."
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.TxtDanos_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Valida la entrada de numeros y tambien ingresar "."
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.InitializeComponent">
             <summary>
