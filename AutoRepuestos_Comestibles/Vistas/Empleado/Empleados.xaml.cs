@@ -10,9 +10,15 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     /// </summary>
     public partial class Empleados : UserControl
     {
+        /// <summary>
+        /// Instancias de clases
+        /// </summary>
         ClVistasDataGrid obj = new ClVistasDataGrid();
         CrudEmpleado ventana = new CrudEmpleado();
         ClSeleccionEmpleado emp = new ClSeleccionEmpleado();
+        /// <summary>
+        /// Declaracion de variables
+        /// </summary>
         String valorID;
         string Estado;
         string Puesto;
@@ -21,24 +27,38 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             InitializeComponent();
             CargarDG();
         }
-
+        /// <summary>
+        /// cargar datos almacenados en la base de datos datagridview
+        /// </summary>
         void CargarDG()
         {
             obj.LlenarDG("EmpleadosVista where Estado = 1", GridDatos);
 
         }
-
+        /// <summary>
+        /// Realiza búsqueda de datos en el datagrid
+        /// </summary>
+        /// <param name="texto"></param>
         void Buscar(string texto)
         {
             obj.Busqueda("EmpleadosVista", GridDatos, texto, "Identidad", "[Nombre del empleado]", "Puesto");
 
         }
+        /// <summary>
+        /// Abre ventana de CrudEmpleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Insert";
 
         }
+        /// <summary>
+        /// LLena campos de la ventana CrudEmpleados
+        /// </summary>
+        /// <param name="identidad">Identidad del cliente que desea modificar</param>
 
         void llenarcampos(string identidad)
         {
@@ -74,11 +94,14 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         {
             Buscar(TxtBuscar.Text);
         }
-
+        /// <summary>
+        /// cuando selesccione una fila se guarda valores de un registro de la base datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            
-
+           
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             if(view != null)
             {
@@ -95,14 +118,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
             }
             
         }
-
+        /// <summary>
+        /// Abre la ventana de CrudEmpleados con los campos llenados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
             llenarcampos(valorID);
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Update";
         }
-
+        /// <summary>
+        /// Se elimina el registro de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();

@@ -10,7 +10,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
     /// Lógica de interacción para Rentas.xaml
     /// </summary>
     public partial class Rentas : UserControl
-    {
+    {/// <summary>
+    /// INstancia de clase
+    /// </summary>
         ClVistasDataGrid obj = new ClVistasDataGrid();
         string valorID;
         public Rentas()
@@ -23,13 +25,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             obj.LlenarDG("RentasVista where Estado = 1", GridDatos);
 
         }
-
+        /// <summary>
+        /// Abre ventana de CrudRentas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarRenta_Click(object sender, RoutedEventArgs e)
         {
             CrudRentas ventana = new CrudRentas();
             FrameRentas.Content = ventana;
         }
-
+        /// <summary>
+        /// Realiza busqueda en datagrid
+        /// </summary>
+        /// <param name="texto"></param>
         void Buscar(string texto)
         {
             obj.Busqueda("RentasVista", GridDatos, texto, "Cliente", "Empleado", "Fecha");
@@ -62,7 +71,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
          
 
         }
-
+        /// <summary>
+        /// Elimina registro de la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();
@@ -76,7 +89,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             BtnEliminar.IsEnabled = false;
             Content = new Rentas();
         }
-
+        /// <summary>
+        /// Abre ventana de crudrentas y carga los datos a los campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
             ReporteRentas repRen = new ReporteRentas();

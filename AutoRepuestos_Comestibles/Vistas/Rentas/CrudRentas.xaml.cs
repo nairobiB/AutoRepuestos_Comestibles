@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles.Vistas.Rentas
 {
@@ -20,7 +10,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
     /// </summary>
     public partial class CrudRentas : Page
     {
-
+        /// <summary>
+        /// Instancias de clases
+        /// </summary>
         ClCmb cmb = new ClCmb();
         ClSeleccionVehiculo sel = new ClSeleccionVehiculo();
         ClValidaciones val = new ClValidaciones();
@@ -41,7 +33,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
         {
             Content = new Rentas();
         }
-
+        /// <summary>
+        /// Encapsulacion
+        /// </summary>
         public class Item
         {
             public string vehiculo { get; set; }
@@ -50,7 +44,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
         }
 
         Item view = new Item();
-
+        /// <summary>
+        /// Agrega vehiculo al datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
             if (CmbVehiculo.Text == string.Empty)
@@ -79,13 +77,21 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
 
 
         }
-
+        /// <summary>
+        /// Selecciona fila en datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             view = (Item)GridDatos.SelectedItem;
             BtnEliminar.IsEnabled = true;
         }
-
+        /// <summary>
+        /// Elimina registro del datagrid
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             BtnEliminar.IsEnabled = false;
@@ -102,14 +108,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Rentas
             TxtTotal.Text = total.ToString();
 
         }
-
+        /// <summary>
+        /// Inserta un vehiculo al datagrid
+        /// </summary>
+        /// <param name="vehiculo"></param>
+        /// <param name="precio"></param>
         void insertarDetalles(string vehiculo, double precio)
         {
             dynamic[] parametros1 = { "@ID_Factura", "@ID_Vehiculo", "@Precio_Historico", "@Operacion" };
             dynamic[] controlnames1 = { numFac, vehiculo, precio, 2 };
             obj.Insertar("Ins_DetallesRentas", parametros1, controlnames1);
         }
-
+        /// <summary>
+        /// Confirma la rtenta y agrega el registro a la base de datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             int pago = 1;

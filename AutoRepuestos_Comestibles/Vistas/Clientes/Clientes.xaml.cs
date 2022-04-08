@@ -57,7 +57,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             ventana.Operacion = "Insert";
         }
         /// <summary>
-        /// 
+        /// Realiza búsqueda de datos en el datagrid
         /// </summary>
         /// <param name="texto"></param>
         void Buscar(string texto)
@@ -100,7 +100,7 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         }
 
         /// <summary>
-        /// 
+        /// Abre la ventana de CrudClientes con los campos llenados
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -118,7 +118,6 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
         /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            
 
             DataRowView view = (DataRowView)GridDatos.SelectedItem;
             if(view != null)

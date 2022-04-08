@@ -22,10 +22,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     /// </summary>
     public partial class Usuarios : UserControl
     {
+        /// <summary>
+        /// Instancias de clases
+        /// </summary>
         ClVistasDataGrid obj = new ClVistasDataGrid();
 
         CrudUsuarios ventana = new CrudUsuarios();
         ClSeleccionUsuario user = new ClSeleccionUsuario();
+        /// <summary>
+        /// Declaracion de variables
+        /// </summary>
         String valorID;
         string Estado;
         string Empleado;
@@ -34,19 +40,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             InitializeComponent();
             CargarDG();
         }
+        /// <summary>
+        /// cargar datos almacenados en la base de datos datagridview
+        /// </summary>
         void CargarDG()
         {
             obj.LlenarDG("UsuariosVista where Estado = 1", GridDatos);
 
         }
 
-
+        /// <summary>
+        /// Abre ventana de CrudUsuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarEmpleado_Click(object sender, RoutedEventArgs e)
         {
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Insert";
         }
-
+        /// <summary>
+        /// Realiza búsqueda de datos en el datagrid
+        /// </summary>
+        /// <param name="texto"></param>
         void Buscar(string texto)
         {
             obj.Busqueda("UsuariosVista", GridDatos, texto, "Usuario", "[Nombre del Empleado]", "Rol");
@@ -54,6 +70,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         }
 
         int indiceEmpleado;
+        /// <summary>
+        /// LLena campos de la ventana CrudUsuarios
+        /// </summary>
+        /// <param name="identidad">Identidad del cliente que desea modificar</param>
+
         void llenarcampos(string identidad)
         {
             
@@ -76,7 +97,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         {
             Buscar(TxtBuscar.Text);
         }
-
+        /// <summary>
+        /// cuando selesccione una fila se guarda valores de un registro de la base datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             
@@ -99,7 +124,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
 
 
         }
-
+        /// <summary>
+        /// Abre la ventana de CrudUsuarios con los campos llenados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificar_Click(object sender, RoutedEventArgs e)
         {
             BtnModificar.IsEnabled = false;
@@ -108,7 +137,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             FrameEmpleado.Content = ventana;
             ventana.Operacion = "Update";
         }
-
+        /// <summary>
+        /// Se elimina el registro de usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();

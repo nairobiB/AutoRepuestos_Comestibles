@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using AutoRepuestos_Comestibles.Vistas.Proveedores;
 using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Proveedores
@@ -22,6 +11,10 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
     /// </summary>
     public partial class CrudProveedores : Page
     {
+
+        /// <summary>
+        /// Instancia de clases
+        /// </summary>
         ClInsercion obj = new ClInsercion();
         ClValidaciones val = new ClValidaciones();
         int estado = 1;
@@ -35,12 +28,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Regresa el usuario a la pantalla pricnipal de proveedores
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Proveedores();
         }
-
+        /// <summary>
+        /// Realiza la operación de modificar o agregar un nuevo proveedor
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -104,12 +105,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
                     val.mensajeError("La identidad ingresada es invalida (asegurese que no contiene espacios)");
                 }              
         }
-
+        /// <summary>
+        /// Validacion para no ingresar letras al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtIdentidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros(e);
         }
-
+        /// <summary>
+        /// Validacion para no ingresar numeros al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarLetras(e);
@@ -119,17 +128,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Proveedores
         {
             //val.email(e);
         }
-
+        /// <summary>
+        /// Validacion para no ingresar numeros al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtRTN_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros(e);
         }
-
+        /// <summary>
+        /// Validacion para no ingresar letras al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtEncargado_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarLetras(e);
         }
-
+        /// <summary>
+        /// Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if (TxtTelefono.Text.Length == 0)

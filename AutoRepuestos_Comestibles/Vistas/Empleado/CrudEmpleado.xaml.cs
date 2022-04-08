@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.SqlClient;
-using System.Data;
 using AutoRepuestos_Comestibles.Clases;
 namespace AutoRepuestos_Comestibles.Vistas.Empleado
 {
@@ -22,11 +10,16 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
     /// </summary>
     public partial class CrudEmpleado : Page
     {
+        /// <summary>
+        /// Instancia de clases
+        /// </summary>
         ClValidaciones val = new ClValidaciones();
         ClCmb cmb = new ClCmb();
         ClInsercion obj = new ClInsercion();
+        /// <summary>
+        /// Declaracion de variable y encapsulacion
+        /// </summary>
         private String operacion;
-
         public String Operacion { get => operacion; set => operacion = value; }
         public CrudEmpleado()
         {
@@ -36,7 +29,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         }
 
         int estado = 1;
-
+        /// <summary>
+        /// Regresa el usuario a la pantalla pricnipal de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Empleados();
@@ -46,7 +43,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
         int puesto=0;
 
         DateTime fecha_actual = DateTime.Now;
-
+        /// <summary>
+        /// Realiza la operación de modificar o agregar un nuevo empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             DateTime fecha = TxtFechNac.SelectedDate.Value;
@@ -133,12 +134,20 @@ namespace AutoRepuestos_Comestibles.Vistas.Empleado
 
 
         }
-
+        /// <summary>
+        /// Validacion para no ingresar letras al textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtIdentidad_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros(e);
         }
-
+        /// <summary>
+        /// Validacion para numeros de telefonos, permite agregar el simbolo "+" al inicio y numeros al final
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtTelefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             if(TxtTelefono.Text.Length==0)

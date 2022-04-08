@@ -1,18 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using AutoRepuestos_Comestibles.Vistas.Usuario;
 using AutoRepuestos_Comestibles.Clases;
 
 namespace AutoRepuestos_Comestibles.Vistas.Usuario
@@ -22,6 +11,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
     /// </summary>
     public partial class CrudUsuarios : Page
     {
+        /// <summary>
+        /// Instancias de clases
+        /// </summary>
         ClSeleccionUsuario user = new ClSeleccionUsuario();
         ClCmb cmb = new ClCmb();
         ClInsercion ob = new ClInsercion();
@@ -30,7 +22,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
         private int id_usuario;
 
 
-
+        /// <summary>
+        /// Declaracion de variable y encapsulacion
+        /// </summary>
         public String Operacion { get => operacion; set => operacion = value; }
         public int Id_usuario { get => id_usuario; set => id_usuario = value; }
 
@@ -40,14 +34,22 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             Llenar_cmb();
 
         }
-
+        /// <summary>
+        /// Regresa el usuario a la pantalla pricnipal de usuarios
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnRegresar_Click(object sender, RoutedEventArgs e)
         {
             Content = new Usuarios();
 
         }
         int estado = 1;
-
+        /// <summary>
+        /// Realiza la operación de modificar o agregar un nuevo usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnConfirmar_Click(object sender, RoutedEventArgs e)
         {
             if(TxtNombre.Text.Length > 5 && val.ValidarEspaciosEnBlancos(TxtNombre.Text))
@@ -125,7 +127,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             }
             
         }
-
+        /// <summary>
+        /// Llena los combobox del formulario
+        /// </summary>
         public void Llenar_cmb() 
         {
             cmb.fill_cmb(CmbEmpleado, "Empleados", 1);
@@ -145,17 +149,29 @@ namespace AutoRepuestos_Comestibles.Vistas.Usuario
             }
 
         }
-
+        /// <summary>
+        /// Permite letras y numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtPassConf_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros_letras(e);
         }
-
+        /// <summary>
+        /// Permite letras y numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtPass_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros_letras(e);
         }
-
+        /// <summary>
+        /// Permite letras y numeros
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TxtNombre_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             val.validarNumeros_letras(e);
