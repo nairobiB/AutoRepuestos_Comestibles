@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Documentacion\AutoRepuestos_Comestibles.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -132,9 +133,6 @@
     <Compile Include="Clases\ClSeleccionVehiculo.cs" />
     <Compile Include="Clases\ClValidaciones.cs" />
     <Compile Include="Clases\ClVistasDataGrid.cs" />
-    <Compile Include="ReportePedidos.xaml.cs">
-      <DependentUpon>ReportePedidos.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ReporteRentas.xaml.cs">
       <DependentUpon>ReporteRentas.xaml</DependentUpon>
     </Compile>
@@ -209,10 +207,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MenuAgente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ReportePedidos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,9 +322,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Busqueda_FacturaVenta.rdl">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\ReportePedidos.rdl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

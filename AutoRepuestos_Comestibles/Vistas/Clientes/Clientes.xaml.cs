@@ -23,6 +23,9 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
     /// </summary>
     public partial class Clientes : UserControl
     {
+        /// <summary>
+        /// Instranci de clase
+        /// </summary>
         ClVistasDataGrid obj = new ClVistasDataGrid();
         CrudClientes ventana = new CrudClientes();
         ClSeleccion cli = new ClSeleccion();
@@ -34,30 +37,49 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             InitializeComponent();
             CargarDG();
         }
-         
+         /// <summary>
+         /// cargar datos almacenados en la base de datos datagridview
+         /// </summary>
         void CargarDG()
         {
             obj.LlenarDG("ClientesVista", GridDatos);
 
         }
-
+        /// <summary>
+        /// Abrir CrudClients
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAgregarCliente_Click(object sender, RoutedEventArgs e)
         {
 
             FrameCliente.Content = ventana;
             ventana.Operacion = "Insert";
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="texto"></param>
         void Buscar(string texto)
         {
             obj.Busqueda("ClientesVista", GridDatos, texto, "Identidad", "[Nombre del Cliente]", "Correo");
 
         }
+
+        /// <summary>
+        /// Realizar busqueda de clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"> texto ingresado</param>
         private void TxtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Buscar(TxtBuscar.Text);
         }
 
+        /// <summary>
+        /// LLena campos de la ventana CrudClientes
+        /// </summary>
+        /// <param name="identidad">Identidad del cliente que desea modificar</param>
         void llenarcampos(string identidad)
         {
             cli.seleccionar(identidad);
@@ -77,7 +99,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
 
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnModificar_Click_1(object sender, RoutedEventArgs e)
         {
             llenarcampos(valorID);
@@ -85,6 +111,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             ventana.Operacion = "Update";
         }
 
+        /// <summary>
+        /// cuando selesccione una fila se guarda valores de un registro de la base datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridDatos_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             
@@ -104,7 +135,11 @@ namespace AutoRepuestos_Comestibles.Vistas.Clientes
             }
             
         }
-
+        /// <summary>
+        /// Se elimina el registro de clientes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnEliminar_Click(object sender, RoutedEventArgs e)
         {
             ClInsercion obj = new ClInsercion();

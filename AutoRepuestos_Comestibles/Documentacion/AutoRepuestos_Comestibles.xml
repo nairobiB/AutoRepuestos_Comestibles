@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AutoRepuestos_Comestibles</name>
+    </assembly>
+    <members>
+        <member name="T:AutoRepuestos_Comestibles.ReporteRentas">
+            <summary>
+            Interaction logic for ReporteRentas.xaml
+            </summary>
+            <summary>
+            ReporteRentas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.ReporteRentas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.ReporteVentas">
+            <summary>
+            Interaction logic for ReporteVentas.xaml
+            </summary>
+            <summary>
+            ReporteVentas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.ReporteVentas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes">
+            <summary>
+            Interaction logic for Clientes.xaml
+            </summary>
+            <summary>
+            Clientes
+            </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.obj">
+            <summary>
+            Instranci de clase
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.CargarDG">
+            <summary>
+            cargar datos almacenados en la base de datos datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.BtnAgregarCliente_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Abrir CrudClients
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.Buscar(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.TxtBuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Realizar busqueda de clientes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"> texto ingresado</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.llenarcampos(System.String)">
+            <summary>
+            LLena campos de la ventana CrudClientes
+            </summary>
+            <param name="identidad">Identidad del cliente que desea modificar</param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.BtnModificar_Click_1(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            cuando selesccione una fila se guarda valores de un registro de la base datos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Se elimina el registro de clientes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.Clientes.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes">
+            <summary>
+            Interaction logic for CrudClientes.xaml
+            </summary>
+            <summary>
+            CrudClientes
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Clientes.CrudClientes.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado">
+            <summary>
+            Interaction logic for frmControlUsuarios.xaml
+            </summary>
+            <summary>
+            CrudEmpleado
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.CrudEmpleado.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados">
+            <summary>
+            Interaction logic for Empleados.xaml
+            </summary>
+            <summary>
+            Empleados
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Empleado.Empleados.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos">
+            <summary>
+            Lógica de interacción para CrudPedidos.xaml
+            </summary>
+            <summary>
+            CrudPedidos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.CrudPedidos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos">
+            <summary>
+            Lógica de interacción para Pedidos.xaml
+            </summary>
+            <summary>
+            Pedidos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Pedidos.Pedidos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores">
+            <summary>
+            Interaction logic for CrudProveedores.xaml
+            </summary>
+            <summary>
+            CrudProveedores
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.CrudProveedores.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores">
+            <summary>
+            Interaction logic for Proveedores.xaml
+            </summary>
+            <summary>
+            Proveedores
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Proveedores.Proveedores.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas">
+            <summary>
+            Lógica de interacción para CrudRentas.xaml
+            </summary>
+            <summary>
+            CrudRentas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.CrudRentas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas">
+            <summary>
+            Lógica de interacción para Rentas.xaml
+            </summary>
+            <summary>
+            Rentas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Rentas.Rentas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos">
+            <summary>
+            Interaction logic for Retornos.xaml
+            </summary>
+            <summary>
+            Retornos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Retorno.Retornos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios">
+            <summary>
+            Interaction logic for CrudUsuarios.xaml
+            </summary>
+            <summary>
+            CrudUsuarios
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.CrudUsuarios.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios">
+            <summary>
+            Interaction logic for Usuarios.xaml
+            </summary>
+            <summary>
+            Usuarios
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Usuario.Usuarios.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos">
+            <summary>
+            Interaction logic for CrudVehiculos.xaml
+            </summary>
+            <summary>
+            CrudVehiculos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos">
+            <summary>
+            Interaction logic for Vehiculos.xaml
+            </summary>
+            <summary>
+            Vehiculos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas">
+            <summary>
+            Interaction logic for CrudVentas.xaml
+            </summary>
+            <summary>
+            CrudVentas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas">
+            <summary>
+            Interaction logic for Ventas.xaml
+            </summary>
+            <summary>
+            Ventas
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Login">
+            <summary>
+            Interaction logic for Login.xaml
+            </summary>
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Login.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.MenuAdmin">
+            <summary>
+            Interaction logic for MenuAdmin.xaml
+            </summary>
+            <summary>
+            MenuAdmin
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAdmin.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.MenuAgente">
+            <summary>
+            Interaction logic for MenuAgente.xaml
+            </summary>
+            <summary>
+            MenuAgente
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.MenuAgente.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AutoRepuestos_Comestibles.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AutoRepuestos_Comestibles.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
