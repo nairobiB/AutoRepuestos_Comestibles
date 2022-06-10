@@ -851,6 +851,78 @@
             CrudVehiculos
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.obj">
+            <summary>
+            Definicion de atributos y instancias de clase
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.#ctor">
+            <summary>
+            Metodo para llenar combobox
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa al formulario de vehiculo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Validaciones. Se rellena combobox con primera opcion para evitar que quede vacio.
+            Decision Si es Insersion o actualizacion.
+            Se guarda la informacion o se actualiza, regresando tambien al 
+            formulario de vehiculos
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.BtnAddMarca_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para agregar marca por medio de procedimiento almacenado. 
+            Si esta vacio no se guarda.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.BtnAddModelo_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para agregar marca por medio de procedimiento almacenado. 
+            Si esta vacio no se guarda.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.BtnAddcolor_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton para agregar marca por medio de procedimiento almacenado. 
+            Si esta vacio no se guarda.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.TxtVenta_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Impide que escriba caracteres no permitidos en el textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.TxtIdVehiculo_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Impide que escriba caracteres no permitidos en el textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.TxtRenta_PreviewTextInput(System.Object,System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            Impide que escriba caracteres no permitidos en el textbox
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.CrudVehiculos.InitializeComponent">
             <summary>
             InitializeComponent
@@ -863,6 +935,70 @@
             <summary>
             Vehiculos
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.obj">
+            <summary>
+            Instancia de clases y definicion de variable valorID
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.#ctor">
+            <summary>
+            Abre el formulario vehiculos y ejecuta funcion para cargar datos del datagridview
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.CargarDG">
+            <summary>
+            Llenar datos del datagridview con datos que tengan estado en habilitado
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.BtnAgregarEmpleado_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Redirige al formulario de Crudvehiculos e iguala operacion a Insert para ejecutar el procedimiento
+            insertar posteriormente si se guarda informacin
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.Buscar(System.String)">
+            <summary>
+            Funcion para buscar dentro por medio de los parametros.
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.TxtBuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            llama a la funcion buscar
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.llenarCampos(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="idvehiculo"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Elimina los datos de la lista pero no de la base
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Si se selecciona un registro activa los botones
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Modifica los datos por medio del procedimiento almacenado dependiendo y edita
+            el registro seleccionado en el grid
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Vehiculos.Vehiculos.InitializeComponent">
             <summary>
@@ -877,6 +1013,82 @@
             CrudVentas
             </summary>
         </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.val">
+            <summary>
+            Instansias de clase y definicion de variable
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.#ctor">
+            <summary>
+            Rellenar el combobox
+            </summary>
+        </member>
+        <member name="T:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.Item">
+            <summary>
+            Definicion de metodos
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.BtnRegresar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa al formulario sin guardar cambios
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.BtnAgregar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Boton que agrega el vehiculo con sus detalles para hacer una venta
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.view">
+            <summary>
+            Instancia de la clase
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Hacer seleccion de un registro y activa el boton para eliminar. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia el estado de una venta a falso para que ya no aparezca en la vista. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.insertarDetalles(System.String,System.Double)">
+            <summary>
+            Insercion de los detalles del venta por medio de procedimiento almacenado. 
+            </summary>
+            <param name="vehiculo"></param>
+            <param name="precio"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.BtnConfirmar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Validaciones. Si cumple todos los requisitos se realiza la venta y guarda los detalles a la base.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.rbtnTranferencia_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia el estado del tipo de pago si es seleccionado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.rbtnTarjeta_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia el estado del tipo de pago si es seleccionado
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.CrudVentas.InitializeComponent">
             <summary>
             InitializeComponent
@@ -889,6 +1101,62 @@
             <summary>
             Ventas
             </summary>
+        </member>
+        <member name="F:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.obj">
+            <summary>
+            Instansia de clase y definicion de variable.
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.#ctor">
+            <summary>
+            Inicia el formulario y carga los datos del datagrid.
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.CargarDG">
+            <summary>
+            Funcion para cargar datos del grid
+            </summary>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.Buscar(System.String)">
+            <summary>
+            Funcion para hacer busqueda de registros por medio del nombre del cliente, empleado o tipo de pago.
+            </summary>
+            <param name="texto"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.BtnAgregarVenta_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Agrega los detalles de la venta al datagridview
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.TxtBuscar_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Llama a la funcion buscar y la ejecuta. Busca los datos por medio de parametros establecidos.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.GridDatos_SelectedCellsChanged(System.Object,System.Windows.Controls.SelectedCellsChangedEventArgs)">
+            <summary>
+            Activa los botones seleccionando el registro. Si no no se activan los botones.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.BtnEliminar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Cambia el estado de la venta para que no aparzeca en la lista. 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.BtnModificar_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Permite generar la factura abriendo una pestaña de report builder
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:AutoRepuestos_Comestibles.Vistas.Ventas.Ventas.InitializeComponent">
             <summary>
@@ -1027,6 +1295,36 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>
